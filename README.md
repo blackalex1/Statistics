@@ -93,6 +93,4 @@ You can trigger the **GitHub Metrics Generator** workflow manually to change the
   <a href="https://t.me/blackalex1">
     <img src="https://raw.githubusercontent.com/blackalex1/Statistics/metrics/output/telegram.svg" width="220"/>
   </a>
-  <br/>
-  <img src="https://raw.githubusercontent.com/blackalex1/Statistics/metrics/output/wave.svg" width="850" height="50"/>
 </div>
