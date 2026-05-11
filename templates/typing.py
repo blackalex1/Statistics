@@ -19,6 +19,7 @@ def get_typing_svg(lines, color="#00FFAA"):
     uid = int(time.time()) % 10000
     
     content = ""
+    all_defs = ""
     
     for i, line in enumerate(lines):
         safe_text = saxutils.escape(line)
@@ -76,27 +77,31 @@ def get_typing_svg(lines, color="#00FFAA"):
         val_w_str = ";".join([f"{x:.1f}" for x in val_w_list])
         val_x_str = ";".join([f"{x:.1f}" for x in val_x_list])
         
-        # Visibility animation
+    # Visibility animation
         vis_values = "0;0;1;1;0;0"
         vis_times = f"0;{f_start};{f_start + 0.0001};{f_end - 0.0001};{f_end};1"
         
+        # Aggregate clipPaths
+        all_defs += f"""
+    <clipPath id="cp-{uid}-{i}">
+        <rect x="{start_x + prefix_width - clip_offset}" y="0" width="0" height="70">
+            <animate attributeName="width" values="{val_w_str}" keyTimes="{kt_str}" dur="{total_dur}s" repeatCount="indefinite" calcMode="discrete" />
+        </rect>
+    </clipPath>"""
+
         content += f"""
     <g opacity="0">
         <animate attributeName="opacity" values="{vis_values}" keyTimes="{vis_times}" dur="{total_dur}s" repeatCount="indefinite" />
-        <defs>
-            <clipPath id="clip-{uid}-{i}">
-                <rect x="{start_x + prefix_width - clip_offset}" y="0" width="0" height="70">
-                    <animate attributeName="width" values="{val_w_str}" keyTimes="{kt_str}" dur="{total_dur}s" repeatCount="indefinite" calcMode="discrete" />
-                </rect>
-            </clipPath>
-        </defs>
-        <text x="{start_x}" y="52" class="t-text" xml:space="preserve"><tspan x="{start_x}" fill-opacity="0.5">$ </tspan><tspan x="{start_x + prefix_width}" clip-path="url(#clip-{uid}-{i})">{safe_text}</tspan></text>
+        <text x="{start_x}" y="52" class="t-text" xml:space="preserve"><tspan x="{start_x}" fill="#00FFAA" fill-opacity="0.4">$ </tspan><tspan x="{start_x + prefix_width}" clip-path="url(#cp-{uid}-{i})">{safe_text}</tspan></text>
         <rect y="32" width="2" height="24" class="t-cursor">
             <animate attributeName="x" values="{val_x_str}" keyTimes="{kt_str}" dur="{total_dur}s" repeatCount="indefinite" calcMode="discrete" />
         </rect>
     </g>"""
 
     return f"""<svg width="500" height="70" viewBox="0 0 500 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    {all_defs}
+  </defs>
   <style>
     :root {{ --bg: #0d1117; --text: {color}; --border: #30363d; }}
     @media (prefers-color-scheme: light) {{ :root {{ --bg: #ffffff; --text: #1a7f37; --border: #d0d7de; }} }}
