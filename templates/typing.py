@@ -26,52 +26,59 @@ def get_typing_svg(lines, color="#00FFAA"):
         
         # Timing fractions
         f_start = i / N
-        f_type_start = (i + 0.1) / N
-        f_type_end = (i + 0.4) / N
-        f_stay_end = (i + 0.7) / N
-        f_erase_end = (i + 0.9) / N
+        f_type_start = (i + 0.05) / N
+        f_type_end = (i + 0.45) / N
+        f_stay_end = (i + 0.75) / N
+        f_erase_end = (i + 0.95) / N
         f_end = (i + 1.0) / N
         
-        # Build animation sequences
+        # Build animation sequences (ensure strictly increasing keyTimes)
         kt_list = [0, f_start]
         val_w_list = [0, 0]
         val_x_list = [start_x + prefix_width, start_x + prefix_width]
         
+        # Typing phase
         type_steps = max(1, line_len)
-        for s in range(type_steps + 1):
+        for s in range(1, type_steps + 1):
             t = f_type_start + (s / type_steps) * (f_type_end - f_type_start)
             kt_list.append(t)
-            w = (s * char_width + clip_offset) if s > 0 else 0
+            w = s * char_width + clip_offset
             val_w_list.append(w)
             val_x_list.append(start_x + prefix_width + s * char_width)
             
-        kt_list.append(f_stay_end)
-        val_w_list.append(line_len * char_width + clip_offset)
-        val_x_list.append(start_x + prefix_width + line_len * char_width)
+        # Stay phase
+        if f_stay_end > kt_list[-1]:
+            kt_list.append(f_stay_end)
+            val_w_list.append(line_len * char_width + clip_offset)
+            val_x_list.append(start_x + prefix_width + line_len * char_width)
         
-        for s in range(type_steps, -1, -1):
+        # Erasing phase
+        for s in range(type_steps - 1, -1, -1):
             t = f_stay_end + ((type_steps - s) / type_steps) * (f_erase_end - f_stay_end)
-            kt_list.append(t)
-            w = (s * char_width + clip_offset) if s > 0 else 0
-            val_w_list.append(w)
-            val_x_list.append(start_x + prefix_width + s * char_width)
+            if t > kt_list[-1]:
+                kt_list.append(t)
+                w = (s * char_width + clip_offset) if s > 0 else 0
+                val_w_list.append(w)
+                val_x_list.append(start_x + prefix_width + s * char_width)
             
-        kt_list.append(f_end)
-        val_w_list.append(0)
-        val_x_list.append(start_x + prefix_width)
+        # Final state for this line
+        if f_end > kt_list[-1]:
+            kt_list.append(f_end)
+            val_w_list.append(0)
+            val_x_list.append(start_x + prefix_width)
         
-        if f_end < 1.0:
+        if 1.0 > kt_list[-1]:
             kt_list.append(1.0)
             val_w_list.append(0)
             val_x_list.append(start_x + prefix_width)
             
-        kt_str = ";".join([f"{min(1.0, x):.4f}" for x in kt_list])
+        kt_str = ";".join([f"{x:.4f}" for x in kt_list])
         val_w_str = ";".join([f"{x:.1f}" for x in val_w_list])
         val_x_str = ";".join([f"{x:.1f}" for x in val_x_list])
         
-        # Visibility animation (SMIL is more reliable than CSS keyframes in some environments)
+        # Visibility animation
         vis_values = "0;0;1;1;0;0"
-        vis_times = f"0;{f_start};{f_start + 0.001};{f_end - 0.001};{f_end};1"
+        vis_times = f"0;{f_start};{f_start + 0.0001};{f_end - 0.0001};{f_end};1"
         
         content += f"""
     <g opacity="0">
