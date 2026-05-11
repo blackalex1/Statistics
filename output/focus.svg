@@ -1,0 +1,168 @@
+<svg width="850" height="180" viewBox="0 0 850 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <style>
+        :root {
+            --f-bg: #0d1117;
+            --f-accent: #00FFAA;
+            --f-text: #ffffff;
+            --f-secondary: #8b949e;
+            --f-border: #30363d;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --f-bg: #ffffff;
+                --f-accent: #0969da;
+                --f-text: #1f2328;
+                --f-secondary: #57606a;
+                --f-border: #d0d7de;
+            }
+        }
+
+        .f-card {
+            fill: var(--f-bg);
+            stroke: var(--f-border);
+            stroke-width: 1;
+            transition: all 0.3s;
+        }
+        
+        .f-card:hover {
+            stroke: var(--f-accent);
+        }
+
+        .f-tag {
+            font: bold 12px monospace;
+            fill: var(--f-accent);
+            letter-spacing: 1px;
+        }
+
+        .f-title {
+            font: bold 13px 'Segoe UI', sans-serif;
+            fill: var(--f-text);
+        }
+
+        .f-desc {
+            font: 10px 'Segoe UI', sans-serif;
+            fill: var(--f-secondary);
+        }
+
+        .f-accent-line {
+            stroke: var(--f-accent);
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+
+        .f-indicator {
+            fill: var(--f-accent);
+            opacity: 0.3;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .f-appear {
+            opacity: 0;
+            animation: f-fadeIn 0.5s forwards;
+        }
+
+        @keyframes f-fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(10px); }
+        }
+        
+        .f-corner { fill: var(--f-accent); }
+    </style>
+    
+    
+    <text x="10" y="25" style="font: bold 16px monospace; fill: var(--f-text); letter-spacing: 2px;">STRATEGIC_FOCUS // MODULES</text>
+    <line x1="10" y1="30" x2="280" y2="30" stroke="#00FFAA" stroke-width="1" opacity="0.3"/>
+
+    
+        <g class="f-appear" style="animation-delay: 0.0s;">
+            <rect x="10" y="40" width="155" height="130" rx="6" class="f-card"/>
+            
+            <!-- Corner Accent -->
+            <path d="M 10 55 L 10 40 L 25 40" fill="none" stroke="#00FFAA" stroke-width="1.5" opacity="0.6"/>
+            
+            <text x="22" y="65" class="f-tag">RE</text>
+            <text x="22" y="88" class="f-title">Reverse Engineering</text>
+            
+            <!-- Wrapping description -->
+            <text x="22" y="110" class="f-desc">x64dbg, IDA Pro, Ghidra</text>
+            <text x="22" y="125" class="f-desc"></text>
+            
+            <rect x="22" y="150" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
+            <rect x="22" y="150" width="40" height="3" rx="1.5" class="f-indicator"/>
+        </g>
+        
+        <g class="f-appear" style="animation-delay: 0.1s;">
+            <rect x="177" y="40" width="155" height="130" rx="6" class="f-card"/>
+            
+            <!-- Corner Accent -->
+            <path d="M 177 55 L 177 40 L 192 40" fill="none" stroke="#00FFAA" stroke-width="1.5" opacity="0.6"/>
+            
+            <text x="189" y="65" class="f-tag">OS</text>
+            <text x="189" y="88" class="f-title">OS Internals</text>
+            
+            <!-- Wrapping description -->
+            <text x="189" y="110" class="f-desc">Kernel Dev / Windows &amp; Li</text>
+            <text x="189" y="125" class="f-desc">nux</text>
+            
+            <rect x="189" y="150" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
+            <rect x="189" y="150" width="55" height="3" rx="1.5" class="f-indicator"/>
+        </g>
+        
+        <g class="f-appear" style="animation-delay: 0.2s;">
+            <rect x="344" y="40" width="155" height="130" rx="6" class="f-card"/>
+            
+            <!-- Corner Accent -->
+            <path d="M 344 55 L 344 40 L 359 40" fill="none" stroke="#00FFAA" stroke-width="1.5" opacity="0.6"/>
+            
+            <text x="356" y="65" class="f-tag">PENTEST</text>
+            <text x="356" y="88" class="f-title">Pentesting</text>
+            
+            <!-- Wrapping description -->
+            <text x="356" y="110" class="f-desc">Infrastructure &amp; Web Audi</text>
+            <text x="356" y="125" class="f-desc">ts</text>
+            
+            <rect x="356" y="150" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
+            <rect x="356" y="150" width="70" height="3" rx="1.5" class="f-indicator"/>
+        </g>
+        
+        <g class="f-appear" style="animation-delay: 0.30000000000000004s;">
+            <rect x="511" y="40" width="155" height="130" rx="6" class="f-card"/>
+            
+            <!-- Corner Accent -->
+            <path d="M 511 55 L 511 40 L 526 40" fill="none" stroke="#00FFAA" stroke-width="1.5" opacity="0.6"/>
+            
+            <text x="523" y="65" class="f-tag">BYPASS</text>
+            <text x="523" y="88" class="f-title">Evasion</text>
+            
+            <!-- Wrapping description -->
+            <text x="523" y="110" class="f-desc">Advanced Detection Bypass</text>
+            <text x="523" y="125" class="f-desc"></text>
+            
+            <rect x="523" y="150" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
+            <rect x="523" y="150" width="85" height="3" rx="1.5" class="f-indicator"/>
+        </g>
+        
+        <g class="f-appear" style="animation-delay: 0.4s;">
+            <rect x="678" y="40" width="155" height="130" rx="6" class="f-card"/>
+            
+            <!-- Corner Accent -->
+            <path d="M 678 55 L 678 40 L 693 40" fill="none" stroke="#00FFAA" stroke-width="1.5" opacity="0.6"/>
+            
+            <text x="690" y="65" class="f-tag">NET</text>
+            <text x="690" y="88" class="f-title">Networking</text>
+            
+            <!-- Wrapping description -->
+            <text x="690" y="110" class="f-desc">Low-level Protocols &amp; Sni</text>
+            <text x="690" y="125" class="f-desc">ffing</text>
+            
+            <rect x="690" y="150" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
+            <rect x="690" y="150" width="100" height="3" rx="1.5" class="f-indicator"/>
+        </g>
+        
+</svg>
