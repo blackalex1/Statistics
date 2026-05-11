@@ -70,7 +70,10 @@ def fetch_data(username):
             name = edge["node"]["name"]
             lang_stats[name] = lang_stats.get(name, 0) + edge["size"]
     total_size = sum(lang_stats.values())
-    languages = sorted([(k, round(v/total_size*100, 1)) for k,v in lang_stats.items()], key=lambda x: x[1], reverse=True)
+    if total_size == 0:
+        languages = []
+    else:
+        languages = sorted([(k, round(v/total_size*100, 1)) for k,v in lang_stats.items()], key=lambda x: x[1], reverse=True)
     return {
         "username": data["login"], "stars": total_stars, "commits": commits,
         "prs": data["contributionsCollection"]["totalPullRequestContributions"],

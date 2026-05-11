@@ -28,9 +28,11 @@ def get_activity_graph_svg(calendar, color="#00FFAA"):
     else: y_limit = ((max_count // 10) + 1) * 10
     
     def get_x(i):
+        if num_points <= 1: return pad_l
         return pad_l + (i * (graph_w / (num_points - 1)))
     
     def get_y(count):
+        if y_limit == 0: return pad_t + graph_h
         return pad_t + graph_h - (count * (graph_h / y_limit))
 
     # --- Points Calculation ---
