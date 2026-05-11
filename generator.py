@@ -81,6 +81,7 @@ def fetch_data(username):
 def main():
     parser = argparse.ArgumentParser(description="GitHub Metrics SVG Generator")
     parser.add_argument("--username", type=str, default="blackalex1", help="GitHub username")
+    parser.add_argument("--telegram", type=str, help="Telegram username (optional, defaults to github username)")
     parser.add_argument("--color", type=str, default="#00FFAA", help="Primary accent color (hex)")
     parser.add_argument("--graphs", type=str, nargs="+", default=["all"], help="Specific graphs to generate (header, stats, languages, typing, matrix, scanner, wave, activity, terminal, focus, telegram)")
     
@@ -148,7 +149,8 @@ def main():
             
         if "telegram" in target_graphs:
             with open("output/telegram.svg", "w", encoding="utf-8") as f:
-                f.write(get_contact_badge_svg(username=args.username, color=args.color))
+                tg_handle = args.telegram if args.telegram else args.username
+                f.write(get_contact_badge_svg(username=tg_handle, color=args.color))
             
         print(f"Successfully generated {len(target_graphs)} SVGs in 'output/' directory.")
     except Exception as e:

@@ -9,6 +9,10 @@ on:
         description: 'GitHub Username'
         required: true
         default: 'blackalex1'
+      telegram:
+        description: 'Telegram Username'
+        required: false
+        default: 'blackalex1'
       color:
         description: 'Accent Color (Hex)'
         required: false
@@ -40,6 +44,7 @@ jobs:
           METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           python generator.py --username "${{ github.event.inputs.username || 'blackalex1' }}" \
+                             --telegram "${{ github.event.inputs.telegram || 'blackalex1' }}" \
                              --color "${{ github.event.inputs.color || '#00FFAA' }}" \
                              --graphs ${{ github.event.inputs.graphs || 'all' }}
 
