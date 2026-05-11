@@ -2,7 +2,7 @@ name: GitHub Metrics Generator
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Daily at midnight
+    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
       username:
@@ -18,7 +18,7 @@ on:
         required: false
         default: '#00FFAA'
       graphs:
-        description: 'Graphs to generate (space separated)'
+        description: 'Graphs to generate'
         required: false
         default: 'all'
 
@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false # Important for using custom token for push
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -50,16 +52,15 @@ jobs:
                              --color "${{ github.event.inputs.color || '#00FFAA' }}" \
                              --graphs ${{ github.event.inputs.graphs || 'all' }}
 
-      - name: Commit and Push Changes
+      - name: Commit files
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           
-          # Create temporary directory and copy outputs
+          # Prepare metrics branch logic
           mkdir -p temp_metrics
           cp -r output/*.svg temp_metrics/
           
-          # Switch to metrics branch (create if not exists)
           git fetch origin
           if git rev-parse --verify origin/metrics >/dev/null 2>&1; then
             git checkout metrics
@@ -68,8 +69,15 @@ jobs:
             git rm -rf .
           fi
           
-          # Restore metrics and commit
           mkdir -p output
           cp temp_metrics/*.svg output/
           git add output/*.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update metrics SVGs [skip ci]" && git push "https://x-access-token:${{ secrets.METRICS_TOKEN }}@github.com/${{ github.repository }}.git" metrics --force)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update metrics SVGs [skip ci]")
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.METRICS_TOKEN }}
+          branch: metrics
+          force: true
+          directory: .
