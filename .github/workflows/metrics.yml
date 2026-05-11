@@ -1,0 +1,68 @@
+name: GitHub Metrics Generator
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Daily at midnight
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'GitHub Username'
+        required: true
+        default: 'blackalex1'
+      color:
+        description: 'Accent Color (Hex)'
+        required: false
+        default: '#00FFAA'
+      graphs:
+        description: 'Graphs to generate (space separated)'
+        required: false
+        default: 'all'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate Metrics SVGs
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          python generator.py --username "${{ github.event.inputs.username || 'blackalex1' }}" \
+                             --color "${{ github.event.inputs.color || '#00FFAA' }}" \
+                             --graphs ${{ github.event.inputs.graphs || 'all' }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Create temporary directory and copy outputs
+          mkdir -p temp_metrics
+          cp -r output/*.svg temp_metrics/
+          
+          # Switch to metrics branch (create if not exists)
+          git fetch origin
+          if git rev-parse --verify origin/metrics >/dev/null 2>&1; then
+            git checkout metrics
+          else
+            git checkout --orphan metrics
+            git rm -rf .
+          fi
+          
+          # Restore metrics and commit
+          mkdir -p output
+          cp temp_metrics/*.svg output/
+          git add output/*.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update metrics SVGs [skip ci]" && git push origin metrics --force)
