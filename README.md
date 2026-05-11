@@ -26,6 +26,9 @@ This repository contains a collection of premium SVG templates designed to give 
 
 ### 💻 System & Identity
 <div align="center">
+  <img src="https://raw.githubusercontent.com/blackalex1/Statistics/metrics/output/typing.svg" width="600"/><br/>
+  <i>Dynamic typing animation for technical profile highlights.</i>
+  <br/><br/>
   <img src="https://raw.githubusercontent.com/blackalex1/Statistics/metrics/output/terminal.svg" width="600"/><br/>
   <i>Animated terminal window for role and system information.</i>
 </div>
