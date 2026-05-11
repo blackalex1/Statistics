@@ -1,0 +1,106 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <style>
+        :root {
+            --term-bg: #0d1117;
+            --term-accent: #00FFAA;
+            --term-text: #ffffff;
+            --term-secondary: #8b949e;
+            --term-border: #30363d;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --term-bg: #f6f8fa;
+                --term-accent: #1a7f37;
+                --term-text: #1f2328;
+                --term-secondary: #57606a;
+                --term-border: #d0d7de;
+            }
+        }
+
+        .terminal-window {
+            fill: var(--term-bg);
+            stroke: var(--term-border);
+            stroke-width: 1.5;
+        }
+        
+        .title-bar {
+            fill: var(--term-border);
+            opacity: 0.5;
+        }
+
+        .dot { r: 3; }
+        .dot-red { fill: #ff5f56; }
+        .dot-yellow { fill: #ffbd2e; }
+        .dot-green { fill: #27c93f; }
+
+        .label {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 14px;
+            font-weight: bold;
+            fill: var(--term-text);
+        }
+
+        .value {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 14px;
+            fill: var(--term-accent);
+        }
+
+        .cursor {
+            fill: var(--term-accent);
+            animation: blink 1s infinite step-end;
+        }
+
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .glow {
+            filter: drop-shadow(0 0 3px var(--term-accent));
+        }
+
+        .line-appear {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+    
+    
+    <rect width="600" height="200" rx="10" class="terminal-window"/>
+    <path d="M0 10 C0 4.47715 4.47715 0 10 0 H590 C595.523 0 600 4.47715 600 10 V30 H0 V10 Z" class="title-bar"/>
+    
+    <circle cx="20" cy="15" class="dot dot-red"/>
+    <circle cx="35" cy="15" class="dot dot-yellow"/>
+    <circle cx="50" cy="15" class="dot dot-green"/>
+    <text x="300" y="20" text-anchor="middle" style="font-family: monospace; font-size: 10px; fill: var(--term-secondary);">system_info — bash</text>
+
+    
+        <g class="line-appear" style="animation-delay: 0.0s;">
+            <text x="35" y="65" class="label">$ role</text>
+            <text x="130" y="65" class="value glow">Infosec Researcher / RE</text>
+        </g>
+        
+        <g class="line-appear" style="animation-delay: 0.2s;">
+            <text x="35" y="93" class="label">$ focus</text>
+            <text x="130" y="93" class="value glow">Cybersecurity | C/C++ | Networking</text>
+        </g>
+        
+        <g class="line-appear" style="animation-delay: 0.4s;">
+            <text x="35" y="121" class="label">$ system</text>
+            <text x="130" y="121" class="value glow">Linux / Windows Internals</text>
+        </g>
+        
+        <g class="line-appear" style="animation-delay: 0.6000000000000001s;">
+            <text x="35" y="149" class="label">$ mindset</text>
+            <text x="130" y="149" class="value glow">"Break to understand. Build better."</text>
+        </g>
+        
+    
+    <rect x="436.0" y="137" width="8" height="15" class="cursor" style="animation-delay: 0.8s;"/>
+</svg>
