@@ -1,0 +1,18 @@
+.env
+output/
+__pycache__/
+*.pyc
+test/
+tests/
+
+# IDEs
+.idea/
+.vscode/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Logs
+*.log
