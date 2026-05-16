@@ -406,6 +406,7 @@
 <rect x="693" y="79" width="10" height="10" rx="2" class="wv-cell wv-l-3" style="animation-delay: 4.000s;"/>
 <rect x="693" y="92" width="10" height="10" rx="2" class="wv-cell wv-l-1" style="animation-delay: 4.000s;"/>
 <rect x="693" y="105" width="10" height="10" rx="2" class="wv-cell wv-l-0" style="animation-delay: 4.000s;"/>
+<rect x="693" y="118" width="10" height="10" rx="2" class="wv-cell wv-l-0" style="animation-delay: 4.000s;"/>
 
   </g>
 </svg>
