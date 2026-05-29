@@ -1483,5 +1483,9 @@
             <rect x="683" y="77" width="10" height="10" rx="2" 
                   fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.105s;"/>
+            
+            <rect x="683" y="90" width="10" height="10" rx="2" 
+                  fill="#161b22" class="cell empty" 
+                  style="animation-delay: -2.991s;"/>
              </g>
 </svg>
