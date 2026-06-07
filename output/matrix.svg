@@ -741,7 +741,7 @@
                   style="animation-delay: -3.054s;"/>
             
             <rect x="345" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.939s;"/>
             
             <rect x="345" y="51" width="10" height="10" rx="2" 
@@ -765,71 +765,71 @@
                   style="animation-delay: -2.368s;"/>
             
             <rect x="358" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -4.029s;"/>
             
             <rect x="358" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.915s;"/>
             
             <rect x="358" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.800s;"/>
             
             <rect x="358" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.686s;"/>
             
             <rect x="358" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.572s;"/>
             
             <rect x="358" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.458s;"/>
             
             <rect x="358" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.343s;"/>
             
             <rect x="371" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -4.013s;"/>
             
             <rect x="371" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.899s;"/>
             
             <rect x="371" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.785s;"/>
             
             <rect x="371" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.670s;"/>
             
             <rect x="371" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.556s;"/>
             
             <rect x="371" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -3.442s;"/>
             
             <rect x="371" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.327s;"/>
             
             <rect x="384" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -1.010s;"/>
             
             <rect x="384" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -0.896s;"/>
             
             <rect x="384" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -0.781s;"/>
             
             <rect x="384" y="64" width="10" height="10" rx="2" 
@@ -837,43 +837,43 @@
                   style="animation-delay: -0.667s;"/>
             
             <rect x="384" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -0.553s;"/>
             
             <rect x="384" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -0.439s;"/>
             
             <rect x="384" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -0.324s;"/>
             
             <rect x="397" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.985s;"/>
             
             <rect x="397" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.871s;"/>
             
             <rect x="397" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.757s;"/>
             
             <rect x="397" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.642s;"/>
             
             <rect x="397" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -1.528s;"/>
             
             <rect x="397" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.414s;"/>
             
             <rect x="397" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -1.299s;"/>
             
             <rect x="410" y="25" width="10" height="10" rx="2" 
@@ -893,7 +893,7 @@
                   style="animation-delay: -0.829s;"/>
             
             <rect x="410" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -0.714s;"/>
             
             <rect x="410" y="90" width="10" height="10" rx="2" 
@@ -901,7 +901,7 @@
                   style="animation-delay: -0.600s;"/>
             
             <rect x="410" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -0.486s;"/>
             
             <rect x="423" y="25" width="10" height="10" rx="2" 
@@ -1081,7 +1081,7 @@
                   style="animation-delay: -1.812s;"/>
             
             <rect x="501" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -1.697s;"/>
             
             <rect x="501" y="64" width="10" height="10" rx="2" 
@@ -1089,7 +1089,7 @@
                   style="animation-delay: -1.583s;"/>
             
             <rect x="501" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -1.469s;"/>
             
             <rect x="501" y="90" width="10" height="10" rx="2" 
@@ -1113,15 +1113,15 @@
                   style="animation-delay: -0.725s;"/>
             
             <rect x="514" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -0.610s;"/>
             
             <rect x="514" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -0.496s;"/>
             
             <rect x="514" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -0.382s;"/>
             
             <rect x="514" y="103" width="10" height="10" rx="2" 
@@ -1137,19 +1137,19 @@
                   style="animation-delay: -1.976s;"/>
             
             <rect x="527" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.862s;"/>
             
             <rect x="527" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.748s;"/>
             
             <rect x="527" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.633s;"/>
             
             <rect x="527" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.519s;"/>
             
             <rect x="527" y="103" width="10" height="10" rx="2" 
@@ -1245,11 +1245,11 @@
                   style="animation-delay: -3.242s;"/>
             
             <rect x="579" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.128s;"/>
             
             <rect x="579" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -3.014s;"/>
             
             <rect x="579" y="64" width="10" height="10" rx="2" 
@@ -1273,11 +1273,11 @@
                   style="animation-delay: -4.081s;"/>
             
             <rect x="592" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -3.967s;"/>
             
             <rect x="592" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -3.852s;"/>
             
             <rect x="592" y="64" width="10" height="10" rx="2" 
@@ -1293,7 +1293,7 @@
                   style="animation-delay: -3.509s;"/>
             
             <rect x="592" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.395s;"/>
             
             <rect x="605" y="25" width="10" height="10" rx="2" 
@@ -1301,23 +1301,23 @@
                   style="animation-delay: -3.469s;"/>
             
             <rect x="605" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -3.355s;"/>
             
             <rect x="605" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.240s;"/>
             
             <rect x="605" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -3.126s;"/>
             
             <rect x="605" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.012s;"/>
             
             <rect x="605" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -2.897s;"/>
             
             <rect x="605" y="103" width="10" height="10" rx="2" 
@@ -1325,15 +1325,15 @@
                   style="animation-delay: -2.783s;"/>
             
             <rect x="618" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -3.996s;"/>
             
             <rect x="618" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.882s;"/>
             
             <rect x="618" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -3.767s;"/>
             
             <rect x="618" y="64" width="10" height="10" rx="2" 
@@ -1345,7 +1345,7 @@
                   style="animation-delay: -3.539s;"/>
             
             <rect x="618" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.425s;"/>
             
             <rect x="618" y="103" width="10" height="10" rx="2" 
@@ -1353,51 +1353,51 @@
                   style="animation-delay: -3.310s;"/>
             
             <rect x="631" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.288s;"/>
             
             <rect x="631" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.174s;"/>
             
             <rect x="631" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -3.060s;"/>
             
             <rect x="631" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -2.945s;"/>
             
             <rect x="631" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.831s;"/>
             
             <rect x="631" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -2.717s;"/>
             
             <rect x="631" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.602s;"/>
             
             <rect x="644" y="25" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -1.857s;"/>
             
             <rect x="644" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -1.743s;"/>
             
             <rect x="644" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -1.629s;"/>
             
             <rect x="644" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.514s;"/>
             
             <rect x="644" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -1.400s;"/>
             
             <rect x="644" y="90" width="10" height="10" rx="2" 
@@ -1417,23 +1417,23 @@
                   style="animation-delay: -2.826s;"/>
             
             <rect x="657" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -2.712s;"/>
             
             <rect x="657" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.598s;"/>
             
             <rect x="657" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.484s;"/>
             
             <rect x="657" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.369s;"/>
             
             <rect x="657" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -2.255s;"/>
             
             <rect x="670" y="25" width="10" height="10" rx="2" 
@@ -1441,19 +1441,19 @@
                   style="animation-delay: -2.919s;"/>
             
             <rect x="670" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -2.805s;"/>
             
             <rect x="670" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell empty" 
                   style="animation-delay: -2.691s;"/>
             
             <rect x="670" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -2.576s;"/>
             
             <rect x="670" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -2.462s;"/>
             
             <rect x="670" y="90" width="10" height="10" rx="2" 
@@ -1461,35 +1461,11 @@
                   style="animation-delay: -2.348s;"/>
             
             <rect x="670" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -2.234s;"/>
             
             <rect x="683" y="25" width="10" height="10" rx="2" 
                   fill="#161b22" class="cell active l-1" 
                   style="animation-delay: -3.562s;"/>
-            
-            <rect x="683" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
-                  style="animation-delay: -3.448s;"/>
-            
-            <rect x="683" y="51" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
-                  style="animation-delay: -3.333s;"/>
-            
-            <rect x="683" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
-                  style="animation-delay: -3.219s;"/>
-            
-            <rect x="683" y="77" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-4" 
-                  style="animation-delay: -3.105s;"/>
-            
-            <rect x="683" y="90" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
-                  style="animation-delay: -2.991s;"/>
-            
-            <rect x="683" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell empty" 
-                  style="animation-delay: -2.876s;"/>
              </g>
 </svg>
