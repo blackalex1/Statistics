@@ -1385,7 +1385,7 @@
                   style="animation-delay: -1.857s;"/>
             
             <rect x="644" y="38" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-1" 
+                  fill="#161b22" class="cell active l-2" 
                   style="animation-delay: -1.743s;"/>
             
             <rect x="644" y="51" width="10" height="10" rx="2" 
@@ -1405,7 +1405,7 @@
                   style="animation-delay: -1.286s;"/>
             
             <rect x="644" y="103" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-3" 
+                  fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -1.172s;"/>
             
             <rect x="657" y="25" width="10" height="10" rx="2" 
@@ -1421,7 +1421,7 @@
                   style="animation-delay: -2.712s;"/>
             
             <rect x="657" y="64" width="10" height="10" rx="2" 
-                  fill="#161b22" class="cell active l-2" 
+                  fill="#161b22" class="cell active l-3" 
                   style="animation-delay: -2.598s;"/>
             
             <rect x="657" y="77" width="10" height="10" rx="2" 
@@ -1467,5 +1467,9 @@
             <rect x="683" y="25" width="10" height="10" rx="2" 
                   fill="#161b22" class="cell active l-4" 
                   style="animation-delay: -3.562s;"/>
+            
+            <rect x="683" y="38" width="10" height="10" rx="2" 
+                  fill="#161b22" class="cell empty" 
+                  style="animation-delay: -3.448s;"/>
              </g>
 </svg>
