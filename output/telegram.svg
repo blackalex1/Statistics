@@ -186,17 +186,8 @@
   <text x="425" y="72" class="handle">@blackalex1</text>
 
   <!-- ─── RIGHT: Status indicator ─── -->
-  <!-- Expanding ring animation -->
-  <circle cx="770" cy="60" r="7" class="status-ring"/>
-
-  <!-- Solid dot -->
-  <circle cx="770" cy="60" r="5" class="status-dot"/>
-
-  <!-- ONLINE label -->
-  <text x="770" y="44" class="status-txt" text-anchor="middle">Online</text>
-
-  <!-- Tap to connect CTA -->
-  <g transform="translate(770, 78)" class="arrow-g">
+  <!-- Tap to connect CTA (centered vertically) -->
+  <g transform="translate(750, 64)" class="arrow-g">
     <text class="arrow-txt" text-anchor="middle" y="0">Connect &#x2192;</text>
   </g>
 
