@@ -1,305 +1,213 @@
-<svg width="850" height="220" viewBox="0 0 850 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="850" height="172" viewBox="0 0 850 172" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root {
-      --bg: #0d1117;
-      --accent: #00FFAA;
-      --accent-dim: #00FFAA22;
-      --accent-mid: #00FFAA55;
-      --border: #30363d;
-      --text-main: #e6edf3;
-      --text-dim: #8b949e;
+      --bg:          #0d1117;
+      --accent:      #00FFAA;
+      --accent-dim:  #00FFAA1a;
+      --accent-mid:  #00FFAA50;
+      --border:      #21262d;
+      --muted:       #8b949e;
     }
     @media (prefers-color-scheme: light) {
       :root {
-        --bg: #ffffff;
-        --accent: #1a7f37;
-        --accent-dim: #1a7f3715;
+        --bg:         #ffffff;
+        --accent:     #1a7f37;
+        --accent-dim: #1a7f3712;
         --accent-mid: #1a7f3740;
-        --border: #d0d7de;
-        --text-main: #1f2328;
-        --text-dim: #636c76;
+        --border:     #d0d7de;
+        --muted:      #57606a;
       }
     }
 
     .card-bg   { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }
-    .card-glow { fill: url(#glow-grad); }
+    .card-glow { fill: url(#st-glow); }
 
-    .title-text {
-      font: 700 11px 'Segoe UI', Ubuntu, sans-serif;
-      fill: var(--text-dim);
+    .title-txt {
+      font: 700 10px 'Segoe UI', Ubuntu, sans-serif;
+      fill: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 3px;
+      letter-spacing: 3.5px;
+      text-anchor: middle;
     }
-    .title-accent { fill: var(--accent); font-weight: 800; }
+    .title-accent { fill: var(--accent); }
 
-    .grid-line { stroke: var(--accent); opacity: 0.04; stroke-width: 1; }
+    .divider   { stroke: var(--border); stroke-width: 1; opacity: 0.7; }
+    .grid-line { stroke: var(--accent); opacity: 0.035; stroke-width: 1; }
 
-    .chip-bg {
-      fill: var(--accent-dim);
-      transition: fill 0.2s;
-    }
-    .chip-border {
-      fill: none;
-      stroke: var(--accent-mid);
-      stroke-width: 1;
-    }
-    .chip-text {
-      font: 600 11px 'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+    .chip-bg     { fill: var(--accent-dim); }
+    .chip-border { fill: none; stroke: var(--accent-mid); stroke-width: 1; }
+    .chip-text   {
+      font: 600 11px 'JetBrains Mono', 'Cascadia Code', monospace;
       fill: var(--accent);
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
     }
 
     .bracket {
       stroke: var(--accent);
       stroke-width: 1.5;
       fill: none;
-    }
-
-    .divider { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
-
-    .chip-anim {
-      opacity: 0;
-      animation: chip-in 0.4s ease forwards;
-    }
-    @keyframes chip-in {
-      from { opacity: 0; transform: translateY(6px); }
-      to   { opacity: 1; transform: translateY(0); }
+      opacity: 0.45;
     }
 
     .pulse-dot {
       fill: var(--accent);
-      animation: pulse 2.5s ease-in-out infinite;
+      animation: pdot 2.5s ease-in-out infinite;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; r: 3; }
-      50%       { opacity: 0.3; r: 2; }
+    @keyframes pdot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.25; }
+    }
+
+    .chip-anim {
+      opacity: 0;
+      animation: chip-in 0.35s ease forwards;
+    }
+    @keyframes chip-in {
+      from { opacity: 0; transform: translateY(5px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 
   <defs>
-    <linearGradient id="glow-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"   stop-color="#00FFAA" stop-opacity="0.06"/>
+    <linearGradient id="st-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00FFAA" stop-opacity="0.055"/>
       <stop offset="100%" stop-color="#00FFAA" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="850" height="220" rx="15" class="card-bg"/>
-  <rect width="850" height="220" rx="15" class="card-glow"/>
+  <rect width="850" height="172" rx="15" class="card-bg"/>
+  <rect width="850" height="172" rx="15" class="card-glow"/>
 
   <!-- Subtle grid -->
   <g class="grid-line">
-    <path d="M 0 73 L 850 73"/>
-    <path d="M 0 130 L 850 130"/>
-    <path d="M 0 183 L 850 183"/>
-    <path d="M 170 0 L 170 220"/>
-    <path d="M 425 0 L 425 220"/>
-    <path d="M 680 0 L 680 220"/>
+    <path d="M 0 86 L 850 86"/>
+    <path d="M 283 0 L 283 172"/>
+    <path d="M 566 0 L 566 172"/>
   </g>
 
   
-  <!-- Corner brackets -->
-  <g class="bracket" opacity="0.5">
-    <!-- top-left -->
-    <path d="M 18 32 L 18 18 L 32 18"/>
-    <!-- top-right -->
-    <path d="M 818 18 L 832 18 L 832 32"/>
-    <!-- bottom-left -->
-    <path d="M 18 188 L 18 202 L 32 202"/>
-    <!-- bottom-right -->
-    <path d="M 818 202 L 832 202 L 832 188"/>
+  <g class="bracket">
+    <path d="M 17 30 L 17 17 L 30 17"/>
+    <path d="M 820 17 L 833 17 L 833 30"/>
+    <path d="M 17 142 L 17 155 L 30 155"/>
+    <path d="M 820 155 L 833 155 L 833 142"/>
   </g>
 
-  <!-- Section title -->
-  <g transform="translate(425, 44)">
-    <text text-anchor="middle" class="title-text">
-      <tspan class="title-accent">&#x26A1;</tspan>  Technical Arsenal
-    </text>
-  </g>
+  <!-- Title row -->
+  <circle cx="36" cy="38" r="3.5" class="pulse-dot"/>
+  <text x="50" y="42" class="title-txt" text-anchor="start" style="font-size:9px;letter-spacing:2px;">ONLINE</text>
 
-  <!-- Divider under title -->
-  <line x1="80" y1="62" x2="770" y2="62" class="divider"/>
+  <text x="425" y="42" class="title-txt">
+    <tspan class="title-accent">&#x26A1;</tspan>  Technical  Arsenal
+  </text>
 
-  <!-- Pulsing status dot -->
-  <circle cx="36" cy="44" r="3" class="pulse-dot"/>
-  <text x="47" y="48" class="title-text" style="font-size:9px;letter-spacing:2px;">ONLINE</text>
+  <text x="814" y="42" class="title-txt" text-anchor="end" style="font-size:9px;letter-spacing:1.5px;">STACK</text>
 
-  <!-- Right timestamp badge -->
-  <text x="814" y="48" class="title-text" text-anchor="end"
-        style="font-size:9px;letter-spacing:1.5px;">STACK·v2</text>
+  <!-- Divider -->
+  <line x1="32" y1="56" x2="818" y2="56" class="divider"/>
 
-  <!-- Row labels -->
-  <text x="20" y="109" class="title-text" style="font-size:8px;letter-spacing:1px;">SYS</text>
-  <text x="20" y="159" class="title-text" style="font-size:8px;letter-spacing:1px;">DEV</text>
-
-  <!-- Tech chips row 1 -->
-  <g transform="translate(20, 0)">
-    
-    <g class="chip-anim" style="animation-delay:0.0s">
-      <rect x="84.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="84.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="108.0" y="109.2"
-            class="chip-text" text-anchor="middle">C</text>
+  <!-- Auto-wrapped tech chips -->
+  
+    <g class="chip-anim" style="animation-delay:0.00s">
+      <rect x="60.5" y="72.0" width="48.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="60.5" y="72.0" width="48.0" height="28" rx="6" class="chip-border"/>
+      <text x="84.5" y="90.2" class="chip-text" text-anchor="middle">C</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.05s">
-      <rect x="140.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="140.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="164.0" y="109.2"
-            class="chip-text" text-anchor="middle">C++</text>
+    <g class="chip-anim" style="animation-delay:0.04s">
+      <rect x="116.5" y="72.0" width="48.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="116.5" y="72.0" width="48.0" height="28" rx="6" class="chip-border"/>
+      <text x="140.5" y="90.2" class="chip-text" text-anchor="middle">C++</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.1s">
-      <rect x="196.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="196.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="220.0" y="109.2"
-            class="chip-text" text-anchor="middle">Rust</text>
+    <g class="chip-anim" style="animation-delay:0.08s">
+      <rect x="172.5" y="72.0" width="50.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="172.5" y="72.0" width="50.0" height="28" rx="6" class="chip-border"/>
+      <text x="197.5" y="90.2" class="chip-text" text-anchor="middle">Rust</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.15000000000000002s">
-      <rect x="252.0" y="91.0" width="61.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="252.0" y="91.0" width="61.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="282.5" y="109.2"
-            class="chip-text" text-anchor="middle">Python</text>
+    <g class="chip-anim" style="animation-delay:0.12s">
+      <rect x="230.5" y="72.0" width="63.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="230.5" y="72.0" width="63.0" height="28" rx="6" class="chip-border"/>
+      <text x="262.0" y="90.2" class="chip-text" text-anchor="middle">Python</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.2s">
-      <rect x="321.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="321.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="345.0" y="109.2"
-            class="chip-text" text-anchor="middle">Bash</text>
+    <g class="chip-anim" style="animation-delay:0.16s">
+      <rect x="301.5" y="72.0" width="50.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="301.5" y="72.0" width="50.0" height="28" rx="6" class="chip-border"/>
+      <text x="326.5" y="90.2" class="chip-text" text-anchor="middle">Bash</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.25s">
-      <rect x="377.0" y="91.0" width="87.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="377.0" y="91.0" width="87.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="420.5" y="109.2"
-            class="chip-text" text-anchor="middle">PowerShell</text>
+    <g class="chip-anim" style="animation-delay:0.20s">
+      <rect x="359.5" y="72.0" width="89.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="359.5" y="72.0" width="89.0" height="28" rx="6" class="chip-border"/>
+      <text x="404.0" y="90.2" class="chip-text" text-anchor="middle">PowerShell</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.30000000000000004s">
-      <rect x="472.0" y="91.0" width="54.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="472.0" y="91.0" width="54.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="499.0" y="109.2"
-            class="chip-text" text-anchor="middle">Linux</text>
+    <g class="chip-anim" style="animation-delay:0.24s">
+      <rect x="456.5" y="72.0" width="56.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="456.5" y="72.0" width="56.0" height="28" rx="6" class="chip-border"/>
+      <text x="484.5" y="90.2" class="chip-text" text-anchor="middle">Linux</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.35000000000000003s">
-      <rect x="534.0" y="91.0" width="67.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="534.0" y="91.0" width="67.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="567.5" y="109.2"
-            class="chip-text" text-anchor="middle">Windows</text>
+    <g class="chip-anim" style="animation-delay:0.28s">
+      <rect x="520.5" y="72.0" width="69.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="520.5" y="72.0" width="69.0" height="28" rx="6" class="chip-border"/>
+      <text x="555.0" y="90.2" class="chip-text" text-anchor="middle">Windows</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.4s">
-      <rect x="609.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="609.0" y="91.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="633.0" y="109.2"
-            class="chip-text" text-anchor="middle">Kali</text>
+    <g class="chip-anim" style="animation-delay:0.32s">
+      <rect x="597.5" y="72.0" width="50.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="597.5" y="72.0" width="50.0" height="28" rx="6" class="chip-border"/>
+      <text x="622.5" y="90.2" class="chip-text" text-anchor="middle">Kali</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.45s">
-      <rect x="665.0" y="91.0" width="61.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="665.0" y="91.0" width="61.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="695.5" y="109.2"
-            class="chip-text" text-anchor="middle">Debian</text>
+    <g class="chip-anim" style="animation-delay:0.36s">
+      <rect x="655.5" y="72.0" width="63.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="655.5" y="72.0" width="63.0" height="28" rx="6" class="chip-border"/>
+      <text x="687.0" y="90.2" class="chip-text" text-anchor="middle">Debian</text>
     </g>
-  </g>
-
-  <!-- Tech chips row 2 -->
-  <g transform="translate(20, 0)">
-    
-    <g class="chip-anim" style="animation-delay:0.0s">
-      <rect x="39.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="39.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="69.5" y="159.2"
-            class="chip-text" text-anchor="middle">Ubuntu</text>
+    <g class="chip-anim" style="animation-delay:0.40s">
+      <rect x="726.5" y="72.0" width="63.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="726.5" y="72.0" width="63.0" height="28" rx="6" class="chip-border"/>
+      <text x="758.0" y="90.2" class="chip-text" text-anchor="middle">Ubuntu</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.05s">
-      <rect x="108.0" y="141.0" width="106.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="108.0" y="141.0" width="106.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="161.0" y="159.2"
-            class="chip-text" text-anchor="middle">Visual Studio</text>
+    <g class="chip-anim" style="animation-delay:0.40s">
+      <rect x="85.5" y="112.0" width="108.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="85.5" y="112.0" width="108.0" height="28" rx="6" class="chip-border"/>
+      <text x="139.5" y="130.2" class="chip-text" text-anchor="middle">Visual Studio</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.1s">
-      <rect x="222.0" y="141.0" width="67.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="222.0" y="141.0" width="67.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="255.5" y="159.2"
-            class="chip-text" text-anchor="middle">VS Code</text>
+    <g class="chip-anim" style="animation-delay:0.44s">
+      <rect x="201.5" y="112.0" width="69.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="201.5" y="112.0" width="69.0" height="28" rx="6" class="chip-border"/>
+      <text x="236.0" y="130.2" class="chip-text" text-anchor="middle">VS Code</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.15000000000000002s">
-      <rect x="297.0" y="141.0" width="67.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="297.0" y="141.0" width="67.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="330.5" y="159.2"
-            class="chip-text" text-anchor="middle">Sublime</text>
+    <g class="chip-anim" style="animation-delay:0.48s">
+      <rect x="278.5" y="112.0" width="69.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="278.5" y="112.0" width="69.0" height="28" rx="6" class="chip-border"/>
+      <text x="313.0" y="130.2" class="chip-text" text-anchor="middle">Sublime</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.2s">
-      <rect x="372.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="372.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="402.5" y="159.2"
-            class="chip-text" text-anchor="middle">Docker</text>
+    <g class="chip-anim" style="animation-delay:0.52s">
+      <rect x="355.5" y="112.0" width="63.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="355.5" y="112.0" width="63.0" height="28" rx="6" class="chip-border"/>
+      <text x="387.0" y="130.2" class="chip-text" text-anchor="middle">Docker</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.25s">
-      <rect x="441.0" y="141.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="441.0" y="141.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="465.0" y="159.2"
-            class="chip-text" text-anchor="middle">Git</text>
+    <g class="chip-anim" style="animation-delay:0.56s">
+      <rect x="426.5" y="112.0" width="48.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="426.5" y="112.0" width="48.0" height="28" rx="6" class="chip-border"/>
+      <text x="450.5" y="130.2" class="chip-text" text-anchor="middle">Git</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.30000000000000004s">
-      <rect x="497.0" y="141.0" width="54.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="497.0" y="141.0" width="54.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="524.0" y="159.2"
-            class="chip-text" text-anchor="middle">MySQL</text>
+    <g class="chip-anim" style="animation-delay:0.60s">
+      <rect x="482.5" y="112.0" width="56.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="482.5" y="112.0" width="56.0" height="28" rx="6" class="chip-border"/>
+      <text x="510.5" y="130.2" class="chip-text" text-anchor="middle">MySQL</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.35000000000000003s">
-      <rect x="559.0" y="141.0" width="87.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="559.0" y="141.0" width="87.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="602.5" y="159.2"
-            class="chip-text" text-anchor="middle">PostgreSQL</text>
+    <g class="chip-anim" style="animation-delay:0.64s">
+      <rect x="546.5" y="112.0" width="89.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="546.5" y="112.0" width="89.0" height="28" rx="6" class="chip-border"/>
+      <text x="591.0" y="130.2" class="chip-text" text-anchor="middle">PostgreSQL</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.4s">
-      <rect x="654.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="654.0" y="141.0" width="61.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="684.5" y="159.2"
-            class="chip-text" text-anchor="middle">SQLite</text>
+    <g class="chip-anim" style="animation-delay:0.68s">
+      <rect x="643.5" y="112.0" width="63.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="643.5" y="112.0" width="63.0" height="28" rx="6" class="chip-border"/>
+      <text x="675.0" y="130.2" class="chip-text" text-anchor="middle">SQLite</text>
     </g>
-    <g class="chip-anim" style="animation-delay:0.45s">
-      <rect x="723.0" y="141.0" width="48.0" height="28" rx="6"
-            class="chip-bg"/>
-      <rect x="723.0" y="141.0" width="48.0" height="28" rx="6"
-            class="chip-border"/>
-      <text x="747.0" y="159.2"
-            class="chip-text" text-anchor="middle">Java</text>
+    <g class="chip-anim" style="animation-delay:0.72s">
+      <rect x="714.5" y="112.0" width="50.0" height="28" rx="6" class="chip-bg"/>
+      <rect x="714.5" y="112.0" width="50.0" height="28" rx="6" class="chip-border"/>
+      <text x="739.5" y="130.2" class="chip-text" text-anchor="middle">Java</text>
     </g>
-  </g>
 
 </svg>
