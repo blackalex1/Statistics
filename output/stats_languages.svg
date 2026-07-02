@@ -1,0 +1,299 @@
+<svg width="850" height="200" viewBox="0 0 850 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root { 
+      --s-bg: #0d1117; 
+      --s-accent: #00FFAA; 
+      --s-text: #ffffff;
+      --s-label: #8b949e;
+      --s-grid-op: 0.05;
+      
+      --l-bg: #0d1117; 
+      --l-accent: #00FFAA; 
+      --l-accent-light: #00FFAA99; 
+      --l-text: #c9d1d9;
+      --l-grid-op: 0.05;
+      --l-shadow: drop-shadow(0 0 3px #00FFAA);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { 
+        --s-bg: #ffffff; 
+        --s-accent: #1a7f37; 
+        --s-text: #1f2328;
+        --s-label: #636c76;
+        --s-grid-op: 0.1;
+        
+        --l-bg: #ffffff; 
+        --l-accent: #1a7f37; 
+        --l-accent-light: #2da44e; 
+        --l-text: #1f2328;
+        --l-grid-op: 0.1;
+        --l-shadow: none;
+      }
+    }
+
+    .s-card-bg { fill: var(--s-bg); stroke: #30363d; stroke-width: 2; }
+    @media (prefers-color-scheme: light) { .s-card-bg { stroke: #d0d7de; } }
+
+    /* Stats styles */
+    .s-label { font: bold 12px 'Segoe UI', Ubuntu, -apple-system, sans-serif; fill: var(--s-label); text-transform: uppercase; letter-spacing: 1.5px; text-anchor: middle; }
+    .s-value { font: bold 28px 'JetBrains Mono', 'Cascadia Code', monospace; fill: var(--s-accent); text-anchor: middle; }
+    .s-icon { fill: var(--s-accent); opacity: 0.7; }
+    .s-grid { stroke: var(--s-accent); opacity: var(--s-grid-op); stroke-width: 1; }
+    
+    .s-item-anim { opacity: 0; animation: s-fade-in 0.6s forwards; }
+    @keyframes s-fade-in { 
+      from { opacity: 0; transform: translateY(10px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+
+    /* Languages styles */
+    .l-name { font: bold 13px 'Segoe UI', Ubuntu, sans-serif; fill: var(--l-text); }
+    .l-pct { font: bold 12px 'JetBrains Mono', 'Courier New', monospace; fill: var(--l-accent); }
+    .l-bar-bg { fill: #161b22; opacity: 0.8; }
+    @media (prefers-color-scheme: light) { .l-bar-bg { fill: #ebedf0; opacity: 1; } }
+
+    .l-bar-fill { filter: var(--l-shadow); }
+    .l-grid { stroke: var(--l-accent); opacity: var(--l-grid-op); stroke-width: 1; }
+
+    .l-item-anim { opacity: 0; animation: l-fade-in 0.5s forwards; }
+    @keyframes l-fade-in { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+    
+    .c-separator { stroke: #30363d; stroke-width: 2; }
+    @media (prefers-color-scheme: light) { .c-separator { stroke: #d0d7de; } }
+  </style>
+
+  <!-- Single unified background card -->
+  <rect width="850" height="200" rx="15" class="s-card-bg"/>
+  
+  <defs>
+    <linearGradient id="s-grad-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="var(--s-accent)" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="var(--s-accent)" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="850" height="200" rx="15" fill="url(#s-grad-bg)"/>
+
+  <!-- Middle vertical separator line -->
+  <path d="M 425 0 L 425 200" class="c-separator" />
+
+  <!-- LEFT HALF: Stats (x = 0 to 425) -->
+  <g class="s-grid">
+    <path d="M 0 100 L 425 100" />
+    <path d="M 212.5 0 L 212.5 200" />
+  </g>
+
+  <!-- Stars -->
+  <g transform="translate(106.25, 65)">
+    <g class="s-item-anim" style="animation-delay: 0.1s;">
+      <path d="M8 0L10.45 4.96L16 5.76L12 9.66L12.95 15.19L8 12.59L3.05 15.19L4 9.66L0 5.76L5.55 4.96L8 0Z" class="s-icon" transform="translate(-40, -15) scale(0.9)"/>
+      <text x="0" y="-2" class="s-label">Stars</text>
+      <text x="0" y="32" class="s-value">4</text>
+    </g>
+  </g>
+
+  <!-- Commits -->
+  <g transform="translate(318.75, 65)">
+    <g class="s-item-anim" style="animation-delay: 0.2s;">
+      <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(-50, -15) scale(0.9)"/>
+      <text x="0" y="-2" class="s-label">Commits</text>
+      <text x="0" y="32" class="s-value">1530</text>
+    </g>
+  </g>
+
+  <!-- PRs -->
+  <g transform="translate(106.25, 145)">
+    <g class="s-item-anim" style="animation-delay: 0.3s;">
+      <path d="M5 0V2H0V16H16V11H14V14H2V4H5V6L10 3L5 0Z" class="s-icon" transform="translate(-35, -15) scale(1)"/>
+      <text x="0" y="-2" class="s-label">PRs</text>
+      <text x="0" y="32" class="s-value">0</text>
+    </g>
+  </g>
+
+  <!-- Issues -->
+  <g transform="translate(318.75, 145)">
+    <g class="s-item-anim" style="animation-delay: 0.4s;">
+      <path d="M8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM9 12H7V10H9V12ZM9 9H7V4H9V9Z" class="s-icon" transform="translate(-45, -15) scale(1)"/>
+      <text x="0" y="-2" class="s-label">Issues</text>
+      <text x="0" y="32" class="s-value">0</text>
+    </g>
+  </g>
+
+  <!-- RIGHT HALF: Languages (x = 425 to 850, translated relative to 425) -->
+  <g transform="translate(425, 0)">
+    <g class="l-grid">
+      <path d="M 0 50 L 425 50 M 0 100 L 425 100 M 0 150 L 425 150" />
+      <path d="M 50 0 L 50 200 M 375 0 L 375 200" />
+    </g>
+    
+        <g>
+          <g class="l-item-anim" style="animation-delay: 0.0s;">
+            <defs>
+              <linearGradient id="l-grad-0" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--l-accent-light)"/>
+                <stop offset="100%" stop-color="var(--l-accent)"/>
+              </linearGradient>
+              <linearGradient id="l-sheen-0" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="l-clip-0">
+                <rect x="120" y="35" width="178.32" height="8" rx="4"/>
+              </clipPath>
+            </defs>
+
+            <text x="30" y="45" class="l-name">Python</text>
+            <text x="395" y="45" class="l-pct" text-anchor="end">74.3%</text>
+            
+            <rect x="120" y="35" width="240" height="8" rx="4" class="l-bar-bg"/>
+            <rect x="120" y="35" width="0" height="8" rx="4" fill="url(#l-grad-0)" class="l-bar-fill">
+              <animate attributeName="width" from="0" to="178.32" dur="1s" begin="0.0s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+            </rect>
+            
+            <g clip-path="url(#l-clip-0)">
+              <rect x="120" y="35" width="100" height="8" rx="4" fill="url(#l-sheen-0)" opacity="0">
+                 <animate attributeName="x" from="20" to="298.32" dur="2s" begin="2.0s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.0s" repeatCount="indefinite" />
+              </rect>
+            </g>
+          </g>
+        </g>
+        
+        <g>
+          <g class="l-item-anim" style="animation-delay: 0.1s;">
+            <defs>
+              <linearGradient id="l-grad-1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--l-accent-light)"/>
+                <stop offset="100%" stop-color="var(--l-accent)"/>
+              </linearGradient>
+              <linearGradient id="l-sheen-1" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="l-clip-1">
+                <rect x="120" y="67" width="24.24" height="8" rx="4"/>
+              </clipPath>
+            </defs>
+
+            <text x="30" y="77" class="l-name">Kotlin</text>
+            <text x="395" y="77" class="l-pct" text-anchor="end">10.1%</text>
+            
+            <rect x="120" y="67" width="240" height="8" rx="4" class="l-bar-bg"/>
+            <rect x="120" y="67" width="0" height="8" rx="4" fill="url(#l-grad-1)" class="l-bar-fill">
+              <animate attributeName="width" from="0" to="24.24" dur="1s" begin="0.1s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+            </rect>
+            
+            <g clip-path="url(#l-clip-1)">
+              <rect x="120" y="67" width="100" height="8" rx="4" fill="url(#l-sheen-1)" opacity="0">
+                 <animate attributeName="x" from="20" to="144.24" dur="2s" begin="2.2s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.2s" repeatCount="indefinite" />
+              </rect>
+            </g>
+          </g>
+        </g>
+        
+        <g>
+          <g class="l-item-anim" style="animation-delay: 0.2s;">
+            <defs>
+              <linearGradient id="l-grad-2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--l-accent-light)"/>
+                <stop offset="100%" stop-color="var(--l-accent)"/>
+              </linearGradient>
+              <linearGradient id="l-sheen-2" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="l-clip-2">
+                <rect x="120" y="99" width="23.52" height="8" rx="4"/>
+              </clipPath>
+            </defs>
+
+            <text x="30" y="109" class="l-name">JavaScript</text>
+            <text x="395" y="109" class="l-pct" text-anchor="end">9.8%</text>
+            
+            <rect x="120" y="99" width="240" height="8" rx="4" class="l-bar-bg"/>
+            <rect x="120" y="99" width="0" height="8" rx="4" fill="url(#l-grad-2)" class="l-bar-fill">
+              <animate attributeName="width" from="0" to="23.52" dur="1s" begin="0.2s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+            </rect>
+            
+            <g clip-path="url(#l-clip-2)">
+              <rect x="120" y="99" width="100" height="8" rx="4" fill="url(#l-sheen-2)" opacity="0">
+                 <animate attributeName="x" from="20" to="143.52" dur="2s" begin="2.4s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.4s" repeatCount="indefinite" />
+              </rect>
+            </g>
+          </g>
+        </g>
+        
+        <g>
+          <g class="l-item-anim" style="animation-delay: 0.30000000000000004s;">
+            <defs>
+              <linearGradient id="l-grad-3" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--l-accent-light)"/>
+                <stop offset="100%" stop-color="var(--l-accent)"/>
+              </linearGradient>
+              <linearGradient id="l-sheen-3" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="l-clip-3">
+                <rect x="120" y="131" width="6.48" height="8" rx="4"/>
+              </clipPath>
+            </defs>
+
+            <text x="30" y="141" class="l-name">HTML</text>
+            <text x="395" y="141" class="l-pct" text-anchor="end">2.7%</text>
+            
+            <rect x="120" y="131" width="240" height="8" rx="4" class="l-bar-bg"/>
+            <rect x="120" y="131" width="0" height="8" rx="4" fill="url(#l-grad-3)" class="l-bar-fill">
+              <animate attributeName="width" from="0" to="6.48" dur="1s" begin="0.30000000000000004s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+            </rect>
+            
+            <g clip-path="url(#l-clip-3)">
+              <rect x="120" y="131" width="100" height="8" rx="4" fill="url(#l-sheen-3)" opacity="0">
+                 <animate attributeName="x" from="20" to="126.48" dur="2s" begin="2.6s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.6s" repeatCount="indefinite" />
+              </rect>
+            </g>
+          </g>
+        </g>
+        
+        <g>
+          <g class="l-item-anim" style="animation-delay: 0.4s;">
+            <defs>
+              <linearGradient id="l-grad-4" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--l-accent-light)"/>
+                <stop offset="100%" stop-color="var(--l-accent)"/>
+              </linearGradient>
+              <linearGradient id="l-sheen-4" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="l-clip-4">
+                <rect x="120" y="163" width="4.32" height="8" rx="4"/>
+              </clipPath>
+            </defs>
+
+            <text x="30" y="173" class="l-name">CSS</text>
+            <text x="395" y="173" class="l-pct" text-anchor="end">1.8%</text>
+            
+            <rect x="120" y="163" width="240" height="8" rx="4" class="l-bar-bg"/>
+            <rect x="120" y="163" width="0" height="8" rx="4" fill="url(#l-grad-4)" class="l-bar-fill">
+              <animate attributeName="width" from="0" to="4.32" dur="1s" begin="0.4s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+            </rect>
+            
+            <g clip-path="url(#l-clip-4)">
+              <rect x="120" y="163" width="100" height="8" rx="4" fill="url(#l-sheen-4)" opacity="0">
+                 <animate attributeName="x" from="20" to="124.32" dur="2s" begin="2.8s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.8s" repeatCount="indefinite" />
+              </rect>
+            </g>
+          </g>
+        </g>
+        
+  </g>
+</svg>

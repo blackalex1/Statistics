@@ -1,0 +1,305 @@
+<svg width="850" height="220" viewBox="0 0 850 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --accent: #00FFAA;
+      --accent-dim: #00FFAA22;
+      --accent-mid: #00FFAA55;
+      --border: #30363d;
+      --text-main: #e6edf3;
+      --text-dim: #8b949e;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --accent: #1a7f37;
+        --accent-dim: #1a7f3715;
+        --accent-mid: #1a7f3740;
+        --border: #d0d7de;
+        --text-main: #1f2328;
+        --text-dim: #636c76;
+      }
+    }
+
+    .card-bg   { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }
+    .card-glow { fill: url(#glow-grad); }
+
+    .title-text {
+      font: 700 11px 'Segoe UI', Ubuntu, sans-serif;
+      fill: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    .title-accent { fill: var(--accent); font-weight: 800; }
+
+    .grid-line { stroke: var(--accent); opacity: 0.04; stroke-width: 1; }
+
+    .chip-bg {
+      fill: var(--accent-dim);
+      transition: fill 0.2s;
+    }
+    .chip-border {
+      fill: none;
+      stroke: var(--accent-mid);
+      stroke-width: 1;
+    }
+    .chip-text {
+      font: 600 12px 'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+      fill: var(--accent);
+      letter-spacing: 0.3px;
+    }
+
+    .bracket {
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .divider { stroke: var(--border); stroke-width: 1; opacity: 0.6; }
+
+    .chip-anim {
+      opacity: 0;
+      animation: chip-in 0.4s ease forwards;
+    }
+    @keyframes chip-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .pulse-dot {
+      fill: var(--accent);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; r: 3; }
+      50%       { opacity: 0.3; r: 2; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="glow-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00FFAA" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00FFAA" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="850" height="220" rx="15" class="card-bg"/>
+  <rect width="850" height="220" rx="15" class="card-glow"/>
+
+  <!-- Subtle grid -->
+  <g class="grid-line">
+    <path d="M 0 73 L 850 73"/>
+    <path d="M 0 130 L 850 130"/>
+    <path d="M 0 183 L 850 183"/>
+    <path d="M 170 0 L 170 220"/>
+    <path d="M 425 0 L 425 220"/>
+    <path d="M 680 0 L 680 220"/>
+  </g>
+
+  
+  <!-- Corner brackets -->
+  <g class="bracket" opacity="0.5">
+    <!-- top-left -->
+    <path d="M 18 32 L 18 18 L 32 18"/>
+    <!-- top-right -->
+    <path d="M 818 18 L 832 18 L 832 32"/>
+    <!-- bottom-left -->
+    <path d="M 18 188 L 18 202 L 32 202"/>
+    <!-- bottom-right -->
+    <path d="M 818 202 L 832 202 L 832 188"/>
+  </g>
+
+  <!-- Section title -->
+  <g transform="translate(425, 44)">
+    <text text-anchor="middle" class="title-text">
+      <tspan class="title-accent">&#x26A1;</tspan>  Technical Arsenal
+    </text>
+  </g>
+
+  <!-- Divider under title -->
+  <line x1="80" y1="62" x2="770" y2="62" class="divider"/>
+
+  <!-- Pulsing status dot -->
+  <circle cx="36" cy="44" r="3" class="pulse-dot"/>
+  <text x="47" y="48" class="title-text" style="font-size:9px;letter-spacing:2px;">ONLINE</text>
+
+  <!-- Right timestamp badge -->
+  <text x="814" y="48" class="title-text" text-anchor="end"
+        style="font-size:9px;letter-spacing:1.5px;">STACK·v2</text>
+
+  <!-- Row labels -->
+  <text x="20" y="109" class="title-text" style="font-size:8px;letter-spacing:1px;">SYS</text>
+  <text x="20" y="159" class="title-text" style="font-size:8px;letter-spacing:1px;">DEV</text>
+
+  <!-- Tech chips row 1 -->
+  <g transform="translate(20, 0)">
+    
+    <g class="chip-anim" style="animation-delay:0.0s">
+      <rect x="15.0" y="90.0" width="56.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="15.0" y="90.0" width="56.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="43.0" y="109.6"
+            class="chip-text" text-anchor="middle">C</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.05s">
+      <rect x="81.0" y="90.0" width="56.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="81.0" y="90.0" width="56.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="109.0" y="109.6"
+            class="chip-text" text-anchor="middle">C++</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.1s">
+      <rect x="147.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="147.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="177.0" y="109.6"
+            class="chip-text" text-anchor="middle">Rust</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.15000000000000002s">
+      <rect x="217.0" y="90.0" width="74.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="217.0" y="90.0" width="74.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="254.0" y="109.6"
+            class="chip-text" text-anchor="middle">Python</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.2s">
+      <rect x="301.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="301.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="331.0" y="109.6"
+            class="chip-text" text-anchor="middle">Bash</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.25s">
+      <rect x="371.0" y="90.0" width="102.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="371.0" y="90.0" width="102.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="422.0" y="109.6"
+            class="chip-text" text-anchor="middle">PowerShell</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.30000000000000004s">
+      <rect x="483.0" y="90.0" width="67.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="483.0" y="90.0" width="67.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="516.5" y="109.6"
+            class="chip-text" text-anchor="middle">Linux</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.35000000000000003s">
+      <rect x="560.0" y="90.0" width="81.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="560.0" y="90.0" width="81.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="600.5" y="109.6"
+            class="chip-text" text-anchor="middle">Windows</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.4s">
+      <rect x="651.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="651.0" y="90.0" width="60.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="681.0" y="109.6"
+            class="chip-text" text-anchor="middle">Kali</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.45s">
+      <rect x="721.0" y="90.0" width="74.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="721.0" y="90.0" width="74.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="758.0" y="109.6"
+            class="chip-text" text-anchor="middle">Debian</text>
+    </g>
+  </g>
+
+  <!-- Tech chips row 2 -->
+  <g transform="translate(20, 0)">
+    
+    <g class="chip-anim" style="animation-delay:0.0s">
+      <rect x="-36.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="-36.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="1.0" y="159.6"
+            class="chip-text" text-anchor="middle">Ubuntu</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.05s">
+      <rect x="48.0" y="140.0" width="123.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="48.0" y="140.0" width="123.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="109.5" y="159.6"
+            class="chip-text" text-anchor="middle">Visual Studio</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.1s">
+      <rect x="181.0" y="140.0" width="81.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="181.0" y="140.0" width="81.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="221.5" y="159.6"
+            class="chip-text" text-anchor="middle">VS Code</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.15000000000000002s">
+      <rect x="272.0" y="140.0" width="81.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="272.0" y="140.0" width="81.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="312.5" y="159.6"
+            class="chip-text" text-anchor="middle">Sublime</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.2s">
+      <rect x="363.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="363.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="400.0" y="159.6"
+            class="chip-text" text-anchor="middle">Docker</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.25s">
+      <rect x="447.0" y="140.0" width="56.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="447.0" y="140.0" width="56.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="475.0" y="159.6"
+            class="chip-text" text-anchor="middle">Git</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.30000000000000004s">
+      <rect x="513.0" y="140.0" width="67.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="513.0" y="140.0" width="67.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="546.5" y="159.6"
+            class="chip-text" text-anchor="middle">MySQL</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.35000000000000003s">
+      <rect x="590.0" y="140.0" width="102.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="590.0" y="140.0" width="102.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="641.0" y="159.6"
+            class="chip-text" text-anchor="middle">PostgreSQL</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.4s">
+      <rect x="702.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="702.0" y="140.0" width="74.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="739.0" y="159.6"
+            class="chip-text" text-anchor="middle">SQLite</text>
+    </g>
+    <g class="chip-anim" style="animation-delay:0.45s">
+      <rect x="786.0" y="140.0" width="60.0" height="30" rx="6"
+            class="chip-bg"/>
+      <rect x="786.0" y="140.0" width="60.0" height="30" rx="6"
+            class="chip-border"/>
+      <text x="816.0" y="159.6"
+            class="chip-text" text-anchor="middle">Java</text>
+    </g>
+  </g>
+
+</svg>
