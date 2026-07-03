@@ -1,194 +1,79 @@
-<svg width="850" height="120" viewBox="0 0 850 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    :root {
-      --bg:     #0d1117;
-      --accent: #00FFAA;
-      --dim:    #00FFAA18;
-      --mid:    #00FFAA40;
-      --border: #21262d;
-      --muted:  #8b949e;
-      --text:   #e6edf3;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg:     #f6f8fa;
-        --accent: #0969da;
-        --dim:    #0969da12;
-        --mid:    #0969da35;
-        --border: #d0d7de;
-        --muted:  #57606a;
-        --text:   #1f2328;
-      }
-    }
+<svg width="250" height="50" viewBox="0 0 250 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <style>
+        :root {
+            --b-bg: #0d1117;
+            --b-accent: #00FFAA;
+            --b-text: #ffffff;
+            --b-border: #30363d;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --b-bg: #ffffff;
+                --b-accent: #0969da;
+                --b-text: #1f2328;
+                --b-border: #d0d7de;
+            }
+        }
 
-    /* ---- base ---- */
-    .bg   { fill: var(--bg); }
-    .glow { fill: url(#c-radial); }
-    .rim  { fill: none; stroke: var(--border); stroke-width: 1.5; }
+        .badge-rect {
+            fill: var(--b-bg);
+            stroke: var(--b-accent);
+            stroke-width: 1.5;
+            transition: all 0.3s;
+        }
 
-    /* ---- scan line ---- */
-    .scan {
-      stroke: var(--accent);
-      stroke-width: 1;
-      opacity: 0;
-      animation: scan-move 3.5s ease-in-out infinite;
-    }
-    @keyframes scan-move {
-      0%   { opacity: 0; transform: translateX(-850px); }
-      10%  { opacity: 0.35; }
-      90%  { opacity: 0.35; }
-      100% { opacity: 0; transform: translateX(850px); }
-    }
+        .badge-text {
+            font: bold 14px monospace;
+            fill: var(--b-text);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* ---- signal rings (left) ---- */
-    .sig {
-      fill: none;
-      stroke: var(--accent);
-      animation: sig-pulse 2.4s ease-out infinite;
-    }
-    .sig1 { animation-delay: 0s; }
-    .sig2 { animation-delay: 0.5s; }
-    .sig3 { animation-delay: 1.0s; }
-    @keyframes sig-pulse {
-      0%   { opacity: 0.7; stroke-width: 1.5; }
-      100% { opacity: 0;   stroke-width: 0.3; }
-    }
+        .badge-sub {
+            font: bold 10px monospace;
+            fill: var(--b-accent);
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
 
-    /* ---- center label ---- */
-    .tag {
-      font: 700 10px 'Segoe UI', Ubuntu, sans-serif;
-      fill: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      text-anchor: middle;
-    }
-    .handle {
-      font: 800 28px 'JetBrains Mono', 'Cascadia Code', monospace;
-      fill: var(--accent);
-      letter-spacing: 2px;
-      text-anchor: middle;
-      filter: drop-shadow(0 0 8px #00FFAA88);
-    }
+        .glow {
+            filter: drop-shadow(0 0 4px var(--b-accent));
+        }
 
-    /* ---- deco lines ---- */
-    .h-line {
-      stroke: var(--accent);
-      stroke-width: 1;
-      opacity: 0.25;
-    }
-    .h-line-bright {
-      stroke: var(--accent);
-      stroke-width: 1;
-      opacity: 0.6;
-    }
+        .tg-icon {
+            fill: var(--b-accent);
+        }
 
-    /* ---- status (right) ---- */
-    .status-dot {
-      fill: var(--accent);
-      animation: blink 2s ease-in-out infinite;
-      filter: drop-shadow(0 0 4px #00FFAA);
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.25; }
-    }
-    .status-ring {
-      fill: none;
-      stroke: var(--accent);
-      opacity: 0.3;
-      animation: ring-expand 2s ease-out infinite;
-    }
-    @keyframes ring-expand {
-      0%   { r: 7;  opacity: 0.5; }
-      100% { r: 18; opacity: 0; }
-    }
-    .status-txt {
-      font: 700 9px 'Segoe UI', Ubuntu, sans-serif;
-      fill: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    .corner {
-      fill: none;
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      opacity: 0.45;
-    }
+        .corner {
+            fill: var(--b-accent);
+        }
 
-    /* ---- right arrow bounce ---- */
-    .arrow-g {
-      animation: arrow-bounce 1.6s ease-in-out infinite;
-    }
-    @keyframes arrow-bounce {
-      0%, 100% { transform: translateX(0); }
-      50%       { transform: translateX(5px); }
-    }
-    .arrow-txt {
-      font: 600 10px 'Segoe UI', Ubuntu, sans-serif;
-      fill: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-  </style>
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
 
-  <defs>
-    <!-- Subtle radial glow in center -->
-    <radialGradient id="c-radial" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#00FFAA" stop-opacity="0.07"/>
-      <stop offset="100%" stop-color="#00FFAA" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
+        .online-dot {
+            fill: #00FFAA;
+            animation: pulse 2s infinite ease-in-out;
+        }
+    </style>
+    
+    
+    <rect x="2" y="2" width="246" height="46" rx="6" class="badge-rect"/>
+    
+    <!-- Telegram Icon (Simplified) -->
+    <path d="M25 25 L40 18 L37 32 L31 29 L28 32 L25 25 Z" class="tg-icon glow"/>
+    <path d="M40 18 L31 29 L25 25" fill="none" stroke="var(--b-bg)" stroke-width="1"/>
 
-  <!-- ─── Background ─── -->
-  <rect width="850" height="120" rx="14" class="bg"/>
-  <rect width="850" height="120" rx="14" class="glow"/>
-  <rect width="850" height="120" rx="14" class="rim"/>
-
-  <!-- ─── Scanning line ─── -->
-  <line x1="0" y1="60" x2="850" y2="60" class="scan"/>
-
-  <!-- ─── Corner brackets ─── -->
-  <g class="corner">
-    <path d="M 18 32 L 18 18 L 32 18"/>
-    <path d="M 818 18 L 832 18 L 832 32"/>
-    <path d="M 18 88 L 18 102 L 32 102"/>
-    <path d="M 818 102 L 832 102 L 832 88"/>
-  </g>
-
-  <!-- ─── LEFT: Signal rings emanating from icon ─── -->
-  <!-- TG icon circle background -->
-  <circle cx="90" cy="60" r="22" fill="#00FFAA14"/>
-  <circle cx="90" cy="60" r="22" fill="none" stroke="#00FFAA" stroke-width="1" opacity="0.4"/>
-
-  <!-- Telegram paper plane icon centred at (90, H/2) -->
-  <g transform="translate(78, 49) scale(2.3)" class="status-dot" style="animation:none;filter:drop-shadow(0 0 6px #00FFAA88);">
-    <path d="M1 5.5L11 1 9.5 10 6 8 4.5 9.5 4.5 7.5 9.5 3 3.5 7Z" fill="#00FFAA"/>
-  </g>
-
-  <!-- Signal arcs radiating to the right of icon -->
-  <path d="M 118 48 A 15 15 0 0 1 118 72" class="sig sig1"/>
-  <path d="M 126 40 A 24 24 0 0 1 126 80" class="sig sig2"/>
-  <path d="M 135 31 A 33 33 0 0 1 135 89" class="sig sig3"/>
-
-  <!-- ─── CENTER: Decorative lines + handle ─── -->
-  <!-- Left deco line -->
-  <line x1="160" y1="60" x2="280" y2="60" class="h-line"/>
-  <line x1="280" y1="60" x2="295" y2="60" class="h-line-bright"/>
-
-  <!-- Right deco line -->
-  <line x1="555" y1="60" x2="570" y2="60" class="h-line-bright"/>
-  <line x1="570" y1="60" x2="665" y2="60" class="h-line"/>
-
-  <!-- Label -->
-  <text x="425" y="42" class="tag">Telegram</text>
-
-  <!-- Handle -->
-  <text x="425" y="72" class="handle">@blackalex1</text>
-
-  <!-- ─── RIGHT: Status indicator ─── -->
-  <!-- Tap to connect CTA (centered vertically) -->
-  <g transform="translate(750, 64)" class="arrow-g">
-    <text class="arrow-txt" text-anchor="middle" y="0">Connect &#x2192;</text>
-  </g>
-
+    <text x="60" y="24" class="badge-text">TELEGRAM</text>
+    <text x="60" y="38" class="badge-sub">@blackalex1</text>
+    
+    <!-- Online Status Indicator -->
+    <circle cx="225" cy="25" r="4" class="online-dot glow"/>
+    
+    <!-- Corner Accents -->
+    <path d="M 5 12 L 5 5 L 12 5" fill="none" stroke="#00FFAA" stroke-width="2"/>
+    <path d="M 245 38 L 245 45 L 238 45" fill="none" stroke="#00FFAA" stroke-width="2"/>
 </svg>
