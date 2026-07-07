@@ -55,21 +55,21 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-0">
-                <rect x="140" y="35" width="178.56000000000003" height="8" rx="4"/>
+                <rect x="140" y="35" width="178.32" height="8" rx="4"/>
               </clipPath>
             </defs>
 
             <text x="35" y="45" class="l-name">Python</text>
-            <text x="415" y="45" class="l-pct" text-anchor="end">74.4%</text>
+            <text x="415" y="45" class="l-pct" text-anchor="end">74.3%</text>
             
             <rect x="140" y="35" width="240" height="8" rx="4" class="l-bar-bg"/>
             <rect x="140" y="35" width="0" height="8" rx="4" fill="url(#l-grad-0)" class="l-bar-fill">
-              <animate attributeName="width" from="0" to="178.56000000000003" dur="1s" begin="0.0s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+              <animate attributeName="width" from="0" to="178.32" dur="1s" begin="0.0s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
             </rect>
             
             <g clip-path="url(#l-clip-0)">
               <rect x="140" y="35" width="100" height="8" rx="4" fill="url(#l-sheen-0)" opacity="0">
-                 <animate attributeName="x" from="40" to="318.56000000000006" dur="2s" begin="2.0s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="40" to="318.32" dur="2s" begin="2.0s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.0s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -89,21 +89,21 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-1">
-                <rect x="140" y="67" width="24.0" height="8" rx="4"/>
+                <rect x="140" y="67" width="24.24" height="8" rx="4"/>
               </clipPath>
             </defs>
 
             <text x="35" y="77" class="l-name">Kotlin</text>
-            <text x="415" y="77" class="l-pct" text-anchor="end">10.0%</text>
+            <text x="415" y="77" class="l-pct" text-anchor="end">10.1%</text>
             
             <rect x="140" y="67" width="240" height="8" rx="4" class="l-bar-bg"/>
             <rect x="140" y="67" width="0" height="8" rx="4" fill="url(#l-grad-1)" class="l-bar-fill">
-              <animate attributeName="width" from="0" to="24.0" dur="1s" begin="0.1s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+              <animate attributeName="width" from="0" to="24.24" dur="1s" begin="0.1s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
             </rect>
             
             <g clip-path="url(#l-clip-1)">
               <rect x="140" y="67" width="100" height="8" rx="4" fill="url(#l-sheen-1)" opacity="0">
-                 <animate attributeName="x" from="40" to="164.0" dur="2s" begin="2.2s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="40" to="164.24" dur="2s" begin="2.2s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.2s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -123,21 +123,21 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-2">
-                <rect x="140" y="99" width="23.52" height="8" rx="4"/>
+                <rect x="140" y="99" width="23.279999999999998" height="8" rx="4"/>
               </clipPath>
             </defs>
 
             <text x="35" y="109" class="l-name">JavaScript</text>
-            <text x="415" y="109" class="l-pct" text-anchor="end">9.8%</text>
+            <text x="415" y="109" class="l-pct" text-anchor="end">9.7%</text>
             
             <rect x="140" y="99" width="240" height="8" rx="4" class="l-bar-bg"/>
             <rect x="140" y="99" width="0" height="8" rx="4" fill="url(#l-grad-2)" class="l-bar-fill">
-              <animate attributeName="width" from="0" to="23.52" dur="1s" begin="0.2s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
+              <animate attributeName="width" from="0" to="23.279999999999998" dur="1s" begin="0.2s" calcMode="spline" keyTimes="0; 1" keySplines="0.4 0 0.2 1" fill="freeze"/>
             </rect>
             
             <g clip-path="url(#l-clip-2)">
               <rect x="140" y="99" width="100" height="8" rx="4" fill="url(#l-sheen-2)" opacity="0">
-                 <animate attributeName="x" from="40" to="163.52" dur="2s" begin="2.4s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="40" to="163.28" dur="2s" begin="2.4s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;1;0" dur="2s" begin="2.4s" repeatCount="indefinite" />
               </rect>
             </g>
