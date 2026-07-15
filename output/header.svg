@@ -81,112 +81,112 @@
   <rect width="800" height="200" rx="15" class="h-bg"/>
   
   <g opacity="1">
-        <text x="0" y="-50" class="h-matrix-text" style="animation-delay: 4.912465019783415s; animation-duration: 5.1114347615814495s; font-size: 9px;">
-            -{_DIR{&gt;ROOT1\|\EXE
+        <text x="0" y="-50" class="h-matrix-text" style="animation-delay: 1.02403928638293s; animation-duration: 9.159859327676244s; font-size: 10px;">
+            {_||ROOT&lt;--]&gt;{[
         </text>
         
-        <text x="30" y="-50" class="h-matrix-text" style="animation-delay: 4.9382018199772295s; animation-duration: 7.625487543838718s; font-size: 14px;">
-            0/[&gt;█EXE0EXE1/_EXE
+        <text x="30" y="-50" class="h-matrix-text" style="animation-delay: 4.906479715496495s; animation-duration: 4.514240480121123s; font-size: 14px;">
+            }|_&gt;{/&gt;ROOT|ROOT1&gt;
         </text>
         
-        <text x="60" y="-50" class="h-matrix-text" style="animation-delay: 3.6794490165458043s; animation-duration: 7.9045011817490565s; font-size: 9px;">
-            /}\\-]|[[|]\
+        <text x="60" y="-50" class="h-matrix-text" style="animation-delay: 3.6373964350731196s; animation-duration: 7.155280616338166s; font-size: 14px;">
+            DIR/&gt;EXEEXE👾]\|ROOT█EXE
         </text>
         
-        <text x="90" y="-50" class="h-matrix-text" style="animation-delay: 3.766142692278527s; animation-duration: 7.415627666391413s; font-size: 9px;">
-            \\█-👾EXE_█\\DIR-
+        <text x="90" y="-50" class="h-matrix-text" style="animation-delay: 1.9646350387600626s; animation-duration: 8.745756069506436s; font-size: 14px;">
+            ROOT█⚡⚡}1_ROOT/👾EXE1
         </text>
         
-        <text x="120" y="-50" class="h-matrix-text" style="animation-delay: 3.4765106352283386s; animation-duration: 6.682491940176641s; font-size: 12px;">
-            DIR[ROOT&gt;_-&lt;👾]⚡_DIR
+        <text x="120" y="-50" class="h-matrix-text" style="animation-delay: 0.2603870995611829s; animation-duration: 9.36620047615666s; font-size: 8px;">
+            _]-DIRDIR{[\-/{]
         </text>
         
-        <text x="150" y="-50" class="h-matrix-text" style="animation-delay: 3.307002839552542s; animation-duration: 6.065239486511718s; font-size: 11px;">
-            /0}|}|\&gt;DIR█]/
+        <text x="150" y="-50" class="h-matrix-text" style="animation-delay: 0.4039637057629414s; animation-duration: 8.468360924920985s; font-size: 14px;">
+            ROOT👾EXE\/👾👾-[1{|
         </text>
         
-        <text x="180" y="-50" class="h-matrix-text" style="animation-delay: 2.1940085922268784s; animation-duration: 9.425646823765533s; font-size: 14px;">
-            ⚡DIR\&gt;}DIR[DIR&lt;_👾EXE
+        <text x="180" y="-50" class="h-matrix-text" style="animation-delay: 4.59950572980138s; animation-duration: 4.634607373415923s; font-size: 9px;">
+            &gt;\]👾⚡10EXE01⚡&lt;
         </text>
         
-        <text x="210" y="-50" class="h-matrix-text" style="animation-delay: 0.5807207088628663s; animation-duration: 5.778830470244841s; font-size: 12px;">
-            ⚡█0█EXE█0&gt;██[&lt;
+        <text x="210" y="-50" class="h-matrix-text" style="animation-delay: 4.518862552166338s; animation-duration: 4.183477520759291s; font-size: 14px;">
+            👾]|0_EXE👾&gt;👾}⚡|
         </text>
         
-        <text x="240" y="-50" class="h-matrix-text" style="animation-delay: 4.1543806658873805s; animation-duration: 8.72384635584269s; font-size: 8px;">
-            ⚡{EXE⚡👾EXE👾&lt;/EXEDIR1
+        <text x="240" y="-50" class="h-matrix-text" style="animation-delay: 0.24253223259529333s; animation-duration: 9.90673489631164s; font-size: 13px;">
+            DIR]-[[}[|_█-/
         </text>
         
-        <text x="270" y="-50" class="h-matrix-text" style="animation-delay: 4.616005038781463s; animation-duration: 4.732316009437226s; font-size: 8px;">
-            -&gt;█\EXE_-1-]][
+        <text x="270" y="-50" class="h-matrix-text" style="animation-delay: 0.16047453433076786s; animation-duration: 8.411701143758364s; font-size: 13px;">
+            █]█\/|&lt;&lt;0]ROOTDIR
         </text>
         
-        <text x="300" y="-50" class="h-matrix-text" style="animation-delay: 1.556439969888952s; animation-duration: 6.491745072167915s; font-size: 14px;">
-            ROOT👾/{&gt;]👾EXEROOT0{/
+        <text x="300" y="-50" class="h-matrix-text" style="animation-delay: 3.689287210563616s; animation-duration: 6.631874880870285s; font-size: 8px;">
+            EXE{{⚡[1█&lt;_}⚡1
         </text>
         
-        <text x="330" y="-50" class="h-matrix-text" style="animation-delay: 2.6980213365810224s; animation-duration: 7.848131689088192s; font-size: 14px;">
-            ]11|_&lt;\ROOT0ROOT_👾
+        <text x="330" y="-50" class="h-matrix-text" style="animation-delay: 4.537345963332721s; animation-duration: 5.104621683777168s; font-size: 9px;">
+            ]█\//1█-⚡/\&gt;
         </text>
         
-        <text x="360" y="-50" class="h-matrix-text" style="animation-delay: 3.2421644840500474s; animation-duration: 8.620185738004846s; font-size: 12px;">
-            -█1\_]]_█_]DIR
+        <text x="360" y="-50" class="h-matrix-text" style="animation-delay: 4.771412839777219s; animation-duration: 8.207230797055438s; font-size: 8px;">
+            👾}👾0⚡-EXE-&gt;[}{
         </text>
         
-        <text x="390" y="-50" class="h-matrix-text" style="animation-delay: 4.34093053629789s; animation-duration: 7.834042207969932s; font-size: 8px;">
-            }}&lt;]0👾0DIR]/[|
+        <text x="390" y="-50" class="h-matrix-text" style="animation-delay: 1.2359376550129098s; animation-duration: 4.044191954663421s; font-size: 10px;">
+            {⚡&lt;ROOTDIR0⚡👾⚡1{-
         </text>
         
-        <text x="420" y="-50" class="h-matrix-text" style="animation-delay: 2.177154183022625s; animation-duration: 9.90069515590745s; font-size: 8px;">
-            }]█ROOTDIR&gt;}⚡/{\👾
+        <text x="420" y="-50" class="h-matrix-text" style="animation-delay: 4.897066745566981s; animation-duration: 8.674453194347283s; font-size: 13px;">
+            ]\\DIR&gt;_&gt;_}/[DIR
         </text>
         
-        <text x="450" y="-50" class="h-matrix-text" style="animation-delay: 4.236073444380721s; animation-duration: 7.968897806220359s; font-size: 13px;">
-            &gt;⚡]-[&lt;}/1[-ROOT
+        <text x="450" y="-50" class="h-matrix-text" style="animation-delay: 4.1550955166138674s; animation-duration: 8.50425580651682s; font-size: 13px;">
+            {&gt;EXE⚡_}[}|{/&lt;
         </text>
         
-        <text x="480" y="-50" class="h-matrix-text" style="animation-delay: 2.3519738367934986s; animation-duration: 9.405334132557403s; font-size: 12px;">
-            ⚡EXE1ROOT&lt;\{_ROOT_⚡0
+        <text x="480" y="-50" class="h-matrix-text" style="animation-delay: 2.6980828387207376s; animation-duration: 9.392912852285544s; font-size: 8px;">
+            ]1\-_ROOTDIR[-|-&gt;
         </text>
         
-        <text x="510" y="-50" class="h-matrix-text" style="animation-delay: 0.03077834811082092s; animation-duration: 7.8887158695188475s; font-size: 13px;">
-            \👾DIR[⚡&lt;]|&lt;&lt;EXE1
+        <text x="510" y="-50" class="h-matrix-text" style="animation-delay: 2.51582696855578s; animation-duration: 9.744913373804025s; font-size: 13px;">
+            EXE[&lt;_DIR/]👾EXE&lt;1EXE
         </text>
         
-        <text x="540" y="-50" class="h-matrix-text" style="animation-delay: 4.260551254305356s; animation-duration: 9.752453659044956s; font-size: 9px;">
-            👾1\█//}&lt;}EXE_}
+        <text x="540" y="-50" class="h-matrix-text" style="animation-delay: 0.7458036617683866s; animation-duration: 9.621091413771891s; font-size: 12px;">
+            _1-0DIR}|/ROOT&gt;1&lt;
         </text>
         
-        <text x="570" y="-50" class="h-matrix-text" style="animation-delay: 2.598441939608148s; animation-duration: 7.3559134783176985s; font-size: 8px;">
-            \ROOT1/}\/█_EXE[&lt;
+        <text x="570" y="-50" class="h-matrix-text" style="animation-delay: 2.5536871842571376s; animation-duration: 8.351968781078993s; font-size: 8px;">
+            DIR0/-|██]_█DIR⚡
         </text>
         
-        <text x="600" y="-50" class="h-matrix-text" style="animation-delay: 0.9537100761463874s; animation-duration: 7.845288343264874s; font-size: 12px;">
-            //EXE&gt;&lt;_1█|👾0DIR
+        <text x="600" y="-50" class="h-matrix-text" style="animation-delay: 3.580810967925811s; animation-duration: 6.9474761117724775s; font-size: 12px;">
+            }]&lt;&lt;👾ROOT1/\1&gt;█
         </text>
         
-        <text x="630" y="-50" class="h-matrix-text" style="animation-delay: 4.750606980779121s; animation-duration: 4.13197190253929s; font-size: 10px;">
-            EXE-&gt;\10}-1👾|ROOT
+        <text x="630" y="-50" class="h-matrix-text" style="animation-delay: 4.6292150161355385s; animation-duration: 4.695904420059339s; font-size: 8px;">
+            █DIR👾||👾-0ROOT👾ROOT]
         </text>
         
-        <text x="660" y="-50" class="h-matrix-text" style="animation-delay: 3.4996959202701703s; animation-duration: 8.018472204506189s; font-size: 14px;">
-            ROOTEXE|\[{ROOT[&gt;█1&lt;
+        <text x="660" y="-50" class="h-matrix-text" style="animation-delay: 2.378274589562159s; animation-duration: 9.152651550953648s; font-size: 8px;">
+            {-█👾👾█||}|\|
         </text>
         
-        <text x="690" y="-50" class="h-matrix-text" style="animation-delay: 1.069219523226777s; animation-duration: 6.233902101809134s; font-size: 10px;">
-            0⚡0]█&lt;/}DIR{{]
+        <text x="690" y="-50" class="h-matrix-text" style="animation-delay: 4.220499271860064s; animation-duration: 4.690420133259087s; font-size: 10px;">
+            |}-//👾[11\👾]
         </text>
         
-        <text x="720" y="-50" class="h-matrix-text" style="animation-delay: 4.591174458996282s; animation-duration: 7.003112280032913s; font-size: 9px;">
-            /}1⚡EXE&gt;ROOTEXE}█1👾
+        <text x="720" y="-50" class="h-matrix-text" style="animation-delay: 2.3715705610675726s; animation-duration: 4.999342884711514s; font-size: 9px;">
+            ⚡DIR/-&lt;ROOTEXE\0\DIR█
         </text>
         
-        <text x="750" y="-50" class="h-matrix-text" style="animation-delay: 1.094853072819475s; animation-duration: 4.880265056562114s; font-size: 11px;">
-            ⚡👾█1&gt;_DIR{/⚡}\
+        <text x="750" y="-50" class="h-matrix-text" style="animation-delay: 2.3350441712853893s; animation-duration: 7.502581561525561s; font-size: 8px;">
+            █-}{EXE}}[]0{█
         </text>
         
-        <text x="780" y="-50" class="h-matrix-text" style="animation-delay: 4.248140731854023s; animation-duration: 5.485609595666611s; font-size: 8px;">
-            &gt;|{&gt;EXE[👾█👾⚡█_
+        <text x="780" y="-50" class="h-matrix-text" style="animation-delay: 2.047054029043478s; animation-duration: 7.916424734829212s; font-size: 8px;">
+            ||&lt;\|\&lt;[ROOT1|\
         </text>
         </g>
   <rect class="h-scanline" />
