@@ -52,7 +52,7 @@
     <g class="s-item-anim" style="animation-delay: 0.1s;">
       <path d="M8 0L10.45 4.96L16 5.76L12 9.66L12.95 15.19L8 12.59L3.05 15.19L4 9.66L0 5.76L5.55 4.96L8 0Z" class="s-icon" transform="translate(-40, -15) scale(0.9)"/>
       <text x="0" y="-2" class="s-label">Stars</text>
-      <text x="0" y="32" class="s-value">4</text>
+      <text x="0" y="32" class="s-value">5</text>
     </g>
   </g>
 
