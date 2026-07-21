@@ -471,7 +471,8 @@
 <rect x="670" y="90" width="10" height="10" rx="2" class="sc-cell sc-l-0" style="animation-delay: 3.922s;"/>
 <rect x="670" y="103" width="10" height="10" rx="2" class="sc-cell sc-l-0" style="animation-delay: 3.922s;"/>
 <rect x="683" y="25" width="10" height="10" rx="2" class="sc-cell sc-l-0" style="animation-delay: 4.000s;"/>
-<rect x="683" y="38" width="10" height="10" rx="2" class="sc-cell sc-l-0" style="animation-delay: 4.000s;"/>
+<rect x="683" y="38" width="10" height="10" rx="2" class="sc-cell sc-l-1" style="animation-delay: 4.000s;"/>
+<rect x="683" y="51" width="10" height="10" rx="2" class="sc-cell sc-l-0" style="animation-delay: 4.000s;"/>
 
   </g>
 
