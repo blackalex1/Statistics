@@ -1,0 +1,176 @@
+<svg width="850" height="200" viewBox="0 0 850 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --accent:    #00FFAA;
+      --accent-dim:#00FFAA33;
+      --border:    #30363d;
+      --border-dim:#21262d;
+      --muted:     #8b949e;
+      --text:      #e6edf3;
+      --text-hi:   #ffffff;
+      --chip-bg:   #0d1117;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:        #ffffff;
+        --surface:   #f6f8fa;
+        --accent:    #1a7f37;
+        --accent-dim:#1a7f3722;
+        --border:    #d0d7de;
+        --border-dim:#e1e4e8;
+        --muted:     #57606a;
+        --text:      #24292f;
+        --text-hi:   #1f2328;
+        --chip-bg:   #ffffff;
+      }
+    }
+
+    .card { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }
+    .hud-bracket { stroke: var(--accent); stroke-width: 1.8; fill: none; opacity: 0.85; stroke-linecap: square; }
+    .t-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: var(--accent); letter-spacing: 1px; }
+    
+    .a-card { fill: var(--surface); stroke: var(--border-dim); stroke-width: 1.2; }
+    .a-header { font: bold 11px 'JetBrains Mono', monospace; fill: var(--accent); letter-spacing: 1.5px; }
+    .a-subtag { font: bold 9px 'JetBrains Mono', monospace; fill: var(--muted); letter-spacing: 0.5px; }
+    .a-lbl { font: bold 9.5px 'JetBrains Mono', monospace; fill: var(--muted); letter-spacing: 1px; }
+    .a-pill { fill: var(--chip-bg); stroke: var(--border); stroke-width: 1; }
+    .a-pill-txt { font: bold 10px 'JetBrains Mono', monospace; fill: var(--text); letter-spacing: 0.3px; }
+    .a-pill-hi { fill: var(--accent-dim); stroke: var(--accent); stroke-width: 1; stroke-opacity: 0.6; }
+    .a-pill-txt-hi { font: bold 10px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 0.3px; }
+  </style>
+
+  <rect width="850" height="200" rx="12" class="card"/>
+  
+  <!-- Outer Corner Brackets -->
+  <path d="M 0 18 L 0 0 L 18 0" class="hud-bracket"/>
+  <path d="M 850 18 L 850 0 L 832 0" class="hud-bracket"/>
+  <path d="M 0 182 L 0 200 L 18 200" class="hud-bracket"/>
+  <path d="M 850 182 L 850 200 L 832 200" class="hud-bracket"/>
+
+  <text x="25" y="28" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">CORE_SPECIALIZATION // ARSENAL_MATRIX</text>
+  <text x="825" y="28" text-anchor="end" class="t-tag">[VERIFIED_TOOLSET]</text>
+
+  <g transform="translate(15, 42)">
+    <!-- Left Arsenal: Binary Recon & Reverse Engineering -->
+    <g transform="translate(0, 0)">
+      <rect width="402" height="136" rx="8" class="a-card"/>
+      <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
+      <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
+      
+      <text x="14" y="22" class="a-header">0x01 // BINARY RECON &amp; DISASSEMBLY</text>
+      <text x="388" y="22" text-anchor="end" class="a-subtag">[STATIC / DYNAMIC]</text>
+      <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
+      
+      <!-- Row 1: Disasm -->
+      <text x="14" y="52" class="a-lbl">DISASM</text>
+      <g transform="translate(80, 39)">
+        <rect width="70" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="35" y="14" class="a-pill-txt-hi" text-anchor="middle">IDA Pro 9.0</text>
+      </g>
+      <g transform="translate(156, 39)">
+        <rect width="56" height="20" rx="4" class="a-pill"/>
+        <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Ghidra</text>
+      </g>
+      <g transform="translate(218, 39)">
+        <rect width="56" height="20" rx="4" class="a-pill"/>
+        <text x="28" y="14" class="a-pill-txt" text-anchor="middle">x64dbg</text>
+      </g>
+      <g transform="translate(280, 39)">
+        <rect width="66" height="20" rx="4" class="a-pill"/>
+        <text x="33" y="14" class="a-pill-txt" text-anchor="middle">BinNinja</text>
+      </g>
+
+      <!-- Row 2: Dynamic -->
+      <text x="14" y="82" class="a-lbl">TRACE</text>
+      <g transform="translate(80, 69)">
+        <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">Frida Hook</text>
+      </g>
+      <g transform="translate(170, 69)">
+        <rect width="98" height="20" rx="4" class="a-pill"/>
+        <text x="49" y="14" class="a-pill-txt" text-anchor="middle">Process Hacker</text>
+      </g>
+      <g transform="translate(274, 69)">
+        <rect width="72" height="20" rx="4" class="a-pill"/>
+        <text x="36" y="14" class="a-pill-txt" text-anchor="middle">Wireshark</text>
+      </g>
+
+      <!-- Row 3: Targets & Tech -->
+      <text x="14" y="112" class="a-lbl">TARGET</text>
+      <g transform="translate(80, 99)">
+        <rect width="112" height="20" rx="4" class="a-pill"/>
+        <text x="56" y="14" class="a-pill-txt" text-anchor="middle">PE / ELF / Mach-O</text>
+      </g>
+      <g transform="translate(198, 99)">
+        <rect width="78" height="20" rx="4" class="a-pill"/>
+        <text x="39" y="14" class="a-pill-txt" text-anchor="middle">Anti-Debug</text>
+      </g>
+      <g transform="translate(282, 99)">
+        <rect width="64" height="20" rx="4" class="a-pill"/>
+        <text x="32" y="14" class="a-pill-txt" text-anchor="middle">Hooking</text>
+      </g>
+    </g>
+
+    <!-- Right Arsenal: Low-Level & OS Internals -->
+    <g transform="translate(418, 0)">
+      <rect width="402" height="136" rx="8" class="a-card"/>
+      <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
+      <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
+      
+      <text x="14" y="22" class="a-header">0x02 // LOW-LEVEL &amp; KERNEL INTERNALS</text>
+      <text x="388" y="22" text-anchor="end" class="a-subtag">[RING_0 / RING_3]</text>
+      <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
+      
+      <!-- Row 1: Languages -->
+      <text x="14" y="52" class="a-lbl">LANGS</text>
+      <g transform="translate(80, 39)">
+        <rect width="56" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="28" y="14" class="a-pill-txt-hi" text-anchor="middle">C / C++</text>
+      </g>
+      <g transform="translate(142, 39)">
+        <rect width="44" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="22" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
+      </g>
+      <g transform="translate(192, 39)">
+        <rect width="54" height="20" rx="4" class="a-pill"/>
+        <text x="27" y="14" class="a-pill-txt" text-anchor="middle">Python</text>
+      </g>
+      <g transform="translate(252, 39)">
+        <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">x86/x64 Asm</text>
+      </g>
+
+      <!-- Row 2: OS Kernels -->
+      <text x="14" y="82" class="a-lbl">KERNEL</text>
+      <g transform="translate(80, 69)">
+        <rect width="86" height="20" rx="4" class="a-pill"/>
+        <text x="43" y="14" class="a-pill-txt" text-anchor="middle">Win32 / NT</text>
+      </g>
+      <g transform="translate(172, 69)">
+        <rect width="80" height="20" rx="4" class="a-pill"/>
+        <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Linux eBPF</text>
+      </g>
+      <g transform="translate(258, 69)">
+        <rect width="90" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="45" y="14" class="a-pill-txt-hi" text-anchor="middle">Kernel Driver</text>
+      </g>
+
+      <!-- Row 3: Security & Network -->
+      <text x="14" y="112" class="a-lbl">SECURITY</text>
+      <g transform="translate(80, 99)">
+        <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
+        <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">Direct Syscalls</text>
+      </g>
+      <g transform="translate(188, 99)">
+        <rect width="78" height="20" rx="4" class="a-pill"/>
+        <text x="39" y="14" class="a-pill-txt" text-anchor="middle">DEP / ASLR</text>
+      </g>
+      <g transform="translate(272, 99)">
+        <rect width="84" height="20" rx="4" class="a-pill"/>
+        <text x="42" y="14" class="a-pill-txt" text-anchor="middle">Raw Sockets</text>
+      </g>
+    </g>
+  </g>
+</svg>

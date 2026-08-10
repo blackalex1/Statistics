@@ -1,38 +1,65 @@
 <svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="h-clip-standalone">
+      <rect width="800" height="200" rx="12"/>
+    </clipPath>
+    <radialGradient id="h-text-shield-standalone" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--h-bg)" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="var(--h-bg)" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="var(--h-bg)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="h-mask-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="var(--h-bg)" stop-opacity="1"/>
+      <stop offset="18%" stop-color="var(--h-bg)" stop-opacity="0"/>
+      <stop offset="82%" stop-color="var(--h-bg)" stop-opacity="0"/>
+      <stop offset="100%" stop-color="var(--h-bg)" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+
   <style>
     :root { 
       --h-bg: #0d1117; 
       --h-text: #ffffff; 
       --h-accent: #00FFAA; 
-      --h-matrix-opacity: 0.25;
+      --h-border: #30363d;
+      --h-muted: #8b949e;
+      --h-matrix-opacity: 0.22;
     }
     @media (prefers-color-scheme: light) { 
       :root { 
         --h-bg: #ffffff; 
         --h-text: #1f2328; 
         --h-accent: #1a7f37;
-        --h-matrix-opacity: 0.4;
+        --h-border: #d0d7de;
+        --h-muted: #57606a;
+        --h-matrix-opacity: 0.35;
       } 
-      .h-title { filter: none !important; }
     }
 
-    .h-bg { fill: var(--h-bg); }
+    .h-bg { fill: var(--h-bg); stroke: var(--h-border); stroke-width: 1.5; }
 
     .h-title { 
-      font: bold 52px 'Segoe UI', Ubuntu, sans-serif; 
+      font: bold 52px 'JetBrains Mono', 'Segoe UI', monospace; 
       fill: var(--h-accent); 
       text-transform: uppercase; 
       letter-spacing: 8px;
-      animation: h-glitch 5s infinite;
+      animation: h-glitch 6s infinite ease-in-out;
       transform-origin: center;
     }
     
     .h-subtitle { 
-      font: bold 16px 'Courier New', monospace; 
+      font: bold 14px 'JetBrains Mono', 'Courier New', monospace; 
       fill: var(--h-text); 
       letter-spacing: 3px; 
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: 0.9;
+    }
+
+    .h-tagline {
+      font: bold 10px 'JetBrains Mono', monospace;
+      fill: var(--h-muted);
+      letter-spacing: 2px;
+      opacity: 0.75;
     }
 
     .h-matrix-text { 
@@ -43,24 +70,21 @@
       animation: h-fall linear infinite; 
     }
 
-    /* REFINED GLITCH: Softened collapse, intensified color split */
     @keyframes h-glitch {
-      0%, 80%, 100% { transform: none; opacity: 1; text-shadow: 0 0 8px var(--h-accent); }
-      81% { transform: skew(-5deg) translate(-5px, 2px); text-shadow: 3px 0 #ff00c1, -3px 0 #00fff9; opacity: 0.8; }
-      82% { transform: skew(5deg) translate(5px, -2px); text-shadow: -3px 0 #ff00c1, 3px 0 #00fff9; opacity: 0.9; }
-      83% { transform: none; text-shadow: 0 0 8px var(--h-accent); }
-      84% { transform: scaleY(0.7) skewX(10deg); opacity: 0.7; text-shadow: 4px 0 #ff00c1, -4px 0 #00fff9; }
-      85% { transform: none; opacity: 1; }
-      92% { transform: translate(-4px, -2px); text-shadow: 5px 0 red, -5px 0 blue; }
-      94% { transform: translate(4px, 2px); text-shadow: -5px 0 red, 5px 0 blue; }
-      96% { transform: none; text-shadow: 0 0 8px var(--h-accent); }
+      0%, 88%, 100% { transform: none; opacity: 1; }
+      89% { transform: skew(-3deg) translate(-2px, 1px); opacity: 0.85; }
+      90% { transform: skew(3deg) translate(2px, -1px); opacity: 0.9; }
+      91% { transform: none; opacity: 1; }
+      95% { transform: translate(-2px, -1px); }
+      96% { transform: translate(2px, 1px); }
+      97% { transform: none; }
     }
 
     @keyframes h-fall { 
-      0% { transform: translateY(-100px); opacity: 0; } 
-      10% { opacity: var(--h-matrix-opacity); } 
-      90% { opacity: var(--h-matrix-opacity); } 
-      100% { transform: translateY(300px); opacity: 0; } 
+      0% { transform: translateY(-40px); opacity: 0; } 
+      15% { opacity: var(--h-matrix-opacity); } 
+      80% { opacity: var(--h-matrix-opacity); } 
+      100% { transform: translateY(200px); opacity: 0; } 
     }
 
     .h-scanline {
@@ -68,146 +92,106 @@
       height: 2px;
       fill: var(--h-accent);
       opacity: 0.08;
-      animation: h-scan 3s infinite linear;
+      animation: h-scan 4s infinite linear;
     }
     @keyframes h-scan {
       0% { transform: translateY(0); }
       100% { transform: translateY(200px); }
     }
 
-    .h-corner { stroke: var(--h-accent); stroke-width: 2.5; fill: none; opacity: 0.6; stroke-linecap: square; }
+    .h-corner { stroke: var(--h-accent); stroke-width: 2; fill: none; opacity: 0.8; stroke-linecap: square; }
+    .h-reticle { stroke: var(--h-muted); stroke-width: 1; opacity: 0.4; }
   </style>
 
-  <rect width="800" height="200" rx="15" class="h-bg"/>
+  <rect width="800" height="200" rx="12" class="h-bg"/>
   
-  <g opacity="1">
-        <text x="0" y="-50" class="h-matrix-text" style="animation-delay: 3.9487250492395587s; animation-duration: 6.581960466859981s; font-size: 14px;">
-            _ROOT👾]👾█[👾-]&gt;█
+  <g clip-path="url(#h-clip-standalone)">
+    <g opacity="1">
+        <text x="16" y="-30" class="h-matrix-text" style="animation-delay: 1.53s; animation-duration: 6.38s; font-size: 12px;">
+            [SYSSYS|👾👾█}-
         </text>
         
-        <text x="30" y="-50" class="h-matrix-text" style="animation-delay: 1.6522068799744511s; animation-duration: 5.256982201843888s; font-size: 11px;">
-            [&gt;[&lt;&lt;\00DIR█1█
+        <text x="40" y="-30" class="h-matrix-text" style="animation-delay: 2.8s; animation-duration: 5.81s; font-size: 12px;">
+            |⚡-👾ROOTEXESYS]-
         </text>
         
-        <text x="60" y="-50" class="h-matrix-text" style="animation-delay: 0.6857324708197748s; animation-duration: 6.217993506360908s; font-size: 14px;">
-            &lt;|_DIR[⚡-}⚡DIR👾█
+        <text x="64" y="-30" class="h-matrix-text" style="animation-delay: 0.64s; animation-duration: 6.55s; font-size: 12px;">
+            {\SYS⚡&gt;/ROOT/]
         </text>
         
-        <text x="90" y="-50" class="h-matrix-text" style="animation-delay: 4.550989583792326s; animation-duration: 5.840968241740692s; font-size: 9px;">
-            }]]█👾ROOTROOTROOT1&lt;1|
+        <text x="88" y="-30" class="h-matrix-text" style="animation-delay: 1.13s; animation-duration: 4.99s; font-size: 12px;">
+            &lt;SYS000EXESYS|EXE
         </text>
         
-        <text x="120" y="-50" class="h-matrix-text" style="animation-delay: 1.9300372187533448s; animation-duration: 5.748750601525786s; font-size: 9px;">
-            1_|\&gt;\\\[DIR0⚡
+        <text x="112" y="-30" class="h-matrix-text" style="animation-delay: 1.86s; animation-duration: 5.99s; font-size: 12px;">
+            █ROOT-█\}{_SYS
         </text>
         
-        <text x="150" y="-50" class="h-matrix-text" style="animation-delay: 4.4035559688812835s; animation-duration: 8.02592340357056s; font-size: 10px;">
-            {EXE/_}0👾|&lt;█}/
+        <text x="136" y="-30" class="h-matrix-text" style="animation-delay: 2.17s; animation-duration: 5.34s; font-size: 12px;">
+            SYS\10DIRSYS/DIR0x
         </text>
         
-        <text x="180" y="-50" class="h-matrix-text" style="animation-delay: 1.9766977392470757s; animation-duration: 7.75728629406111s; font-size: 12px;">
-            -DIR[ROOT/_]&gt;DIR\👾1
+        <text x="160" y="-30" class="h-matrix-text" style="animation-delay: 1.95s; animation-duration: 5.14s; font-size: 11px;">
+            DIR0-&lt;&gt;_0x-}
         </text>
         
-        <text x="210" y="-50" class="h-matrix-text" style="animation-delay: 1.561765560979727s; animation-duration: 5.19592506718672s; font-size: 10px;">
-            |[EXE{EXE[{][⚡\EXE
+        <text x="184" y="-30" class="h-matrix-text" style="animation-delay: 0.79s; animation-duration: 4.63s; font-size: 12px;">
+            ]█&lt;{DIR⚡👾EXE{
         </text>
         
-        <text x="240" y="-50" class="h-matrix-text" style="animation-delay: 4.724439152131733s; animation-duration: 5.858612027345197s; font-size: 9px;">
-            [{⚡/1👾█}DIRROOT1👾
+        <text x="208" y="-30" class="h-matrix-text" style="animation-delay: 3.25s; animation-duration: 5.95s; font-size: 12px;">
+            SYS&lt;DIREXE-|█SYS]
         </text>
         
-        <text x="270" y="-50" class="h-matrix-text" style="animation-delay: 3.6738546312884752s; animation-duration: 8.344067948729784s; font-size: 14px;">
-            _0█DIR👾⚡█0__&lt;⚡
+        <text x="600" y="-30" class="h-matrix-text" style="animation-delay: 0.98s; animation-duration: 6.27s; font-size: 11px;">
+            EXEROOTROOT{0x⚡0&lt;}
         </text>
         
-        <text x="300" y="-50" class="h-matrix-text" style="animation-delay: 3.5347538843136492s; animation-duration: 4.591915088155659s; font-size: 9px;">
-            /⚡⚡⚡\&lt;👾/█11&lt;
+        <text x="624" y="-30" class="h-matrix-text" style="animation-delay: 1.03s; animation-duration: 4.93s; font-size: 11px;">
+            &lt;SYSDIR&lt;0DIRROOTROOT]
         </text>
         
-        <text x="330" y="-50" class="h-matrix-text" style="animation-delay: 2.1475056349471138s; animation-duration: 4.649686638250859s; font-size: 12px;">
-            👾_&lt;👾-_EXE&lt;[}{█
+        <text x="648" y="-30" class="h-matrix-text" style="animation-delay: 1.05s; animation-duration: 6.24s; font-size: 10px;">
+            }⚡-}0x\DIR⚡{
         </text>
         
-        <text x="360" y="-50" class="h-matrix-text" style="animation-delay: 3.9830389221334155s; animation-duration: 8.408087181822204s; font-size: 14px;">
-            ⚡}|/ROOT&lt;-1]██_
+        <text x="672" y="-30" class="h-matrix-text" style="animation-delay: 0.19s; animation-duration: 5.02s; font-size: 12px;">
+            ⚡|ROOT0██DIR]ROOT
         </text>
         
-        <text x="390" y="-50" class="h-matrix-text" style="animation-delay: 3.7194146797393106s; animation-duration: 6.623321847340986s; font-size: 12px;">
-            👾&lt;|\}{&gt;DIR[/|0
+        <text x="696" y="-30" class="h-matrix-text" style="animation-delay: 0.81s; animation-duration: 5.27s; font-size: 12px;">
+            DIR{[{⚡0👾DIR{
         </text>
         
-        <text x="420" y="-50" class="h-matrix-text" style="animation-delay: 0.17424552896310397s; animation-duration: 6.432378279739004s; font-size: 11px;">
-            &gt;\&lt;█&lt;{|👾ROOT&gt;}_
+        <text x="720" y="-30" class="h-matrix-text" style="animation-delay: 1.18s; animation-duration: 6.59s; font-size: 12px;">
+            |1&gt;█\/-0x-
         </text>
         
-        <text x="450" y="-50" class="h-matrix-text" style="animation-delay: 0.4612761007198779s; animation-duration: 5.41036994436468s; font-size: 9px;">
-            &lt;11&lt;█ROOT10&lt;&gt;{[
+        <text x="744" y="-30" class="h-matrix-text" style="animation-delay: 2.0s; animation-duration: 4.87s; font-size: 10px;">
+            {1DIR&gt;👾SYS1}0
         </text>
         
-        <text x="480" y="-50" class="h-matrix-text" style="animation-delay: 4.968761302344637s; animation-duration: 8.351311014672003s; font-size: 13px;">
-            &lt;👾👾]1/👾EXE[\}1
-        </text>
-        
-        <text x="510" y="-50" class="h-matrix-text" style="animation-delay: 0.0818408591287112s; animation-duration: 6.780927760688772s; font-size: 11px;">
-            &gt;}-&gt;-👾&lt;&gt;10EXE{
-        </text>
-        
-        <text x="540" y="-50" class="h-matrix-text" style="animation-delay: 3.964623423959685s; animation-duration: 5.320099531366375s; font-size: 8px;">
-            0//]_{{]\|&gt;👾
-        </text>
-        
-        <text x="570" y="-50" class="h-matrix-text" style="animation-delay: 2.880402078501399s; animation-duration: 6.663822006970484s; font-size: 9px;">
-            1EXE█]DIR[-0⚡█⚡EXE
-        </text>
-        
-        <text x="600" y="-50" class="h-matrix-text" style="animation-delay: 2.5421111179992026s; animation-duration: 4.903821797545046s; font-size: 10px;">
-            1EXEDIR&lt;{{0EXE_[0👾
-        </text>
-        
-        <text x="630" y="-50" class="h-matrix-text" style="animation-delay: 4.021303873754184s; animation-duration: 4.675204970242763s; font-size: 12px;">
-            DIR}1👾0&lt;|👾_EXE1ROOT
-        </text>
-        
-        <text x="660" y="-50" class="h-matrix-text" style="animation-delay: 3.7572669145581763s; animation-duration: 6.3662966741314175s; font-size: 9px;">
-            _0\⚡1-0][_[&gt;
-        </text>
-        
-        <text x="690" y="-50" class="h-matrix-text" style="animation-delay: 4.804949092309404s; animation-duration: 9.175626260901266s; font-size: 9px;">
-            0[_&lt;👾1EXEDIR{ROOTEXE👾
-        </text>
-        
-        <text x="720" y="-50" class="h-matrix-text" style="animation-delay: 1.3649761904847635s; animation-duration: 5.341594948249696s; font-size: 13px;">
-            &gt;/👾👾ROOT⚡-⚡0👾{█
-        </text>
-        
-        <text x="750" y="-50" class="h-matrix-text" style="animation-delay: 0.44509655781371393s; animation-duration: 7.654944423329977s; font-size: 8px;">
-            _|█ROOT&gt;{EXE[0&gt;/0
-        </text>
-        
-        <text x="780" y="-50" class="h-matrix-text" style="animation-delay: 3.082128099040429s; animation-duration: 7.468456026453165s; font-size: 11px;">
-            ⚡/]0[█-&gt;█-_}
+        <text x="768" y="-30" class="h-matrix-text" style="animation-delay: 0.19s; animation-duration: 5.53s; font-size: 12px;">
+            █/DIR⚡|-DIR\}
         </text>
         </g>
-  <rect class="h-scanline" />
+    <rect class="h-scanline" />
+  </g>
   
-  <defs>
-    <linearGradient id="h-mask-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="var(--h-bg)" stop-opacity="1"/>
-      <stop offset="20%" stop-color="var(--h-bg)" stop-opacity="0"/>
-      <stop offset="80%" stop-color="var(--h-bg)" stop-opacity="0"/>
-      <stop offset="100%" stop-color="var(--h-bg)" stop-opacity="1"/>
-    </linearGradient>
-  </defs>
   <rect width="800" height="200" fill="url(#h-mask-grad)" pointer-events="none"/>
+  <ellipse cx="400.0" cy="115" rx="280" ry="65" fill="url(#h-text-shield-standalone)" pointer-events="none"/>
 
   <!-- Main Content -->
-  <text x="400" y="90" text-anchor="middle" dominant-baseline="middle" class="h-title">blackalex1</text>
-  <text x="400" y="140" text-anchor="middle" class="h-subtitle">Infosec Researcher | Reverse Engineer</text>
+  <text x="400.0" y="95" text-anchor="middle" dominant-baseline="middle" class="h-title">blackalex1</text>
+  <text x="400.0" y="142" text-anchor="middle" class="h-subtitle">Infosec Researcher | Reverse Engineer</text>
+  <text x="400.0" y="168" text-anchor="middle" class="h-tagline">[ ARCH: x86_64 // ARM64 // WIN_NT // LINUX_KERNEL ]</text>
 
-  <!-- Corner Accents -->
-  <path d="M 30 10 L 10 10 L 10 30" class="h-corner" />
-  <path d="M 770 10 L 790 10 L 790 30" class="h-corner" />
-  <path d="M 30 190 L 10 190 L 10 170" class="h-corner" />
-  <path d="M 770 190 L 790 190 L 790 170" class="h-corner" />
+  <!-- Precision Corner Accents -->
+  <path d="M 28 12 L 12 12 L 12 28" class="h-corner" />
+  <path d="M 772 12 L 788 12 L 788 28" class="h-corner" />
+  <path d="M 28 188 L 12 188 L 12 172" class="h-corner" />
+  <path d="M 772 188 L 788 188 L 788 172" class="h-corner" />
+  
+  <!-- Center Crosshairs -->
+  <path d="M 395.0 100 L 405.0 100 M 400.0 95 L 400.0 105" class="h-reticle" opacity="0.2"/>
 </svg>

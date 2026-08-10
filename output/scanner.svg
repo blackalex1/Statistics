@@ -10,7 +10,7 @@
     .sc-border { stroke: #30363d; }
     .sc-cell { fill: #161b22; opacity: 0.15; }
     
-    /* REVEAL KEYFRAMES: Gradient Cooling Trail */
+    /* ZERO-CPU OPTIMIZED SCANNER ANIMATION */
     .sc-l-0 { animation: sc-rev-0 12.0s infinite; }
     .sc-l-1 { animation: sc-rev-1 12.0s infinite; }
     .sc-l-2 { animation: sc-rev-2 12.0s infinite; }
@@ -18,43 +18,38 @@
     .sc-l-4 { animation: sc-rev-4 12.0s infinite; }
 
     @keyframes sc-rev-0 {
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 6px #00FFAA); }
-      1% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 4px #00FFAA); }
-      3% { fill: #00FFAA; opacity: 0.4; filter: drop-shadow(0 0 2px #00FFAA); }
-      5%, 100% { fill: #161b22; opacity: 0.15; filter: none; }
+      0% { fill: #ffffff; opacity: 0.9; }
+      1% { fill: #00FFAA; opacity: 0.7; }
+      3% { fill: #00FFAA; opacity: 0.35; }
+      5%, 100% { fill: #161b22; opacity: 0.15; }
     }
     
-    /* Multistage gradient cooling for contribution levels */
     @keyframes sc-rev-1 { 
-      0% { fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px #00FFAA); } 
-      2% { fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px #00FFAA); }
-      4% { fill: #00FFAA; opacity: 1; filter: drop-shadow(0 0 6px #00FFAA); }
-      6% { fill: #0e4429; opacity: 1; filter: drop-shadow(0 0 4px #0e4429); }
-      10%, 75% { fill: #0e4429; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      2% { fill: #aaffdd; opacity: 1; }
+      4% { fill: #00FFAA; opacity: 1; }
+      6%, 75% { fill: #0e4429; opacity: 1; } 
       85%, 100% { fill: #161b22; opacity: 0.15; } 
     }
     @keyframes sc-rev-2 { 
-      0% { fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px #00FFAA); } 
-      2% { fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px #00FFAA); }
-      4% { fill: #00FFAA; opacity: 1; filter: drop-shadow(0 0 6px #00FFAA); }
-      6% { fill: #006d3a; opacity: 1; filter: drop-shadow(0 0 4px #006d3a); }
-      10%, 75% { fill: #006d3a; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      2% { fill: #aaffdd; opacity: 1; }
+      4% { fill: #00FFAA; opacity: 1; }
+      6%, 75% { fill: #006d3a; opacity: 1; } 
       85%, 100% { fill: #161b22; opacity: 0.15; } 
     }
     @keyframes sc-rev-3 { 
-      0% { fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px #00FFAA); } 
-      2% { fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px #00FFAA); }
-      4% { fill: #00FFAA; opacity: 1; filter: drop-shadow(0 0 6px #00FFAA); }
-      6% { fill: #26a641; opacity: 1; filter: drop-shadow(0 0 4px #26a641); }
-      10%, 75% { fill: #26a641; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      2% { fill: #aaffdd; opacity: 1; }
+      4% { fill: #00FFAA; opacity: 1; }
+      6%, 75% { fill: #26a641; opacity: 1; } 
       85%, 100% { fill: #161b22; opacity: 0.15; } 
     }
     @keyframes sc-rev-4 { 
-      0% { fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px #00FFAA); } 
-      2% { fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px #00FFAA); }
-      4% { fill: #00FFAA; opacity: 1; filter: drop-shadow(0 0 6px #00FFAA); }
-      6% { fill: #39d353; opacity: 1; filter: drop-shadow(0 0 4px #39d353); }
-      10%, 75% { fill: #39d353; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      2% { fill: #aaffdd; opacity: 1; }
+      4% { fill: #00FFAA; opacity: 1; }
+      6%, 75% { fill: #39d353; opacity: 1; } 
       85%, 100% { fill: #161b22; opacity: 0.15; } 
     }
 
@@ -70,32 +65,32 @@
     }
     
     @keyframes sc-rev-l0 { 
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 8px #00FFAA); } 
-      2% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 4px #00FFAA); } 
-      5%, 100% { fill: #ebedf0; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 0.9; } 
+      2% { fill: #00FFAA; opacity: 0.7; } 
+      5%, 100% { fill: #ebedf0; opacity: 1; } 
     }
     @keyframes sc-rev-l1 { 
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px #00FFAA); } 
-      3% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 6px #00FFAA); } 
-      8%, 75% { fill: #9be9a8; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      3% { fill: #00FFAA; opacity: 0.8; } 
+      8%, 75% { fill: #9be9a8; opacity: 1; } 
       85%, 100% { fill: #ebedf0; opacity: 1; } 
     }
     @keyframes sc-rev-l2 { 
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px #00FFAA); } 
-      3% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 6px #00FFAA); } 
-      8%, 75% { fill: #40c463; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      3% { fill: #00FFAA; opacity: 0.8; } 
+      8%, 75% { fill: #40c463; opacity: 1; } 
       85%, 100% { fill: #ebedf0; opacity: 1; } 
     }
     @keyframes sc-rev-l3 { 
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px #00FFAA); } 
-      3% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 6px #00FFAA); } 
-      8%, 75% { fill: #30a14e; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      3% { fill: #00FFAA; opacity: 0.8; } 
+      8%, 75% { fill: #30a14e; opacity: 1; } 
       85%, 100% { fill: #ebedf0; opacity: 1; } 
     }
     @keyframes sc-rev-l4 { 
-      0% { fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px #00FFAA); } 
-      3% { fill: #00FFAA; opacity: 0.8; filter: drop-shadow(0 0 6px #00FFAA); } 
-      8%, 75% { fill: #216e39; opacity: 1; filter: none; } 
+      0% { fill: #ffffff; opacity: 1; } 
+      3% { fill: #00FFAA; opacity: 0.8; } 
+      8%, 75% { fill: #216e39; opacity: 1; } 
       85%, 100% { fill: #ebedf0; opacity: 1; } 
     }
 
