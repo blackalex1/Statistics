@@ -21,9 +21,9 @@ def get_stats_card_svg(stats, color="#00FFAA"):
     .s-card-bg {{ fill: var(--s-bg); stroke: #30363d; stroke-width: 2; }}
     @media (prefers-color-scheme: light) {{ .s-card-bg {{ stroke: #d0d7de; }} }}
 
-    .s-label {{ font: bold 12px 'Segoe UI', Ubuntu, -apple-system, sans-serif; fill: var(--s-label); text-transform: uppercase; letter-spacing: 1.5px; text-anchor: middle; }}
+    .s-label {{ font: bold 12px 'Segoe UI', Ubuntu, -apple-system, sans-serif; fill: var(--s-label); text-transform: uppercase; letter-spacing: 1.5px; }}
     .s-value {{ font: bold 28px 'JetBrains Mono', 'Cascadia Code', monospace; fill: var(--s-accent); text-anchor: middle; }}
-    .s-icon {{ fill: var(--s-accent); opacity: 0.7; }}
+    .s-icon {{ fill: var(--s-accent); opacity: 0.75; }}
     .s-grid {{ stroke: var(--s-accent); opacity: var(--s-grid-op); stroke-width: 1; }}
     
     .s-item-anim {{ opacity: 0; animation: s-fade-in 0.6s forwards; }}
@@ -49,38 +49,46 @@ def get_stats_card_svg(stats, color="#00FFAA"):
   </g>
 
   <!-- Stars -->
-  <g transform="translate(112.5, 65)">
+  <g transform="translate(112.5, 60)">
     <g class="s-item-anim" style="animation-delay: 0.1s;">
-      <path d="M8 0L10.45 4.96L16 5.76L12 9.66L12.95 15.19L8 12.59L3.05 15.19L4 9.66L0 5.76L5.55 4.96L8 0Z" class="s-icon" transform="translate(-40, -15) scale(0.9)"/>
-      <text x="0" y="-2" class="s-label">Stars</text>
-      <text x="0" y="32" class="s-value">{stats['stars']}</text>
+      <g transform="translate(-32, 0)">
+        <path d="M8 0L10.45 4.96L16 5.76L12 9.66L12.95 15.19L8 12.59L3.05 15.19L4 9.66L0 5.76L5.55 4.96L8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+        <text x="20" y="0" class="s-label" text-anchor="start">STARS</text>
+      </g>
+      <text x="0" y="32" class="s-value">{stats.get('stars', 0)}</text>
     </g>
   </g>
 
   <!-- Commits -->
-  <g transform="translate(337.5, 65)">
+  <g transform="translate(337.5, 60)">
     <g class="s-item-anim" style="animation-delay: 0.2s;">
-      <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(-50, -15) scale(0.9)"/>
-      <text x="0" y="-2" class="s-label">Commits</text>
-      <text x="0" y="32" class="s-value">{stats['commits']}</text>
+      <g transform="translate(-40, 0)">
+        <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+        <text x="20" y="0" class="s-label" text-anchor="start">COMMITS</text>
+      </g>
+      <text x="0" y="32" class="s-value">{stats.get('commits', 0)}</text>
     </g>
   </g>
 
   <!-- PRs -->
-  <g transform="translate(112.5, 145)">
+  <g transform="translate(112.5, 140)">
     <g class="s-item-anim" style="animation-delay: 0.3s;">
-      <path d="M5 0V2H0V16H16V11H14V14H2V4H5V6L10 3L5 0Z" class="s-icon" transform="translate(-35, -15) scale(1)"/>
-      <text x="0" y="-2" class="s-label">PRs</text>
-      <text x="0" y="32" class="s-value">{stats['prs']}</text>
+      <g transform="translate(-25, 0)">
+        <path d="M5 0V2H0V16H16V11H14V14H2V4H5V6L10 3L5 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+        <text x="20" y="0" class="s-label" text-anchor="start">PRS</text>
+      </g>
+      <text x="0" y="32" class="s-value">{stats.get('prs', 0)}</text>
     </g>
   </g>
 
   <!-- Issues -->
-  <g transform="translate(337.5, 145)">
+  <g transform="translate(337.5, 140)">
     <g class="s-item-anim" style="animation-delay: 0.4s;">
-      <path d="M8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM9 12H7V10H9V12ZM9 9H7V4H9V9Z" class="s-icon" transform="translate(-45, -15) scale(1)"/>
-      <text x="0" y="-2" class="s-label">Issues</text>
-      <text x="0" y="32" class="s-value">{stats['issues']}</text>
+      <g transform="translate(-35, 0)">
+        <path d="M8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM9 12H7V10H9V12ZM9 9H7V4H9V9Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+        <text x="20" y="0" class="s-label" text-anchor="start">ISSUES</text>
+      </g>
+      <text x="0" y="32" class="s-value">{stats.get('issues', 0)}</text>
     </g>
   </g>
 </svg>"""

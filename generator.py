@@ -14,7 +14,9 @@ from templates.wave import get_wave_svg
 from templates.activity import get_activity_graph_svg
 from templates.terminal import get_terminal_svg
 from templates.focus import get_focus_svg
+from templates.arsenal import get_arsenal_svg
 from templates.badge import get_contact_badge_svg
+from templates.combined import get_combined_svg
 
 load_dotenv()
 
@@ -86,7 +88,7 @@ def main():
     parser.add_argument("--username", type=str, default="blackalex1", help="GitHub username")
     parser.add_argument("--telegram", type=str, help="Telegram username (optional, defaults to github username)")
     parser.add_argument("--color", type=str, default="#00FFAA", help="Primary accent color (hex)")
-    parser.add_argument("--graphs", type=str, nargs="+", default=["all"], help="Specific graphs to generate (header, stats, languages, typing, matrix, scanner, wave, activity, terminal, focus, telegram)")
+    parser.add_argument("--graphs", type=str, nargs="+", default=["all"], help="Specific graphs to generate (header, stats, languages, typing, matrix, scanner, wave, activity, terminal, focus, telegram, combined)")
     
     args = parser.parse_args()
     
@@ -102,11 +104,11 @@ def main():
         
         target_graphs = args.graphs
         if "all" in target_graphs:
-            target_graphs = ["header", "stats", "languages", "typing", "matrix", "scanner", "wave", "activity", "terminal", "focus", "telegram"]
+            target_graphs = ["header", "stats", "languages", "typing", "matrix", "scanner", "wave", "activity", "terminal", "focus", "arsenal", "telegram", "combined"]
 
         if "header" in target_graphs:
             with open("output/header.svg", "w", encoding="utf-8") as f:
-                f.write(get_header_svg(data["username"], "Infosec Researcher | Reverse Engineer"))
+                f.write(get_header_svg(data["username"], "Infosec Researcher | Reverse Engineer", color=args.color))
         
         if "stats" in target_graphs:
             with open("output/stats.svg", "w", encoding="utf-8") as f:
@@ -138,10 +140,9 @@ def main():
             
         if "terminal" in target_graphs:
             terminal_data = {
-                "role": "Infosec Researcher / RE",
-                "focus": "Cybersecurity | C/C++ | Networking",
-                "system": "Linux / Windows Internals",
-                "mindset": "\"Break to understand. Build better.\""
+                "role": "Infosec Researcher & Reverse Engineer",
+                "focus": "Vulnerability Research | Binary Exploitation | Kernel Internals",
+                "mindset": "\"Break to understand. Reverse to build better.\""
             }
             with open("output/terminal.svg", "w", encoding="utf-8") as f:
                 f.write(get_terminal_svg(terminal_data, color=args.color))
@@ -149,12 +150,20 @@ def main():
         if "focus" in target_graphs:
             with open("output/focus.svg", "w", encoding="utf-8") as f:
                 f.write(get_focus_svg(color=args.color))
+
+        if "arsenal" in target_graphs:
+            with open("output/arsenal.svg", "w", encoding="utf-8") as f:
+                f.write(get_arsenal_svg(color=args.color))
             
         if "telegram" in target_graphs:
             with open("output/telegram.svg", "w", encoding="utf-8") as f:
                 tg_handle = args.telegram if args.telegram else args.username
                 f.write(get_contact_badge_svg(username=tg_handle, color=args.color))
             
+        if "combined" in target_graphs:
+            with open("output/combined.svg", "w", encoding="utf-8") as f:
+                f.write(get_combined_svg(data, color=args.color))
+
         print(f"Successfully generated {len(target_graphs)} SVGs in 'output/' directory.")
     except Exception as e:
         print(f"Error: {e}")

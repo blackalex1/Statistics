@@ -1,0 +1,903 @@
+import html
+import random
+import xml.sax.saxutils as saxutils
+
+def get_combined_svg(data, color="#00FFAA"):
+    width = 850
+    height = 1440
+    
+    username = html.escape(str(data.get("username", "blackalex1")))
+    role = html.escape(str(data.get("role", "Infosec Researcher | Reverse Engineer")))
+    stats = data
+    languages = data.get("languages", [
+        ("Python", 46.2),
+        ("C++", 24.8),
+        ("C", 14.5),
+        ("Shell", 8.9),
+        ("Assembly", 5.6)
+    ])
+    calendar = data.get("calendar", [])
+    
+    # 1. Matrix rain streams setup for Hero Header - Flanks only
+    chars = ["0", "1", "⚡", "█", "👾", "{", "}", "[", "]", "<", ">", "/", "\\", "|", "-", "_", "DIR", "ROOT", "EXE", "0x", "SYS"]
+    matrix_html = ""
+    flank_x_positions = list(range(16, 210, 24)) + list(range(640, 834, 24))
+    
+    for i in flank_x_positions:
+        raw_chars = "".join(random.choice(chars) for _ in range(9))
+        col_chars = saxutils.escape(raw_chars)
+        delay = round(random.uniform(0, 3.5), 2)
+        duration = round(random.uniform(4.5, 7.0), 2)
+        font_sz = random.randint(10, 12)
+        matrix_html += f"""
+        <text x="{i}" y="-30" class="h-matrix-text" style="animation-delay: {delay}s; animation-duration: {duration}s; font-size: {font_sz}px;">
+            {col_chars}
+        </text>
+        """
+
+    # 2. 52-week grid setup - FULL CARD SPAN (32px left to 818px right = 786px)
+    weeks = calendar[-52:] if len(calendar) >= 52 else calendar
+    num_weeks = len(weeks) if weeks else 52
+    pad_x = 32
+    pad_y = 16
+    grid_width = 786.0
+    step = grid_width / (num_weeks - 1) if num_weeks > 1 else 15.4
+    cell_size = 11.5
+    grid_height = 6 * step + cell_size
+    total_dur = 12.0
+    scan_dur = 4.0
+    
+    dark_c = ["#161b22", "#0e4429", "#006d3a", "#26a641", "#39d353"]
+    
+    scanner_grid = ""
+    for x, week in enumerate(weeks):
+        col_ratio = x / (num_weeks - 1) if num_weeks > 1 else 0
+        delay = col_ratio * scan_dur
+        for y, day in enumerate(week["contributionDays"]):
+            count = day["contributionCount"]
+            level = 0
+            if count > 0:
+                if count < 5: level = 1
+                elif count < 10: level = 2
+                elif count < 20: level = 3
+                else: level = 4
+            px = pad_x + x * step
+            py = pad_y + y * step
+            scanner_grid += f'<rect x="{px:.2f}" y="{py:.2f}" width="{cell_size}" height="{cell_size}" rx="2.5" class="sc-cell sc-l-{level}" style="animation-delay: {delay:.3f}s;"/>\n'
+
+    # 3. Language progress bars
+    lang_bars = ""
+    for i, (name, pct) in enumerate(languages[:5]):
+        y_pos = 30 + (i * 26)
+        grad_id = f"l-grad-{i}"
+        sheen_id = f"l-sheen-{i}"
+        clip_id = f"l-clip-{i}"
+        bar_start_x = 100
+        bar_full_width = 180
+        bar_filled_width = (pct / 100) * bar_full_width
+        sheen_width = 70
+        
+        name_esc = html.escape(str(name))
+        
+        lang_bars += f"""
+        <g class="l-item-anim" style="animation-delay: {i*0.06}s;">
+            <defs>
+              <linearGradient id="{grad_id}" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="{color}" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="{color}"/>
+              </linearGradient>
+              <linearGradient id="{sheen_id}" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="white" stop-opacity="0"/>
+                <stop offset="50%" stop-color="white" stop-opacity="0.75"/>
+                <stop offset="100%" stop-color="white" stop-opacity="0"/>
+              </linearGradient>
+              <clipPath id="{clip_id}">
+                <rect x="{bar_start_x}" y="{y_pos-9}" width="{bar_filled_width}" height="7" rx="3.5"/>
+              </clipPath>
+            </defs>
+            <text x="12" y="{y_pos}" class="l-name">{name_esc}</text>
+            <text x="380" y="{y_pos}" class="l-pct" text-anchor="end">{pct}%</text>
+            <rect x="{bar_start_x}" y="{y_pos-9}" width="{bar_full_width}" height="7" rx="3.5" class="l-bar-bg"/>
+            <rect x="{bar_start_x}" y="{y_pos-9}" width="{bar_filled_width}" height="7" rx="3.5" fill="url(#{grad_id})"/>
+            <g clip-path="url(#{clip_id})">
+              <rect x="{bar_start_x}" y="{y_pos-9}" width="{sheen_width}" height="7" rx="3.5" fill="url(#{sheen_id})" opacity="0">
+                 <animate attributeName="x" from="{bar_start_x - sheen_width}" to="{bar_start_x + bar_filled_width}" dur="2.6s" begin="{1.2 + i*0.18}s" repeatCount="indefinite" />
+                 <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="{1.2 + i*0.18}s" repeatCount="indefinite" />
+              </rect>
+            </g>
+        </g>
+        """
+
+    # 4. Activity spline calculation
+    all_days = []
+    for week in calendar[-6:]:
+        for day in week["contributionDays"]:
+            all_days.append(day)
+    recent_days = all_days[-30:] if len(all_days) >= 30 else all_days
+    num_points = len(recent_days) if recent_days else 30
+    act_pad_l, act_pad_r = 48, 32
+    act_pad_t, act_pad_b = 30, 28
+    act_w = width - act_pad_l - act_pad_r
+    act_h = 195 - act_pad_t - act_pad_b
+    counts = [d["contributionCount"] for d in recent_days] if recent_days else [0]*30
+    max_count = max(counts) if counts else 0
+    if max_count <= 5: y_limit = 10
+    elif max_count <= 10: y_limit = 15
+    elif max_count <= 25: y_limit = 30
+    else: y_limit = ((max_count // 10) + 1) * 10
+    
+    def get_act_x(i):
+        if num_points <= 1: return act_pad_l
+        return act_pad_l + (i * (act_w / (num_points - 1)))
+    def get_act_y(cnt):
+        if y_limit == 0: return act_pad_t + act_h
+        return act_pad_t + act_h - (cnt * (act_h / y_limit))
+
+    points = [(get_act_x(i), get_act_y(d["contributionCount"])) for i, d in enumerate(recent_days)]
+    if points:
+        act_line = f"M {points[0][0]:.2f},{points[0][1]:.2f}"
+        for i in range(len(points) - 1):
+            p0, p1 = points[i], points[i+1]
+            cp1_x = p0[0] + (p1[0] - p0[0]) / 2
+            cp2_x = p0[0] + (p1[0] - p0[0]) / 2
+            act_line += f" C {cp1_x:.2f},{p0[1]:.2f} {cp2_x:.2f},{p1[1]:.2f} {p1[0]:.2f},{p1[1]:.2f}"
+        act_area = act_line + f" L {points[-1][0]:.2f},{act_pad_t + act_h} L {points[0][0]:.2f},{act_pad_t + act_h} Z"
+    else:
+        act_line, act_area = "", ""
+
+    act_grid_html = ""
+    for val in [0, y_limit // 2, y_limit]:
+        y = get_act_y(val)
+        act_grid_html += f'<line x1="{act_pad_l}" y1="{y:.2f}" x2="{width - act_pad_r}" y2="{y:.2f}" class="ac-grid-line" />'
+        act_grid_html += f'<text x="{act_pad_l - 10}" y="{y + 4:.2f}" class="ac-axis-label" text-anchor="end">{val}</text>'
+    for i in range(0, num_points, 5):
+        x = get_act_x(i)
+        act_grid_html += f'<line x1="{x:.2f}" y1="{act_pad_t}" x2="{x:.2f}" y2="{act_pad_t + act_h}" class="ac-grid-line" />'
+        date_day = recent_days[i]["date"].split("-")[-1] if recent_days else f"{i+1}"
+        act_grid_html += f'<text x="{x:.2f}" y="{195 - 8}" class="ac-axis-label" text-anchor="middle">{date_day}</text>'
+
+    act_dots_html = ""
+    for i, (px, py) in enumerate(points):
+        delay = (i / num_points) * 0.6
+        if i == len(points) - 1:
+            act_dots_html += f"""
+            <circle cx="{px:.2f}" cy="{py:.2f}" r="7" class="ac-pulse-ring"/>
+            <circle cx="{px:.2f}" cy="{py:.2f}" r="3.5" class="ac-dot-head"/>
+            """
+        else:
+            act_dots_html += f'<circle cx="{px:.2f}" cy="{py:.2f}" r="3.0" class="ac-dot" style="animation-delay: {delay:.2f}s;"/>'
+
+    return f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    =======================================================================
+    [EASTER_EGG #1 // CLASSIFIED INTEL // CLEARANCE: LEVEL_5]
+    OPERATOR: {username}
+    TARGET_ROLE: {role}
+    
+    CTF_FLAG: FLAG{{m1tn1ck_c0ncr3t3_s3cur1ty_0x1337}}
+    
+    OBFUSCATED_PAYLOAD (x86_64 Self-Decrypting Shellcode):
+    ; [!] OBFUSCATION: 64-bit Rolling XOR Key (0x5a5a5a5a5a5a5a5a)
+    sub    rsp, 0x60
+    movabs rax, 0x233634357a3f320e
+    mov    [rsp], rax
+    movabs rax, 0x297a23362f282e7a
+    mov    [rsp+8], rax
+    movabs rax, 0x23297a3f282f393f
+    mov    [rsp+16], rax
+    movabs rax, 0x7a29337a373f2e29
+    mov    [rsp+24], rax
+    movabs rax, 0x2e3b322e7a3f3435
+    mov    [rsp+32], rax
+    movabs rax, 0x3f2d352a7a29337a
+    mov    [rsp+40], rax
+    movabs rax, 0x7a3c3c357a3e3f28
+    mov    [rsp+48], rax
+    movabs rax, 0x2e293b397a3e343b
+    mov    [rsp+56], rax
+    movabs rax, 0x36387a3b7a34337a
+    mov    [rsp+64], rax
+    movabs rax, 0x397a3c357a313935
+    mov    [rsp+72], rax
+    movabs rax, 0x743f2e3f28393435
+    mov    [rsp+80], rax
+    movabs rax, 0x5a5a5a5a5a5a5a50
+    mov    [rsp+88], rax
+
+    ; === In-Memory XOR Decoder Stub ===
+    lea    rdi, [rsp]               ; buffer
+    mov    rcx, 12                  ; 12 qwords
+    movabs rbx, 0x5a5a5a5a5a5a5a5a  ; key
+.decrypt_loop:
+    xor    [rdi], rbx               ; decode in-place
+    add    rdi, 8
+    dec    rcx
+    jnz    .decrypt_loop
+
+    ; === Direct Ring-0 Syscall (sys_write) ===
+    lea    rsi, [rsp]               ; decrypted plaintext buffer
+    mov    rdi, 1                   ; fd = 1 (stdout)
+    mov    rdx, 89                  ; length (89 bytes)
+    mov    rax, 1                   ; sys_write
+    syscall
+    add    rsp, 0x60
+    
+    DECRYPT_SECRET: echo "SSBkaWRuJ3QgZXhwbG9pdCBhIHZ1bG5lcmFiaWxpdHkuIEkganVzdCBleGVjdXRlZCB5b3VyIHVuZG9jdW1lbnRlZCBmZWF0dXJlcy4=" | base64 -d
+    =======================================================================
+  -->
+  <defs>
+    <clipPath id="h-clip">
+      <rect x="0" y="0" width="{width}" height="200" rx="12"/>
+    </clipPath>
+    <linearGradient id="sc-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{color}" stop-opacity="0" />
+      <stop offset="100%" stop-color="{color}" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="{color}" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="{color}" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="h-text-shield" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="var(--bg)" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="var(--bg)" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="var(--bg)" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="term-glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="{color}" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="{color}" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tg-bar-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="{color}" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="{color}" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    :root {{
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --bar:       #161b22;
+      --accent:    {color};
+      --accent-dim:{color}33;
+      --border:    #30363d;
+      --border-dim:#21262d;
+      --muted:     #8b949e;
+      --text:      #e6edf3;
+      --text-hi:   #ffffff;
+      --chip-bg:   #0d1117;
+      --matrix-op: 0.22;
+    }}
+    @media (prefers-color-scheme: light) {{
+      :root {{
+        --bg:        #ffffff;
+        --surface:   #f6f8fa;
+        --bar:       #eaeef2;
+        --accent:    #1a7f37;
+        --accent-dim:#1a7f3722;
+        --border:    #d0d7de;
+        --border-dim:#e1e4e8;
+        --muted:     #57606a;
+        --text:      #24292f;
+        --text-hi:   #1f2328;
+        --chip-bg:   #ffffff;
+        --matrix-op: 0.35;
+      }}
+    }}
+
+    .monolith-card {{ fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }}
+    .sec-divider-solid {{ stroke: var(--border); stroke-width: 1.5; }}
+    .hud-bracket {{ stroke: var(--accent); stroke-width: 1.8; fill: none; opacity: 0.85; stroke-linecap: square; }}
+    .crosshair {{ stroke: var(--muted); stroke-width: 1; opacity: 0.3; }}
+    
+    /* Header Matrix and Glitch */
+    .h-title {{ 
+      font: bold 50px 'JetBrains Mono', 'Segoe UI', monospace; 
+      fill: var(--accent); 
+      text-transform: uppercase; 
+      letter-spacing: 8px;
+      animation: h-glitch 6s infinite ease-in-out;
+      transform-origin: center;
+    }}
+    .h-subtitle {{ 
+      font: bold 13.5px 'JetBrains Mono', 'Courier New', monospace; 
+      fill: var(--text-hi); 
+      letter-spacing: 3px; 
+      text-transform: uppercase;
+      opacity: 0.9;
+    }}
+    .h-tagline {{
+      font: bold 10px 'JetBrains Mono', monospace;
+      fill: var(--muted);
+      letter-spacing: 2px;
+      opacity: 0.75;
+    }}
+    .h-matrix-text {{ 
+      font: bold 12px monospace;
+      fill: var(--accent); 
+      opacity: 0; 
+      writing-mode: vertical-rl; 
+      animation: h-fall linear infinite; 
+    }}
+    @keyframes h-glitch {{
+      0%, 88%, 100% {{ transform: none; opacity: 1; }}
+      89% {{ transform: skew(-3deg) translate(-2px, 1px); opacity: 0.85; }}
+      90% {{ transform: skew(3deg) translate(2px, -1px); opacity: 0.9; }}
+      91% {{ transform: none; opacity: 1; }}
+      95% {{ transform: translate(-2px, -1px); }}
+      96% {{ transform: translate(2px, 1px); }}
+      97% {{ transform: none; }}
+    }}
+    @keyframes h-fall {{ 
+      0% {{ transform: translateY(-40px); opacity: 0; }} 
+      15% {{ opacity: var(--matrix-op); }} 
+      80% {{ opacity: var(--matrix-op); }} 
+      100% {{ transform: translateY(200px); opacity: 0; }} 
+    }}
+    .h-scanline {{
+      width: {width}px;
+      height: 2px;
+      fill: var(--accent);
+      opacity: 0.08;
+      animation: h-scan 4s infinite linear;
+    }}
+    @keyframes h-scan {{
+      0% {{ transform: translateY(0); }}
+      100% {{ transform: translateY(200px); }}
+    }}
+
+    /* Terminal Styles and Easter Eggs */
+    .t-titlebar {{ fill: var(--bar); }}
+    .t-tl-r {{ fill: #ff5f56; }}
+    .t-tl-y {{ fill: #ffbd2e; }}
+    .t-tl-g {{ fill: #27c93f; }}
+    .t-wtitle {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 11px; fill: var(--muted); letter-spacing: 0.5px; }}
+    .t-pdir {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 12px; font-weight: 700; fill: var(--muted); }}
+    .t-pcmd {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 12px; font-weight: 700; fill: var(--text-hi); }}
+    .t-key {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 12px; font-weight: 600; fill: var(--muted); }}
+    .t-val {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 12px; font-weight: 600; fill: var(--text); }}
+    .t-val-hi {{ font-family: 'JetBrains Mono', 'Cascadia Code', monospace; font-size: 12px; font-weight: 700; fill: var(--accent); }}
+    .t-cursor {{ fill: var(--accent); animation: blink 1s step-end infinite; }}
+    @keyframes blink {{ 0%, 100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+    .t-fadein {{ opacity: 0; animation: t-fade 0.4s ease forwards; }}
+    @keyframes t-fade {{ to {{ opacity: 1; }} }}
+
+    /* Easter Egg #3 Tooltips */
+    .t-btn {{ cursor: pointer; }}
+    .t-tooltip {{
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-4px);
+    }}
+    .t-btn:hover .t-tooltip {{
+      opacity: 1;
+      transform: translateX(0);
+    }}
+    .tt-bg {{ fill: #1c2128; stroke: var(--accent); stroke-width: 1; }}
+    .tt-txt {{ font: bold 9.5px 'JetBrains Mono', monospace; fill: #ffffff; letter-spacing: 0.5px; }}
+    .t-btn-red:hover .tt-bg {{ stroke: #ff5f56; }}
+    .t-btn-yellow:hover .tt-bg {{ stroke: #ffbd2e; }}
+    .t-btn-green:hover .tt-bg {{ stroke: #27c93f; }}
+
+    /* Easter Egg #6: Selection Revelation */
+    .t-secret-select {{
+      font: 9px 'JetBrains Mono', monospace;
+      fill: var(--bg);
+      letter-spacing: 0.5px;
+      user-select: text;
+      -webkit-user-select: text;
+    }}
+    ::selection {{
+      background: {color};
+      color: #0d1117;
+    }}
+
+    /* Telegram Comms Bar */
+    .tg-card {{ fill: var(--surface); stroke: var(--border-dim); stroke-width: 1.2; }}
+    .status-dot {{ fill: var(--accent); animation: live-pulse 2s infinite ease-in-out; }}
+    @keyframes live-pulse {{ 0%, 100% {{ opacity: 0.4; }} 50% {{ opacity: 1; }} }}
+
+    /* Strategic Focus Modules */
+    .f-card {{ fill: var(--surface); stroke: var(--border-dim); stroke-width: 1.2; }}
+    .f-tag {{ font: bold 11.5px 'JetBrains Mono', monospace; fill: var(--accent); letter-spacing: 1px; }}
+    .f-title {{ font: bold 13px 'Segoe UI', -apple-system, sans-serif; fill: var(--text-hi); }}
+    .f-desc {{ font: 10px 'Segoe UI', -apple-system, sans-serif; fill: var(--muted); }}
+    .f-meter-bg {{ fill: var(--border); }}
+    .f-meter-fill {{ fill: var(--accent); opacity: 0.75; }}
+
+    /* High-End Arsenal Matrix */
+    .a-card {{ fill: var(--surface); stroke: var(--border-dim); stroke-width: 1.2; }}
+    .a-header {{ font: bold 11px 'JetBrains Mono', monospace; fill: var(--accent); letter-spacing: 1.5px; }}
+    .a-subtag {{ font: bold 9px 'JetBrains Mono', monospace; fill: var(--muted); letter-spacing: 0.5px; }}
+    .a-lbl {{ font: bold 9.5px 'JetBrains Mono', monospace; fill: var(--muted); letter-spacing: 1px; }}
+    .a-pill {{ fill: var(--chip-bg); stroke: var(--border); stroke-width: 1; }}
+    .a-pill-txt {{ font: bold 10px 'JetBrains Mono', monospace; fill: var(--text); letter-spacing: 0.3px; }}
+    .a-pill-hi {{ fill: var(--accent-dim); stroke: var(--accent); stroke-width: 1; stroke-opacity: 0.6; }}
+    .a-pill-txt-hi {{ font: bold 10px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 0.3px; }}
+
+    /* Stats and Languages */
+    .s-label {{ font: bold 11px 'Segoe UI', sans-serif; fill: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; text-anchor: start; }}
+    .s-value {{ font: bold 27px 'JetBrains Mono', 'Cascadia Code', monospace; fill: var(--accent); text-anchor: middle; }}
+    .s-icon {{ fill: var(--accent); opacity: 0.8; }}
+    .l-name {{ font: bold 12px 'Segoe UI', sans-serif; fill: var(--text); }}
+    .l-pct {{ font: bold 12px 'JetBrains Mono', monospace; fill: var(--accent); }}
+    .l-bar-bg {{ fill: var(--surface); opacity: 0.9; }}
+    .c-separator {{ stroke: var(--border); stroke-width: 1.2; stroke-dasharray: 3,3; }}
+
+    /* 0% CPU Scanner */
+    .sc-cell {{ fill: #161b22; opacity: 0.18; }}
+    .sc-l-0 {{ animation: sc-rev-0 12.0s infinite; }}
+    .sc-l-1 {{ animation: sc-rev-1 12.0s infinite; }}
+    .sc-l-2 {{ animation: sc-rev-2 12.0s infinite; }}
+    .sc-l-3 {{ animation: sc-rev-3 12.0s infinite; }}
+    .sc-l-4 {{ animation: sc-rev-4 12.0s infinite; }}
+
+    @keyframes sc-rev-0 {{
+      0% {{ fill: #ffffff; opacity: 0.9; }}
+      1% {{ fill: {color}; opacity: 0.7; }}
+      3% {{ fill: {color}; opacity: 0.35; }}
+      5%, 100% {{ fill: #161b22; opacity: 0.18; }}
+    }}
+    @keyframes sc-rev-1 {{ 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[1]}; opacity: 1; }} 
+      85%, 100% {{ fill: #161b22; opacity: 0.18; }} 
+    }}
+    @keyframes sc-rev-2 {{ 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[2]}; opacity: 1; }} 
+      85%, 100% {{ fill: #161b22; opacity: 0.18; }} 
+    }}
+    @keyframes sc-rev-3 {{ 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[3]}; opacity: 1; }} 
+      85%, 100% {{ fill: #161b22; opacity: 0.18; }} 
+    }}
+    @keyframes sc-rev-4 {{ 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[4]}; opacity: 1; }} 
+      85%, 100% {{ fill: #161b22; opacity: 0.18; }} 
+    }}
+
+    @keyframes sc-beam-move {{
+      0% {{ transform: translateX(0); opacity: 0; }}
+      1% {{ opacity: 1; }}
+      32% {{ opacity: 1; }}
+      33.3% {{ transform: translateX({grid_width:.1f}px); opacity: 0; }}
+      100% {{ transform: translateX({grid_width:.1f}px); opacity: 0; }}
+    }}
+    .sc-beam {{ animation: sc-beam-move 12.0s infinite linear; }}
+
+    /* Activity Graph */
+    .ac-grid-line {{ stroke: var(--muted); stroke-opacity: 0.15; stroke-width: 1; stroke-dasharray: 3,3; }}
+    .ac-axis-label {{ fill: var(--muted); font-family: 'JetBrains Mono', 'Segoe UI', sans-serif; font-size: 11px; }}
+    .ac-trend-line {{ stroke: var(--accent); stroke-width: 2.8; fill: none; }}
+    .ac-trend-area {{ fill: url(#areaGradient); }}
+    .ac-dot {{ fill: #ffffff; stroke: var(--accent); stroke-width: 1.8; }}
+    .ac-dot-head {{ fill: {color}; stroke: #ffffff; stroke-width: 1.8; }}
+    .ac-pulse-ring {{
+      fill: none;
+      stroke: {color};
+      stroke-width: 1.5;
+      animation: ac-pulse 2s infinite ease-out;
+      transform-origin: center;
+    }}
+    @keyframes ac-pulse {{
+      0% {{ r: 3.5px; opacity: 1; }}
+      100% {{ r: 10px; opacity: 0; }}
+    }}
+  </style>
+
+  <!-- ================= MONOLITHIC MASTER CONTAINER ================= -->
+  <rect width="{width}" height="{height}" rx="12" class="monolith-card"/>
+
+  <!-- ================= SECTION 0: MATRIX RAIN HERO HEADER (0..200) ================= -->
+  <g transform="translate(0, 0)">
+    <!-- Strict Header Clipping -->
+    <g clip-path="url(#h-clip)">
+      <g opacity="1">{matrix_html}</g>
+      <rect class="h-scanline" />
+    </g>
+    
+    <!-- Dark Backdrop Shield behind Nickname to prevent matrix text intrusion -->
+    <ellipse cx="{width/2}" cy="115" rx="300" ry="70" fill="url(#h-text-shield)" pointer-events="none"/>
+
+    <!-- Main Content (Razor Sharp and Clean) -->
+    <text x="{width/2}" y="95" text-anchor="middle" dominant-baseline="middle" class="h-title">{username}</text>
+    <text x="{width/2}" y="142" text-anchor="middle" class="h-subtitle">{role}</text>
+    <text x="{width/2}" y="168" text-anchor="middle" class="h-tagline">[ ARCH: x86_64 // ARM64 // WIN_NT // LINUX_KERNEL ]</text>
+  </g>
+
+  <!-- Divider 0 -->
+  <line x1="15" y1="200" x2="{width-15}" y2="200" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 1: TERMINAL CLI WITH EASTER EGGS (200..410) ================= -->
+  <g transform="translate(0, 200)">
+    <rect width="{width}" height="210" fill="url(#term-glow)"/>
+    <path d="M0 0 H{width} V24 H0 Z" class="t-titlebar"/>
+    
+    <!-- Easter Egg #3: Interactive Terminal Window Buttons -->
+    <g class="t-btn t-btn-red" transform="translate(20, 12)">
+      <circle cx="0" cy="0" r="4.5" class="t-tl-r"/>
+      <g class="t-tooltip">
+        <rect x="48" y="-10" width="135" height="20" rx="4" class="tt-bg"/>
+        <text x="54" y="4" class="tt-txt">SIGKILL // PID: 1337</text>
+      </g>
+    </g>
+
+    <g class="t-btn t-btn-yellow" transform="translate(36, 12)">
+      <circle cx="0" cy="0" r="4.5" class="t-tl-y"/>
+      <g class="t-tooltip">
+        <rect x="32" y="-10" width="168" height="20" rx="4" class="tt-bg"/>
+        <text x="38" y="4" class="tt-txt">SIGSTOP // DEBUGGER_TRAP</text>
+      </g>
+    </g>
+
+    <g class="t-btn t-btn-green" transform="translate(52, 12)">
+      <circle cx="0" cy="0" r="4.5" class="t-tl-g"/>
+      <g class="t-tooltip">
+        <rect x="16" y="-10" width="176" height="20" rx="4" class="tt-bg"/>
+        <text x="22" y="4" class="tt-txt">RING_0 // ESCALATE_ROOT</text>
+      </g>
+    </g>
+
+    <text x="{width/2}" y="16" text-anchor="middle" class="t-wtitle">alex@blackarch: ~ (zsh) — [PID: 1337 // TTY: pts/0]</text>
+    
+    <g transform="translate(30, 48)">
+      <text x="0" y="0" class="t-pdir">┌──(alex㉿blackarch)-[~]</text>
+      <text x="0" y="22" class="t-pcmd">└─$ whoami --verbose --identity</text>
+      
+      <g class="t-fadein" style="animation-delay:0.1s">
+        <text x="20" y="50" class="t-key">Role:</text>
+        <text x="120" y="50" class="t-val-hi">Infosec Researcher &amp; Reverse Engineer</text>
+      </g>
+      <g class="t-fadein" style="animation-delay:0.2s">
+        <text x="20" y="72" class="t-key">Focus:</text>
+        <text x="120" y="72" class="t-val">Vulnerability Research | Binary Exploitation | Kernel Internals</text>
+      </g>
+      <g class="t-fadein" style="animation-delay:0.3s">
+        <text x="20" y="94" class="t-key">Mindset:</text>
+        <text x="120" y="94" class="t-val">"Break to understand. Reverse to build better."</text>
+      </g>
+
+      <!-- Easter Egg #6: Selection Revelation Text -->
+      <text x="20" y="112" class="t-secret-select">&gt;&gt; [LOOPBACK // ::1] "There is no place like 127.0.0.1" // FLAG&#123;n0_pl4c3_l1k3_127_0_0_1&#125;</text>
+
+      <g class="t-fadein" style="animation-delay:0.4s">
+        <text x="0" y="128" class="t-pcmd">└─$ <tspan class="t-cursor">█</tspan></text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Divider 1 -->
+  <line x1="15" y1="410" x2="{width-15}" y2="410" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 1.5: TELEGRAM DIRECT LINK BAR (410..465) ================= -->
+  <g transform="translate(0, 410)">
+    <a href="https://t.me/blackalex1" target="_blank" rel="noopener noreferrer" style="cursor: pointer;">
+      <g transform="translate(15, 10)">
+        <rect width="820" height="42" rx="6" class="tg-card"/>
+        <rect width="820" height="42" rx="6" fill="url(#tg-bar-grad)"/>
+        <path d="M 0 8 L 0 0 L 8 0" class="hud-bracket"/>
+        <path d="M 820 34 L 820 42 L 812 42" class="hud-bracket"/>
+        
+        <!-- Telegram Airplane Glyph -->
+        <g transform="translate(18, 11)">
+          <path d="M19.5 1.8L1.6 8.7C0.5 9.1 0.5 9.8 1.4 10.1L6 11.5L16.4 5C16.8 4.7 17.2 4.9 16.9 5.2L8.5 12.8L8.1 17.5C8.5 17.5 8.7 17.3 9 17L11.2 14.9L15.7 18.2C16.5 18.6 17.1 18.3 17.3 17.4L20.3 3.5C20.6 2.4 19.9 1.9 19.5 1.8Z" fill="{color}"/>
+        </g>
+        
+        <text x="48" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 1.5px;">COMMUNICATION_LINK // TELEGRAM: <tspan fill="{color}">@blackalex1</tspan></text>
+        <circle cx="785" cy="21" r="4.5" class="status-dot"/>
+        <text x="772" y="25" text-anchor="end" style="font: bold 10px 'JetBrains Mono', monospace; fill: var(--muted); letter-spacing: 1px;">[ONLINE // DIRECT_DISPATCH]</text>
+      </g>
+    </a>
+  </g>
+
+  <!-- Divider 1.5 -->
+  <line x1="15" y1="470" x2="{width-15}" y2="470" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 2: STRATEGIC FOCUS (470..635) ================= -->
+  <g transform="translate(0, 470)">
+    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_MODULES</text>
+    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[05 ACTIVE VECTORS]</text>
+    
+    <g transform="translate(15, 42)">
+      <!-- Module 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="155" height="98" rx="6" class="f-card"/>
+        <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
+        <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
+        <text x="12" y="20" class="f-tag">01 // RE</text>
+        <text x="12" y="40" class="f-title">Reverse Eng</text>
+        <text x="12" y="60" class="f-desc">IDA Pro, Ghidra, x64dbg</text>
+        <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
+        <rect x="12" y="78" width="115" height="3" rx="1.5" class="f-meter-fill"/>
+      </g>
+      <!-- Module 2 -->
+      <g transform="translate(166, 0)">
+        <rect width="155" height="98" rx="6" class="f-card"/>
+        <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
+        <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
+        <text x="12" y="20" class="f-tag">02 // KERNEL</text>
+        <text x="12" y="40" class="f-title">OS Internals</text>
+        <text x="12" y="60" class="f-desc">Windows NT / Linux eBPF</text>
+        <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
+        <rect x="12" y="78" width="100" height="3" rx="1.5" class="f-meter-fill"/>
+      </g>
+      <!-- Module 3 -->
+      <g transform="translate(332, 0)">
+        <rect width="155" height="98" rx="6" class="f-card"/>
+        <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
+        <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
+        <text x="12" y="20" class="f-tag">03 // EXPLOIT</text>
+        <text x="12" y="40" class="f-title">Vulnerability</text>
+        <text x="12" y="60" class="f-desc">Fuzzing &amp; ROP Chains</text>
+        <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
+        <rect x="12" y="78" width="120" height="3" rx="1.5" class="f-meter-fill"/>
+      </g>
+      <!-- Module 4 -->
+      <g transform="translate(498, 0)">
+        <rect width="155" height="98" rx="6" class="f-card"/>
+        <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
+        <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
+        <text x="12" y="20" class="f-tag">04 // EVASION</text>
+        <text x="12" y="40" class="f-title">EDR Bypass</text>
+        <text x="12" y="60" class="f-desc">Unhooking &amp; Syscalls</text>
+        <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
+        <rect x="12" y="78" width="105" height="3" rx="1.5" class="f-meter-fill"/>
+      </g>
+      <!-- Module 5 -->
+      <g transform="translate(664, 0)">
+        <rect width="155" height="98" rx="6" class="f-card"/>
+        <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
+        <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
+        <text x="12" y="20" class="f-tag">05 // NETWORK</text>
+        <text x="12" y="40" class="f-title">Protocols</text>
+        <text x="12" y="60" class="f-desc">Raw Sockets &amp; Sniffing</text>
+        <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
+        <rect x="12" y="78" width="125" height="3" rx="1.5" class="f-meter-fill"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Divider 2 -->
+  <line x1="15" y1="635" x2="{width-15}" y2="635" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 2.5: UPGRADED S-TIER ARSENAL MATRIX (635..825) ================= -->
+  <g transform="translate(0, 635)">
+    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">CORE_SPECIALIZATION // ARSENAL_MATRIX</text>
+    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[VERIFIED_TOOLSET]</text>
+    
+    <g transform="translate(15, 38)">
+      <!-- Left Arsenal: Binary Recon & Reverse Engineering -->
+      <g transform="translate(0, 0)">
+        <rect width="402" height="136" rx="8" class="a-card"/>
+        <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
+        <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
+        
+        <text x="14" y="22" class="a-header">0x01 // BINARY RECON &amp; DISASSEMBLY</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[STATIC / DYNAMIC]</text>
+        <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
+        
+        <!-- Row 1: Disasm -->
+        <text x="14" y="52" class="a-lbl">DISASM</text>
+        <g transform="translate(80, 39)">
+          <rect width="70" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="35" y="14" class="a-pill-txt-hi" text-anchor="middle">IDA Pro 9.0</text>
+        </g>
+        <g transform="translate(156, 39)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Ghidra</text>
+        </g>
+        <g transform="translate(218, 39)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">x64dbg</text>
+        </g>
+        <g transform="translate(280, 39)">
+          <rect width="66" height="20" rx="4" class="a-pill"/>
+          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">BinNinja</text>
+        </g>
+
+        <!-- Row 2: Dynamic -->
+        <text x="14" y="82" class="a-lbl">TRACE</text>
+        <g transform="translate(80, 69)">
+          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">Frida Hook</text>
+        </g>
+        <g transform="translate(170, 69)">
+          <rect width="98" height="20" rx="4" class="a-pill"/>
+          <text x="49" y="14" class="a-pill-txt" text-anchor="middle">Process Hacker</text>
+        </g>
+        <g transform="translate(274, 69)">
+          <rect width="72" height="20" rx="4" class="a-pill"/>
+          <text x="36" y="14" class="a-pill-txt" text-anchor="middle">Wireshark</text>
+        </g>
+
+        <!-- Row 3: Targets & Tech -->
+        <text x="14" y="112" class="a-lbl">TARGET</text>
+        <g transform="translate(80, 99)">
+          <rect width="112" height="20" rx="4" class="a-pill"/>
+          <text x="56" y="14" class="a-pill-txt" text-anchor="middle">PE / ELF / Mach-O</text>
+        </g>
+        <g transform="translate(198, 99)">
+          <rect width="78" height="20" rx="4" class="a-pill"/>
+          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">Anti-Debug</text>
+        </g>
+        <g transform="translate(282, 99)">
+          <rect width="64" height="20" rx="4" class="a-pill"/>
+          <text x="32" y="14" class="a-pill-txt" text-anchor="middle">Hooking</text>
+        </g>
+      </g>
+
+      <!-- Right Arsenal: Low-Level & OS Internals -->
+      <g transform="translate(418, 0)">
+        <rect width="402" height="136" rx="8" class="a-card"/>
+        <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
+        <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
+        
+        <text x="14" y="22" class="a-header">0x02 // LOW-LEVEL &amp; KERNEL INTERNALS</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[RING_0 / RING_3]</text>
+        <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
+        
+        <!-- Row 1: Languages -->
+        <text x="14" y="52" class="a-lbl">LANGS</text>
+        <g transform="translate(80, 39)">
+          <rect width="56" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="28" y="14" class="a-pill-txt-hi" text-anchor="middle">C / C++</text>
+        </g>
+        <g transform="translate(142, 39)">
+          <rect width="44" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="22" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
+        </g>
+        <g transform="translate(192, 39)">
+          <rect width="54" height="20" rx="4" class="a-pill"/>
+          <text x="27" y="14" class="a-pill-txt" text-anchor="middle">Python</text>
+        </g>
+        <g transform="translate(252, 39)">
+          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">x86/x64 Asm</text>
+        </g>
+
+        <!-- Row 2: OS Kernels -->
+        <text x="14" y="82" class="a-lbl">KERNEL</text>
+        <g transform="translate(80, 69)">
+          <rect width="86" height="20" rx="4" class="a-pill"/>
+          <text x="43" y="14" class="a-pill-txt" text-anchor="middle">Win32 / NT</text>
+        </g>
+        <g transform="translate(172, 69)">
+          <rect width="80" height="20" rx="4" class="a-pill"/>
+          <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Linux eBPF</text>
+        </g>
+        <g transform="translate(258, 69)">
+          <rect width="90" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="45" y="14" class="a-pill-txt-hi" text-anchor="middle">Kernel Driver</text>
+        </g>
+
+        <!-- Row 3: Security & Network -->
+        <text x="14" y="112" class="a-lbl">SECURITY</text>
+        <g transform="translate(80, 99)">
+          <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">Direct Syscalls</text>
+        </g>
+        <g transform="translate(188, 99)">
+          <rect width="78" height="20" rx="4" class="a-pill"/>
+          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">DEP / ASLR</text>
+        </g>
+        <g transform="translate(272, 99)">
+          <rect width="84" height="20" rx="4" class="a-pill"/>
+          <text x="42" y="14" class="a-pill-txt" text-anchor="middle">Raw Sockets</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Divider 2.5 -->
+  <line x1="15" y1="825" x2="{width-15}" y2="825" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 3: METRICS AND LANGUAGE RADAR (825..1010) ================= -->
+  <g transform="translate(0, 825)">
+    <line x1="{width/2}" y1="12" x2="{width/2}" y2="173" class="c-separator"/>
+    
+    <!-- Left: Stats HUD -->
+    <g transform="translate(0, 0)">
+      <!-- Stars -->
+      <g transform="translate(106, 48)">
+        <g transform="translate(-34, 0)">
+          <path d="M8 0L10.45 4.96L16 5.76L12 9.66L12.95 15.19L8 12.59L3.05 15.19L4 9.66L0 5.76L5.55 4.96L8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+          <text x="22" y="0" class="s-label">STARS</text>
+        </g>
+        <text x="0" y="32" class="s-value">{stats.get('stars', 0)}</text>
+      </g>
+
+      <!-- Commits -->
+      <g transform="translate(318, 48)">
+        <g transform="translate(-42, 0)">
+          <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+          <text x="22" y="0" class="s-label">COMMITS</text>
+        </g>
+        <text x="0" y="32" class="s-value">{stats.get('commits', 0)}</text>
+      </g>
+
+      <!-- PRs -->
+      <g transform="translate(106, 122)">
+        <g transform="translate(-26, 0)">
+          <path d="M5 0V2H0V16H16V11H14V14H2V4H5V6L10 3L5 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+          <text x="22" y="0" class="s-label">PRS</text>
+        </g>
+        <text x="0" y="32" class="s-value">{stats.get('prs', 0)}</text>
+      </g>
+
+      <!-- Issues -->
+      <g transform="translate(318, 122)">
+        <g transform="translate(-38, 0)">
+          <path d="M8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM9 12H7V10H9V12ZM9 9H7V4H9V9Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
+          <text x="22" y="0" class="s-label">ISSUES</text>
+        </g>
+        <text x="0" y="32" class="s-value">{stats.get('issues', 0)}</text>
+      </g>
+    </g>
+    
+    <!-- Right: Language Radar -->
+    <g transform="translate(440, 14)">
+      {lang_bars}
+    </g>
+  </g>
+
+  <!-- Divider 3 -->
+  <line x1="15" y1="1010" x2="{width-15}" y2="1010" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 4: FULL-WIDTH CONTRIBUTION SCANNER (1010..1150) ================= -->
+  <g transform="translate(0, 1010)">
+    <g id="sc-grid">{scanner_grid}</g>
+    <g transform="translate({pad_x}, {pad_y})">
+      <g class="sc-beam">
+        <rect fill="url(#sc-grad)" x="-30" y="0" width="30" height="{grid_height:.1f}" />
+        <rect fill="#fff" x="-1" y="0" width="2" height="{grid_height:.1f}" rx="1" />
+        <circle fill="{color}" cx="0" cy="0" r="3" />
+        <circle fill="{color}" cx="0" cy="{grid_height:.1f}" r="3" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Divider 4 -->
+  <line x1="15" y1="1150" x2="{width-15}" y2="1150" class="sec-divider-solid"/>
+
+  <!-- ================= SECTION 5: ACTIVITY TRENDS (1150..1410) ================= -->
+  <g transform="translate(0, 1165)">
+    <g class="grid">{act_grid_html}</g>
+    <path d="{act_area}" class="ac-trend-area"/>
+    <path d="{act_line}" class="ac-trend-line"/>
+    <g class="dots">{act_dots_html}</g>
+  </g>
+
+  <!-- ================= TACTICAL HUD ANCHORS AND CROSSHAIRS ================= -->
+  <!-- Outer Corner Brackets -->
+  <path d="M 0 22 L 0 0 L 22 0" class="hud-bracket"/>
+  <path d="M {width} 22 L {width} 0 L {width-22} 0" class="hud-bracket"/>
+  <path d="M 0 {height-22} L 0 {height} L 22 {height}" class="hud-bracket"/>
+  <path d="M {width} {height-22} L {width} {height} L {width-22} {height}" class="hud-bracket"/>
+  
+  <!-- Subtle Internal Grid Crosshairs at Divider Intersections -->
+  <path d="M 10 200 L 20 200 M 15 195 L 15 205" class="crosshair"/>
+  <path d="M {width-20} 200 L {width-10} 200 M {width-15} 195 L {width-15} 205" class="crosshair"/>
+  <path d="M 10 410 L 20 410 M 15 405 L 15 415" class="crosshair"/>
+  <path d="M {width-20} 410 L {width-10} 410 M {width-15} 405 L {width-15} 415" class="crosshair"/>
+  <path d="M 10 470 L 20 470 M 15 465 L 15 475" class="crosshair"/>
+  <path d="M {width-20} 470 L {width-10} 470 M {width-15} 465 L {width-15} 475" class="crosshair"/>
+  <path d="M 10 635 L 20 635 M 15 630 L 15 640" class="crosshair"/>
+  <path d="M {width-20} 635 L {width-10} 635 M {width-15} 630 L {width-15} 640" class="crosshair"/>
+  <path d="M 10 825 L 20 825 M 15 820 L 15 830" class="crosshair"/>
+  <path d="M {width-20} 825 L {width-10} 825 M {width-15} 820 L {width-15} 830" class="crosshair"/>
+  <path d="M 10 1010 L 20 1010 M 15 1005 L 15 1015" class="crosshair"/>
+  <path d="M {width-20} 1010 L {width-10} 1010 M {width-15} 1005 L {width-15} 1015" class="crosshair"/>
+  <path d="M 10 1150 L 20 1150 M 15 1145 L 15 1155" class="crosshair"/>
+  <path d="M {width-20} 1150 L {width-10} 1150 M {width-15} 1145 L {width-15} 1155" class="crosshair"/>
+</svg>"""

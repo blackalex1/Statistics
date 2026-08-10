@@ -1,5 +1,4 @@
 def get_wave_svg(calendar, color="#00FFAA"):
-    # --- Configuration ---
     cell_size, gap = 10, 3
     step = cell_size + gap
     pad_x, pad_y = 30, 40
@@ -9,7 +8,6 @@ def get_wave_svg(calendar, color="#00FFAA"):
     width = pad_x * 2 + num_weeks * step
     height = pad_y * 2 + 7 * step
     
-    # Timing: 4s wave, 4s pause
     total_dur = 8.0
     wave_dur = 4.0
     
@@ -39,7 +37,7 @@ def get_wave_svg(calendar, color="#00FFAA"):
     .wv-border {{ stroke: #30363d; }}
     .wv-cell {{ fill: #161b22; transform-origin: center; transform-box: fill-box; }}
     
-    /* DARK THEME ANIMATIONS */
+    /* ZERO-CPU OPTIMIZED WAVE ANIMATION */
     .wv-l-0 {{ animation: wv-jump-0 {total_dur}s infinite cubic-bezier(0.4, 0, 0.2, 1); }}
     .wv-l-1 {{ animation: wv-jump-1 {total_dur}s infinite cubic-bezier(0.4, 0, 0.2, 1); }}
     .wv-l-2 {{ animation: wv-jump-2 {total_dur}s infinite cubic-bezier(0.4, 0, 0.2, 1); }}
@@ -48,12 +46,12 @@ def get_wave_svg(calendar, color="#00FFAA"):
 
     @keyframes wv-jump-0 {{
       0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: #161b22; }}
-      12.5% {{ transform: translateY(-8px) scale(1.2); fill: {color}; filter: drop-shadow(0 0 5px {color}); }}
+      12.5% {{ transform: translateY(-8px) scale(1.2); fill: {color}; }}
     }}
-    @keyframes wv-jump-1 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[1]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: #fff; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-2 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[2]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: #fff; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-3 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[3]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: #fff; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-4 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[4]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: #fff; filter: drop-shadow(0 0 8px {color}); }} }}
+    @keyframes wv-jump-1 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[1]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: #ffffff; }} }}
+    @keyframes wv-jump-2 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[2]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: #ffffff; }} }}
+    @keyframes wv-jump-3 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[3]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: #ffffff; }} }}
+    @keyframes wv-jump-4 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {dark_c[4]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: #ffffff; }} }}
 
     @media (prefers-color-scheme: light) {{
       .wv-bg {{ fill: #ffffff; }}
@@ -68,12 +66,12 @@ def get_wave_svg(calendar, color="#00FFAA"):
     
     @keyframes wv-jump-l0 {{
       0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: #ebedf0; }}
-      12.5% {{ transform: translateY(-8px) scale(1.2); fill: {color}; filter: drop-shadow(0 0 5px {color}); }}
+      12.5% {{ transform: translateY(-8px) scale(1.2); fill: {color}; }}
     }}
-    @keyframes wv-jump-l1 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[1]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: {color}; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-l2 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[2]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: {color}; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-l3 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[3]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: {color}; filter: drop-shadow(0 0 8px {color}); }} }}
-    @keyframes wv-jump-l4 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[4]}; }} 12.5% {{ transform: translateY(-12px) scale(1.3); fill: {color}; filter: drop-shadow(0 0 8px {color}); }} }}
+    @keyframes wv-jump-l1 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[1]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: {color}; }} }}
+    @keyframes wv-jump-l2 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[2]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: {color}; }} }}
+    @keyframes wv-jump-l3 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[3]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: {color}; }} }}
+    @keyframes wv-jump-l4 {{ 0%, 25%, 100% {{ transform: translateY(0) scale(1); fill: {light_c[4]}; }} 12.5% {{ transform: translateY(-10px) scale(1.25); fill: {color}; }} }}
   </style>
 
   <rect width="{width}" height="{height}" rx="12" class="wv-bg wv-border" stroke-width="1.5"/>

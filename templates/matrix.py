@@ -56,9 +56,9 @@ def get_matrix_svg(calendar, color="#00FFAA"):
     }}
     .bg {{ fill: var(--bg); }}
     @keyframes matrix-cycle {{
-      0%, 39.9% {{ fill: var(--c0); opacity: var(--cell-op); filter: none; }}
-      40% {{ fill: var(--flash); opacity: 1; filter: brightness(1.4) drop-shadow(0 0 6px var(--flash)); }}
-      45%, 85% {{ fill: var(--target); opacity: 1; filter: none; }}
+      0%, 39.9% {{ fill: var(--c0); opacity: var(--cell-op); }}
+      40% {{ fill: var(--flash); opacity: 1; }}
+      45%, 85% {{ fill: var(--target); opacity: 1; }}
       95%, 100% {{ fill: var(--c0); opacity: var(--cell-op); }}
     }}
     .cell {{ fill: var(--c0); opacity: var(--cell-op); }}

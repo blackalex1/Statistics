@@ -47,7 +47,7 @@ def get_scanner_svg(calendar, color="#00FFAA"):
     .sc-border {{ stroke: #30363d; }}
     .sc-cell {{ fill: #161b22; opacity: 0.15; }}
     
-    /* REVEAL KEYFRAMES: Gradient Cooling Trail */
+    /* ZERO-CPU OPTIMIZED SCANNER ANIMATION */
     .sc-l-0 {{ animation: sc-rev-0 {total_dur}s infinite; }}
     .sc-l-1 {{ animation: sc-rev-1 {total_dur}s infinite; }}
     .sc-l-2 {{ animation: sc-rev-2 {total_dur}s infinite; }}
@@ -55,43 +55,38 @@ def get_scanner_svg(calendar, color="#00FFAA"):
     .sc-l-4 {{ animation: sc-rev-4 {total_dur}s infinite; }}
 
     @keyframes sc-rev-0 {{
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 6px {color}); }}
-      1% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 4px {color}); }}
-      3% {{ fill: {color}; opacity: 0.4; filter: drop-shadow(0 0 2px {color}); }}
-      5%, 100% {{ fill: #161b22; opacity: 0.15; filter: none; }}
+      0% {{ fill: #ffffff; opacity: 0.9; }}
+      1% {{ fill: {color}; opacity: 0.7; }}
+      3% {{ fill: {color}; opacity: 0.35; }}
+      5%, 100% {{ fill: #161b22; opacity: 0.15; }}
     }}
     
-    /* Multistage gradient cooling for contribution levels */
     @keyframes sc-rev-1 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px {color}); }} 
-      2% {{ fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px {color}); }}
-      4% {{ fill: {color}; opacity: 1; filter: drop-shadow(0 0 6px {color}); }}
-      6% {{ fill: {dark_c[1]}; opacity: 1; filter: drop-shadow(0 0 4px {dark_c[1]}); }}
-      10%, 75% {{ fill: {dark_c[1]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[1]}; opacity: 1; }} 
       85%, 100% {{ fill: #161b22; opacity: 0.15; }} 
     }}
     @keyframes sc-rev-2 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px {color}); }} 
-      2% {{ fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px {color}); }}
-      4% {{ fill: {color}; opacity: 1; filter: drop-shadow(0 0 6px {color}); }}
-      6% {{ fill: {dark_c[2]}; opacity: 1; filter: drop-shadow(0 0 4px {dark_c[2]}); }}
-      10%, 75% {{ fill: {dark_c[2]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[2]}; opacity: 1; }} 
       85%, 100% {{ fill: #161b22; opacity: 0.15; }} 
     }}
     @keyframes sc-rev-3 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px {color}); }} 
-      2% {{ fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px {color}); }}
-      4% {{ fill: {color}; opacity: 1; filter: drop-shadow(0 0 6px {color}); }}
-      6% {{ fill: {dark_c[3]}; opacity: 1; filter: drop-shadow(0 0 4px {dark_c[3]}); }}
-      10%, 75% {{ fill: {dark_c[3]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[3]}; opacity: 1; }} 
       85%, 100% {{ fill: #161b22; opacity: 0.15; }} 
     }}
     @keyframes sc-rev-4 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: brightness(2) drop-shadow(0 0 10px {color}); }} 
-      2% {{ fill: #fff; opacity: 1; filter: brightness(1.5) drop-shadow(0 0 8px {color}); }}
-      4% {{ fill: {color}; opacity: 1; filter: drop-shadow(0 0 6px {color}); }}
-      6% {{ fill: {dark_c[4]}; opacity: 1; filter: drop-shadow(0 0 4px {dark_c[4]}); }}
-      10%, 75% {{ fill: {dark_c[4]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      2% {{ fill: #aaffdd; opacity: 1; }}
+      4% {{ fill: {color}; opacity: 1; }}
+      6%, 75% {{ fill: {dark_c[4]}; opacity: 1; }} 
       85%, 100% {{ fill: #161b22; opacity: 0.15; }} 
     }}
 
@@ -107,32 +102,32 @@ def get_scanner_svg(calendar, color="#00FFAA"):
     }}
     
     @keyframes sc-rev-l0 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 8px {color}); }} 
-      2% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 4px {color}); }} 
-      5%, 100% {{ fill: {light_c[0]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 0.9; }} 
+      2% {{ fill: {color}; opacity: 0.7; }} 
+      5%, 100% {{ fill: {light_c[0]}; opacity: 1; }} 
     }}
     @keyframes sc-rev-l1 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px {color}); }} 
-      3% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 6px {color}); }} 
-      8%, 75% {{ fill: {light_c[1]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      3% {{ fill: {color}; opacity: 0.8; }} 
+      8%, 75% {{ fill: {light_c[1]}; opacity: 1; }} 
       85%, 100% {{ fill: {light_c[0]}; opacity: 1; }} 
     }}
     @keyframes sc-rev-l2 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px {color}); }} 
-      3% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 6px {color}); }} 
-      8%, 75% {{ fill: {light_c[2]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      3% {{ fill: {color}; opacity: 0.8; }} 
+      8%, 75% {{ fill: {light_c[2]}; opacity: 1; }} 
       85%, 100% {{ fill: {light_c[0]}; opacity: 1; }} 
     }}
     @keyframes sc-rev-l3 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px {color}); }} 
-      3% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 6px {color}); }} 
-      8%, 75% {{ fill: {light_c[3]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      3% {{ fill: {color}; opacity: 0.8; }} 
+      8%, 75% {{ fill: {light_c[3]}; opacity: 1; }} 
       85%, 100% {{ fill: {light_c[0]}; opacity: 1; }} 
     }}
     @keyframes sc-rev-l4 {{ 
-      0% {{ fill: #fff; opacity: 1; filter: drop-shadow(0 0 10px {color}); }} 
-      3% {{ fill: {color}; opacity: 0.8; filter: drop-shadow(0 0 6px {color}); }} 
-      8%, 75% {{ fill: {light_c[4]}; opacity: 1; filter: none; }} 
+      0% {{ fill: #ffffff; opacity: 1; }} 
+      3% {{ fill: {color}; opacity: 0.8; }} 
+      8%, 75% {{ fill: {light_c[4]}; opacity: 1; }} 
       85%, 100% {{ fill: {light_c[0]}; opacity: 1; }} 
     }}
 
