@@ -1,6 +1,6 @@
 def get_contact_badge_svg(username="blackalex1", color="#00FFAA"):
-    width = 420
-    height = 54
+    width = 850
+    height = 46
     
     return f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -12,7 +12,7 @@ def get_contact_badge_svg(username="blackalex1", color="#00FFAA"):
 
   <style>
     :root {{
-      --b-bg: #0d1117;
+      --b-bg: #161b22;
       --b-accent: {color};
       --b-text: #ffffff;
       --b-border: #30363d;
@@ -20,8 +20,8 @@ def get_contact_badge_svg(username="blackalex1", color="#00FFAA"):
     }}
     @media (prefers-color-scheme: light) {{
       :root {{
-        --b-bg: #ffffff;
-        --b-accent: #0969da;
+        --b-bg: #f6f8fa;
+        --b-accent: #1a7f37;
         --b-text: #1f2328;
         --b-border: #d0d7de;
         --b-muted: #636c76;
@@ -31,30 +31,24 @@ def get_contact_badge_svg(username="blackalex1", color="#00FFAA"):
     .badge-card {{
       fill: var(--b-bg);
       stroke: var(--b-border);
-      stroke-width: 1.5;
+      stroke-width: 1.2;
     }}
 
     .badge-hud {{
       stroke: var(--b-accent);
       stroke-width: 1.5;
       fill: none;
-      opacity: 0.8;
+      opacity: 0.85;
     }}
 
     .tg-title {{
-      font: bold 12px 'JetBrains Mono', 'Segoe UI', monospace;
+      font: bold 12px 'JetBrains Mono', monospace;
       fill: var(--b-text);
       letter-spacing: 1.5px;
     }}
 
-    .tg-handle {{
-      font: bold 11px 'JetBrains Mono', monospace;
-      fill: var(--b-accent);
-      letter-spacing: 1px;
-    }}
-
     .tg-meta {{
-      font: bold 9px 'JetBrains Mono', monospace;
+      font: bold 10px 'JetBrains Mono', monospace;
       fill: var(--b-muted);
       letter-spacing: 1px;
     }}
@@ -71,29 +65,28 @@ def get_contact_badge_svg(username="blackalex1", color="#00FFAA"):
     .status-dot {{
       fill: var(--b-accent);
       animation: live-pulse 2s infinite ease-in-out;
-      transform-origin: {width - 32}px 27px;
+      transform-origin: {width - 32}px 23px;
     }}
   </style>
 
-  <rect width="{width}" height="{height}" rx="8" class="badge-card"/>
-  <rect width="{width}" height="{height}" rx="8" fill="url(#tg-grad)"/>
+  <rect width="{width}" height="{height}" rx="6" class="badge-card"/>
+  <rect width="{width}" height="{height}" rx="6" fill="url(#tg-grad)"/>
 
   <!-- Tactical Corner Brackets -->
-  <path d="M 0 10 L 0 0 L 10 0" class="badge-hud"/>
-  <path d="M {width} 10 L {width} 0 L {width-10} 0" class="badge-hud"/>
-  <path d="M 0 {height-10} L 0 {height} L 10 {height}" class="badge-hud"/>
-  <path d="M {width} {height-10} L {width} {height} L {width-10} {height}" class="badge-hud"/>
+  <path d="M 0 8 L 0 0 L 8 0" class="badge-hud"/>
+  <path d="M {width} 8 L {width} 0 L {width-8} 0" class="badge-hud"/>
+  <path d="M 0 {height-8} L 0 {height} L 8 {height}" class="badge-hud"/>
+  <path d="M {width} {height-8} L {width} {height} L {width-8} {height}" class="badge-hud"/>
 
-  <!-- Telegram Glyph (Vector accurate) -->
-  <g transform="translate(18, 15)">
-    <path d="M21.5 2.1L1.8 9.7C0.5 10.2 0.5 11 1.6 11.3L6.6 12.9L18.2 5.6C18.7 5.3 19.2 5.5 18.8 5.8L9.4 14.3L9 19.5C9.5 19.5 9.7 19.3 10 19L12.4 16.7L17.4 20.4C18.3 20.9 19 20.6 19.2 19.5L22.5 4C22.8 2.8 22 2.2 21.5 2.1Z" class="tg-icon"/>
+  <!-- Telegram Glyph -->
+  <g transform="translate(18, 13)">
+    <path d="M19.5 1.8L1.6 8.7C0.5 9.1 0.5 9.8 1.4 10.1L6 11.5L16.4 5C16.8 4.7 17.2 4.9 16.9 5.2L8.5 12.8L8.1 17.5C8.5 17.5 8.7 17.3 9 17L11.2 14.9L15.7 18.2C16.5 18.6 17.1 18.3 17.3 17.4L20.3 3.5C20.6 2.4 19.9 1.9 19.5 1.8Z" class="tg-icon"/>
   </g>
 
   <!-- Content -->
-  <text x="56" y="24" class="tg-title">TELEGRAM // DIRECT LINK</text>
-  <text x="56" y="40" class="tg-handle">@{username}</text>
+  <text x="48" y="28" class="tg-title">COMMUNICATION_LINK // TELEGRAM: <tspan fill="var(--b-accent)">@{username}</tspan></text>
 
   <!-- Live Status Beacon -->
-  <circle cx="{width - 32}" cy="27" r="4.5" class="status-dot"/>
-  <text x="{width - 45}" y="30" text-anchor="end" class="tg-meta">[ONLINE]</text>
+  <circle cx="{width - 32}" cy="23" r="4.5" class="status-dot"/>
+  <text x="{width - 45}" y="27" text-anchor="end" class="tg-meta">[ONLINE // DIRECT_DISPATCH]</text>
 </svg>"""
