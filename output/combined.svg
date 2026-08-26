@@ -726,7 +726,7 @@
           <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
           <text x="22" y="0" class="s-label">COMMITS</text>
         </g>
-        <text x="0" y="32" class="s-value">3386</text>
+        <text x="0" y="32" class="s-value">3429</text>
       </g>
 
       <!-- PRs -->
@@ -763,16 +763,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-0">
-                <rect x="100" y="21" width="114.66" height="7" rx="3.5"/>
+                <rect x="100" y="21" width="113.76" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="30" class="l-name">Python</text>
-            <text x="380" y="30" class="l-pct" text-anchor="end">63.7%</text>
+            <text x="380" y="30" class="l-pct" text-anchor="end">63.2%</text>
             <rect x="100" y="21" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="21" width="114.66" height="7" rx="3.5" fill="url(#l-grad-0)"/>
+            <rect x="100" y="21" width="113.76" height="7" rx="3.5" fill="url(#l-grad-0)"/>
             <g clip-path="url(#l-clip-0)">
               <rect x="100" y="21" width="70" height="7" rx="3.5" fill="url(#l-sheen-0)" opacity="0">
-                 <animate attributeName="x" from="30" to="214.66" dur="2.6s" begin="1.2s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="213.76" dur="2.6s" begin="1.2s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.2s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -790,16 +790,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-1">
-                <rect x="100" y="47" width="18.9" height="7" rx="3.5"/>
+                <rect x="100" y="47" width="18.540000000000003" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="56" class="l-name">Kotlin</text>
-            <text x="380" y="56" class="l-pct" text-anchor="end">10.5%</text>
+            <text x="380" y="56" class="l-pct" text-anchor="end">10.3%</text>
             <rect x="100" y="47" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="47" width="18.9" height="7" rx="3.5" fill="url(#l-grad-1)"/>
+            <rect x="100" y="47" width="18.540000000000003" height="7" rx="3.5" fill="url(#l-grad-1)"/>
             <g clip-path="url(#l-clip-1)">
               <rect x="100" y="47" width="70" height="7" rx="3.5" fill="url(#l-sheen-1)" opacity="0">
-                 <animate attributeName="x" from="30" to="118.9" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="118.54" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -817,16 +817,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-2">
-                <rect x="100" y="73" width="17.1" height="7" rx="3.5"/>
+                <rect x="100" y="73" width="16.92" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="82" class="l-name">JavaScript</text>
-            <text x="380" y="82" class="l-pct" text-anchor="end">9.5%</text>
+            <text x="380" y="82" class="l-pct" text-anchor="end">9.4%</text>
             <rect x="100" y="73" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="73" width="17.1" height="7" rx="3.5" fill="url(#l-grad-2)"/>
+            <rect x="100" y="73" width="16.92" height="7" rx="3.5" fill="url(#l-grad-2)"/>
             <g clip-path="url(#l-clip-2)">
               <rect x="100" y="73" width="70" height="7" rx="3.5" fill="url(#l-sheen-2)" opacity="0">
-                 <animate attributeName="x" from="30" to="117.1" dur="2.6s" begin="1.56s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="116.92" dur="2.6s" begin="1.56s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.56s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -844,16 +844,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-3">
-                <rect x="100" y="99" width="15.479999999999999" height="7" rx="3.5"/>
+                <rect x="100" y="99" width="16.740000000000002" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="108" class="l-name">Go</text>
-            <text x="380" y="108" class="l-pct" text-anchor="end">8.6%</text>
+            <text x="380" y="108" class="l-pct" text-anchor="end">9.3%</text>
             <rect x="100" y="99" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="99" width="15.479999999999999" height="7" rx="3.5" fill="url(#l-grad-3)"/>
+            <rect x="100" y="99" width="16.740000000000002" height="7" rx="3.5" fill="url(#l-grad-3)"/>
             <g clip-path="url(#l-clip-3)">
               <rect x="100" y="99" width="70" height="7" rx="3.5" fill="url(#l-sheen-3)" opacity="0">
-                 <animate attributeName="x" from="30" to="115.48" dur="2.6s" begin="1.74s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="116.74000000000001" dur="2.6s" begin="1.74s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.74s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -871,16 +871,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-4">
-                <rect x="100" y="125" width="5.039999999999999" height="7" rx="3.5"/>
+                <rect x="100" y="125" width="4.86" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="134" class="l-name">C#</text>
-            <text x="380" y="134" class="l-pct" text-anchor="end">2.8%</text>
+            <text x="380" y="134" class="l-pct" text-anchor="end">2.7%</text>
             <rect x="100" y="125" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="125" width="5.039999999999999" height="7" rx="3.5" fill="url(#l-grad-4)"/>
+            <rect x="100" y="125" width="4.86" height="7" rx="3.5" fill="url(#l-grad-4)"/>
             <g clip-path="url(#l-clip-4)">
               <rect x="100" y="125" width="70" height="7" rx="3.5" fill="url(#l-sheen-4)" opacity="0">
-                 <animate attributeName="x" from="30" to="105.03999999999999" dur="2.6s" begin="1.92s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="104.86" dur="2.6s" begin="1.92s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.92s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -1253,7 +1253,8 @@
 <rect x="802.59" y="108.47" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-2" style="animation-delay: 3.922s;"/>
 <rect x="818.00" y="16.00" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-1" style="animation-delay: 4.000s;"/>
 <rect x="818.00" y="31.41" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-3" style="animation-delay: 4.000s;"/>
-<rect x="818.00" y="46.82" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-0" style="animation-delay: 4.000s;"/>
+<rect x="818.00" y="46.82" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-4" style="animation-delay: 4.000s;"/>
+<rect x="818.00" y="62.24" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-1" style="animation-delay: 4.000s;"/>
 </g>
     <g transform="translate(32, 16)">
       <g class="sc-beam">
@@ -1270,12 +1271,12 @@
 
   <!-- ================= SECTION 5: ACTIVITY TRENDS (1150..1410) ================= -->
   <g transform="translate(0, 1165)">
-    <g class="grid"><line x1="48" y1="167.00" x2="818" y2="167.00" class="ac-grid-line" /><text x="38" y="171.00" class="ac-axis-label" text-anchor="end">0</text><line x1="48" y1="98.50" x2="818" y2="98.50" class="ac-grid-line" /><text x="38" y="102.50" class="ac-axis-label" text-anchor="end">40</text><line x1="48" y1="30.00" x2="818" y2="30.00" class="ac-grid-line" /><text x="38" y="34.00" class="ac-axis-label" text-anchor="end">80</text><line x1="48.00" y1="30" x2="48.00" y2="167" class="ac-grid-line" /><text x="48.00" y="187" class="ac-axis-label" text-anchor="middle">27</text><line x1="180.76" y1="30" x2="180.76" y2="167" class="ac-grid-line" /><text x="180.76" y="187" class="ac-axis-label" text-anchor="middle">01</text><line x1="313.52" y1="30" x2="313.52" y2="167" class="ac-grid-line" /><text x="313.52" y="187" class="ac-axis-label" text-anchor="middle">06</text><line x1="446.28" y1="30" x2="446.28" y2="167" class="ac-grid-line" /><text x="446.28" y="187" class="ac-axis-label" text-anchor="middle">11</text><line x1="579.03" y1="30" x2="579.03" y2="167" class="ac-grid-line" /><text x="579.03" y="187" class="ac-axis-label" text-anchor="middle">16</text><line x1="711.79" y1="30" x2="711.79" y2="167" class="ac-grid-line" /><text x="711.79" y="187" class="ac-axis-label" text-anchor="middle">21</text></g>
-    <path d="M 48.00,163.57 C 61.28,163.57 61.28,88.23 74.55,88.23 C 87.83,88.23 87.83,148.16 101.10,148.16 C 114.38,148.16 114.38,131.04 127.66,131.04 C 140.93,131.04 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,167.00 180.76,167.00 C 194.03,167.00 194.03,107.06 207.31,107.06 C 220.59,107.06 220.59,127.61 233.86,127.61 C 247.14,127.61 247.14,136.18 260.41,136.18 C 273.69,136.18 273.69,115.62 286.97,115.62 C 300.24,115.62 300.24,163.57 313.52,163.57 C 326.79,163.57 326.79,136.18 340.07,136.18 C 353.34,136.18 353.34,132.75 366.62,132.75 C 379.90,132.75 379.90,127.61 393.17,127.61 C 406.45,127.61 406.45,144.74 419.72,144.74 C 433.00,144.74 433.00,158.44 446.28,158.44 C 459.55,158.44 459.55,158.44 472.83,158.44 C 486.10,158.44 486.10,129.32 499.38,129.32 C 512.66,129.32 512.66,139.60 525.93,139.60 C 539.21,139.60 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,41.99 579.03,41.99 C 592.31,41.99 592.31,149.88 605.59,149.88 C 618.86,149.88 618.86,165.29 632.14,165.29 C 645.41,165.29 645.41,148.16 658.69,148.16 C 671.97,148.16 671.97,134.46 685.24,134.46 C 698.52,134.46 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,153.30 738.34,153.30 C 751.62,153.30 751.62,161.86 764.90,161.86 C 778.17,161.86 778.17,146.45 791.45,146.45 C 804.72,146.45 804.72,167.00 818.00,167.00 L 818.00,167 L 48.00,167 Z" class="ac-trend-area"/>
-    <path d="M 48.00,163.57 C 61.28,163.57 61.28,88.23 74.55,88.23 C 87.83,88.23 87.83,148.16 101.10,148.16 C 114.38,148.16 114.38,131.04 127.66,131.04 C 140.93,131.04 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,167.00 180.76,167.00 C 194.03,167.00 194.03,107.06 207.31,107.06 C 220.59,107.06 220.59,127.61 233.86,127.61 C 247.14,127.61 247.14,136.18 260.41,136.18 C 273.69,136.18 273.69,115.62 286.97,115.62 C 300.24,115.62 300.24,163.57 313.52,163.57 C 326.79,163.57 326.79,136.18 340.07,136.18 C 353.34,136.18 353.34,132.75 366.62,132.75 C 379.90,132.75 379.90,127.61 393.17,127.61 C 406.45,127.61 406.45,144.74 419.72,144.74 C 433.00,144.74 433.00,158.44 446.28,158.44 C 459.55,158.44 459.55,158.44 472.83,158.44 C 486.10,158.44 486.10,129.32 499.38,129.32 C 512.66,129.32 512.66,139.60 525.93,139.60 C 539.21,139.60 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,41.99 579.03,41.99 C 592.31,41.99 592.31,149.88 605.59,149.88 C 618.86,149.88 618.86,165.29 632.14,165.29 C 645.41,165.29 645.41,148.16 658.69,148.16 C 671.97,148.16 671.97,134.46 685.24,134.46 C 698.52,134.46 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,153.30 738.34,153.30 C 751.62,153.30 751.62,161.86 764.90,161.86 C 778.17,161.86 778.17,146.45 791.45,146.45 C 804.72,146.45 804.72,167.00 818.00,167.00" class="ac-trend-line"/>
-    <g class="dots"><circle cx="48.00" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.00s;"/><circle cx="74.55" cy="88.23" r="3.0" class="ac-dot" style="animation-delay: 0.02s;"/><circle cx="101.10" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.04s;"/><circle cx="127.66" cy="131.04" r="3.0" class="ac-dot" style="animation-delay: 0.06s;"/><circle cx="154.21" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.08s;"/><circle cx="180.76" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.10s;"/><circle cx="207.31" cy="107.06" r="3.0" class="ac-dot" style="animation-delay: 0.12s;"/><circle cx="233.86" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.14s;"/><circle cx="260.41" cy="136.18" r="3.0" class="ac-dot" style="animation-delay: 0.16s;"/><circle cx="286.97" cy="115.62" r="3.0" class="ac-dot" style="animation-delay: 0.18s;"/><circle cx="313.52" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.20s;"/><circle cx="340.07" cy="136.18" r="3.0" class="ac-dot" style="animation-delay: 0.22s;"/><circle cx="366.62" cy="132.75" r="3.0" class="ac-dot" style="animation-delay: 0.24s;"/><circle cx="393.17" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.26s;"/><circle cx="419.72" cy="144.74" r="3.0" class="ac-dot" style="animation-delay: 0.28s;"/><circle cx="446.28" cy="158.44" r="3.0" class="ac-dot" style="animation-delay: 0.30s;"/><circle cx="472.83" cy="158.44" r="3.0" class="ac-dot" style="animation-delay: 0.32s;"/><circle cx="499.38" cy="129.32" r="3.0" class="ac-dot" style="animation-delay: 0.34s;"/><circle cx="525.93" cy="139.60" r="3.0" class="ac-dot" style="animation-delay: 0.36s;"/><circle cx="552.48" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.38s;"/><circle cx="579.03" cy="41.99" r="3.0" class="ac-dot" style="animation-delay: 0.40s;"/><circle cx="605.59" cy="149.88" r="3.0" class="ac-dot" style="animation-delay: 0.42s;"/><circle cx="632.14" cy="165.29" r="3.0" class="ac-dot" style="animation-delay: 0.44s;"/><circle cx="658.69" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.46s;"/><circle cx="685.24" cy="134.46" r="3.0" class="ac-dot" style="animation-delay: 0.48s;"/><circle cx="711.79" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.50s;"/><circle cx="738.34" cy="153.30" r="3.0" class="ac-dot" style="animation-delay: 0.52s;"/><circle cx="764.90" cy="161.86" r="3.0" class="ac-dot" style="animation-delay: 0.54s;"/><circle cx="791.45" cy="146.45" r="3.0" class="ac-dot" style="animation-delay: 0.56s;"/>
-            <circle cx="818.00" cy="167.00" r="7" class="ac-pulse-ring"/>
-            <circle cx="818.00" cy="167.00" r="3.5" class="ac-dot-head"/>
+    <g class="grid"><line x1="48" y1="167.00" x2="818" y2="167.00" class="ac-grid-line" /><text x="38" y="171.00" class="ac-axis-label" text-anchor="end">0</text><line x1="48" y1="98.50" x2="818" y2="98.50" class="ac-grid-line" /><text x="38" y="102.50" class="ac-axis-label" text-anchor="end">40</text><line x1="48" y1="30.00" x2="818" y2="30.00" class="ac-grid-line" /><text x="38" y="34.00" class="ac-axis-label" text-anchor="end">80</text><line x1="48.00" y1="30" x2="48.00" y2="167" class="ac-grid-line" /><text x="48.00" y="187" class="ac-axis-label" text-anchor="middle">28</text><line x1="180.76" y1="30" x2="180.76" y2="167" class="ac-grid-line" /><text x="180.76" y="187" class="ac-axis-label" text-anchor="middle">02</text><line x1="313.52" y1="30" x2="313.52" y2="167" class="ac-grid-line" /><text x="313.52" y="187" class="ac-axis-label" text-anchor="middle">07</text><line x1="446.28" y1="30" x2="446.28" y2="167" class="ac-grid-line" /><text x="446.28" y="187" class="ac-axis-label" text-anchor="middle">12</text><line x1="579.03" y1="30" x2="579.03" y2="167" class="ac-grid-line" /><text x="579.03" y="187" class="ac-axis-label" text-anchor="middle">17</text><line x1="711.79" y1="30" x2="711.79" y2="167" class="ac-grid-line" /><text x="711.79" y="187" class="ac-axis-label" text-anchor="middle">22</text></g>
+    <path d="M 48.00,88.23 C 61.28,88.23 61.28,148.16 74.55,148.16 C 87.83,148.16 87.83,131.04 101.10,131.04 C 114.38,131.04 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,107.06 180.76,107.06 C 194.03,107.06 194.03,127.61 207.31,127.61 C 220.59,127.61 220.59,136.18 233.86,136.18 C 247.14,136.18 247.14,115.62 260.41,115.62 C 273.69,115.62 273.69,163.57 286.97,163.57 C 300.24,163.57 300.24,136.18 313.52,136.18 C 326.79,136.18 326.79,132.75 340.07,132.75 C 353.34,132.75 353.34,127.61 366.62,127.61 C 379.90,127.61 379.90,144.74 393.17,144.74 C 406.45,144.74 406.45,158.44 419.72,158.44 C 433.00,158.44 433.00,158.44 446.28,158.44 C 459.55,158.44 459.55,129.32 472.83,129.32 C 486.10,129.32 486.10,139.60 499.38,139.60 C 512.66,139.60 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,41.99 552.48,41.99 C 565.76,41.99 565.76,149.88 579.03,149.88 C 592.31,149.88 592.31,165.29 605.59,165.29 C 618.86,165.29 618.86,148.16 632.14,148.16 C 645.41,148.16 645.41,134.46 658.69,134.46 C 671.97,134.46 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,153.30 711.79,153.30 C 725.07,153.30 725.07,161.86 738.34,161.86 C 751.62,161.86 751.62,146.45 764.90,146.45 C 778.17,146.45 778.17,95.08 791.45,95.08 C 804.72,95.08 804.72,165.29 818.00,165.29 L 818.00,167 L 48.00,167 Z" class="ac-trend-area"/>
+    <path d="M 48.00,88.23 C 61.28,88.23 61.28,148.16 74.55,148.16 C 87.83,148.16 87.83,131.04 101.10,131.04 C 114.38,131.04 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,107.06 180.76,107.06 C 194.03,107.06 194.03,127.61 207.31,127.61 C 220.59,127.61 220.59,136.18 233.86,136.18 C 247.14,136.18 247.14,115.62 260.41,115.62 C 273.69,115.62 273.69,163.57 286.97,163.57 C 300.24,163.57 300.24,136.18 313.52,136.18 C 326.79,136.18 326.79,132.75 340.07,132.75 C 353.34,132.75 353.34,127.61 366.62,127.61 C 379.90,127.61 379.90,144.74 393.17,144.74 C 406.45,144.74 406.45,158.44 419.72,158.44 C 433.00,158.44 433.00,158.44 446.28,158.44 C 459.55,158.44 459.55,129.32 472.83,129.32 C 486.10,129.32 486.10,139.60 499.38,139.60 C 512.66,139.60 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,41.99 552.48,41.99 C 565.76,41.99 565.76,149.88 579.03,149.88 C 592.31,149.88 592.31,165.29 605.59,165.29 C 618.86,165.29 618.86,148.16 632.14,148.16 C 645.41,148.16 645.41,134.46 658.69,134.46 C 671.97,134.46 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,153.30 711.79,153.30 C 725.07,153.30 725.07,161.86 738.34,161.86 C 751.62,161.86 751.62,146.45 764.90,146.45 C 778.17,146.45 778.17,95.08 791.45,95.08 C 804.72,95.08 804.72,165.29 818.00,165.29" class="ac-trend-line"/>
+    <g class="dots"><circle cx="48.00" cy="88.23" r="3.0" class="ac-dot" style="animation-delay: 0.00s;"/><circle cx="74.55" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.02s;"/><circle cx="101.10" cy="131.04" r="3.0" class="ac-dot" style="animation-delay: 0.04s;"/><circle cx="127.66" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.06s;"/><circle cx="154.21" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.08s;"/><circle cx="180.76" cy="107.06" r="3.0" class="ac-dot" style="animation-delay: 0.10s;"/><circle cx="207.31" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.12s;"/><circle cx="233.86" cy="136.18" r="3.0" class="ac-dot" style="animation-delay: 0.14s;"/><circle cx="260.41" cy="115.62" r="3.0" class="ac-dot" style="animation-delay: 0.16s;"/><circle cx="286.97" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.18s;"/><circle cx="313.52" cy="136.18" r="3.0" class="ac-dot" style="animation-delay: 0.20s;"/><circle cx="340.07" cy="132.75" r="3.0" class="ac-dot" style="animation-delay: 0.22s;"/><circle cx="366.62" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.24s;"/><circle cx="393.17" cy="144.74" r="3.0" class="ac-dot" style="animation-delay: 0.26s;"/><circle cx="419.72" cy="158.44" r="3.0" class="ac-dot" style="animation-delay: 0.28s;"/><circle cx="446.28" cy="158.44" r="3.0" class="ac-dot" style="animation-delay: 0.30s;"/><circle cx="472.83" cy="129.32" r="3.0" class="ac-dot" style="animation-delay: 0.32s;"/><circle cx="499.38" cy="139.60" r="3.0" class="ac-dot" style="animation-delay: 0.34s;"/><circle cx="525.93" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.36s;"/><circle cx="552.48" cy="41.99" r="3.0" class="ac-dot" style="animation-delay: 0.38s;"/><circle cx="579.03" cy="149.88" r="3.0" class="ac-dot" style="animation-delay: 0.40s;"/><circle cx="605.59" cy="165.29" r="3.0" class="ac-dot" style="animation-delay: 0.42s;"/><circle cx="632.14" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.44s;"/><circle cx="658.69" cy="134.46" r="3.0" class="ac-dot" style="animation-delay: 0.46s;"/><circle cx="685.24" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.48s;"/><circle cx="711.79" cy="153.30" r="3.0" class="ac-dot" style="animation-delay: 0.50s;"/><circle cx="738.34" cy="161.86" r="3.0" class="ac-dot" style="animation-delay: 0.52s;"/><circle cx="764.90" cy="146.45" r="3.0" class="ac-dot" style="animation-delay: 0.54s;"/><circle cx="791.45" cy="95.08" r="3.0" class="ac-dot" style="animation-delay: 0.56s;"/>
+            <circle cx="818.00" cy="165.29" r="7" class="ac-pulse-ring"/>
+            <circle cx="818.00" cy="165.29" r="3.5" class="ac-dot-head"/>
             </g>
   </g>
 
