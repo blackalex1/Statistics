@@ -107,72 +107,72 @@
   
   <g clip-path="url(#h-clip-standalone)">
     <g opacity="1">
-        <text x="16" y="-30" class="h-matrix-text" style="animation-delay: 1.1s; animation-duration: 5.9s; font-size: 11px;">
-            ROOT&lt;█}/&gt;█|\
+        <text x="16" y="-30" class="h-matrix-text" style="animation-delay: 0.54s; animation-duration: 4.53s; font-size: 11px;">
+            SYS/0ROOT█DIR\DIR&gt;
         </text>
         
-        <text x="40" y="-30" class="h-matrix-text" style="animation-delay: 2.39s; animation-duration: 4.81s; font-size: 11px;">
-            [1|EXESYS\1ROOT\
+        <text x="40" y="-30" class="h-matrix-text" style="animation-delay: 0.91s; animation-duration: 5.96s; font-size: 12px;">
+            }ROOTEXE&lt;_█EXE&gt;{
         </text>
         
-        <text x="64" y="-30" class="h-matrix-text" style="animation-delay: 1.55s; animation-duration: 5.15s; font-size: 11px;">
-            }[{/EXE/{]/
+        <text x="64" y="-30" class="h-matrix-text" style="animation-delay: 0.18s; animation-duration: 5.37s; font-size: 10px;">
+            {1EXE⚡SYS]SYSSYS1
         </text>
         
-        <text x="88" y="-30" class="h-matrix-text" style="animation-delay: 1.11s; animation-duration: 5.0s; font-size: 10px;">
-            /|/[}SYS-SYSDIR
+        <text x="88" y="-30" class="h-matrix-text" style="animation-delay: 1.77s; animation-duration: 4.79s; font-size: 10px;">
+            &lt;{1_110|█
         </text>
         
-        <text x="112" y="-30" class="h-matrix-text" style="animation-delay: 3.24s; animation-duration: 6.89s; font-size: 10px;">
-            👾{-EXE|_|SYS👾
+        <text x="112" y="-30" class="h-matrix-text" style="animation-delay: 1.23s; animation-duration: 5.94s; font-size: 11px;">
+            1/]SYS&lt;-1&lt;_
         </text>
         
-        <text x="136" y="-30" class="h-matrix-text" style="animation-delay: 2.93s; animation-duration: 6.64s; font-size: 12px;">
-            &lt;]&lt;-DIR1EXEROOT-
+        <text x="136" y="-30" class="h-matrix-text" style="animation-delay: 1.42s; animation-duration: 6.03s; font-size: 12px;">
+            {\1SYSEXE⚡0x&lt;}
         </text>
         
-        <text x="160" y="-30" class="h-matrix-text" style="animation-delay: 0.11s; animation-duration: 5.02s; font-size: 10px;">
-            █ROOTROOT{1EXE-1\
+        <text x="160" y="-30" class="h-matrix-text" style="animation-delay: 3.12s; animation-duration: 4.77s; font-size: 12px;">
+            █\-\SYS_⚡⚡{
         </text>
         
-        <text x="184" y="-30" class="h-matrix-text" style="animation-delay: 0.34s; animation-duration: 6.18s; font-size: 11px;">
-            👾⚡SYSSYS&gt;SYSSYS/EXE
+        <text x="184" y="-30" class="h-matrix-text" style="animation-delay: 0.78s; animation-duration: 5.65s; font-size: 12px;">
+            ROOT0x⚡}[1█}█
         </text>
         
-        <text x="208" y="-30" class="h-matrix-text" style="animation-delay: 0.09s; animation-duration: 5.47s; font-size: 11px;">
-            EXE-}1/0_👾SYS
+        <text x="208" y="-30" class="h-matrix-text" style="animation-delay: 1.51s; animation-duration: 5.91s; font-size: 12px;">
+            █_1DIR/0|_⚡
         </text>
         
-        <text x="600" y="-30" class="h-matrix-text" style="animation-delay: 0.63s; animation-duration: 6.73s; font-size: 10px;">
-            0x|{0{_{⚡SYS
+        <text x="600" y="-30" class="h-matrix-text" style="animation-delay: 2.57s; animation-duration: 6.04s; font-size: 11px;">
+            -{[SYS&gt;]{&gt;}
         </text>
         
-        <text x="624" y="-30" class="h-matrix-text" style="animation-delay: 1.34s; animation-duration: 6.86s; font-size: 10px;">
-            ROOT]⚡}|1👾{ROOT
+        <text x="624" y="-30" class="h-matrix-text" style="animation-delay: 0.23s; animation-duration: 4.9s; font-size: 11px;">
+            &lt;{}&gt;]&gt;_/1
         </text>
         
-        <text x="648" y="-30" class="h-matrix-text" style="animation-delay: 3.49s; animation-duration: 6.23s; font-size: 10px;">
-            0x/}ROOT|DIR&lt;👾█
+        <text x="648" y="-30" class="h-matrix-text" style="animation-delay: 0.16s; animation-duration: 5.13s; font-size: 10px;">
+            👾⚡⚡}&gt;\_[}
         </text>
         
-        <text x="672" y="-30" class="h-matrix-text" style="animation-delay: 0.36s; animation-duration: 4.66s; font-size: 10px;">
-            ]█_ROOT]DIR0⚡👾
+        <text x="672" y="-30" class="h-matrix-text" style="animation-delay: 1.0s; animation-duration: 6.08s; font-size: 12px;">
+            [ROOT01/-0x-👾
         </text>
         
-        <text x="696" y="-30" class="h-matrix-text" style="animation-delay: 2.14s; animation-duration: 4.74s; font-size: 10px;">
-            1ROOT}[1&lt;}-}
+        <text x="696" y="-30" class="h-matrix-text" style="animation-delay: 1.07s; animation-duration: 5.46s; font-size: 11px;">
+            &gt;0x[SYS-{ROOT0]
         </text>
         
-        <text x="720" y="-30" class="h-matrix-text" style="animation-delay: 0.71s; animation-duration: 5.5s; font-size: 10px;">
-            1[ROOTEXE&gt;0SYSDIRDIR
+        <text x="720" y="-30" class="h-matrix-text" style="animation-delay: 2.97s; animation-duration: 5.08s; font-size: 10px;">
+            &lt;█SYS_0|/{]
         </text>
         
-        <text x="744" y="-30" class="h-matrix-text" style="animation-delay: 1.54s; animation-duration: 6.84s; font-size: 11px;">
-            |&lt;⚡{&lt;⚡}}&lt;
+        <text x="744" y="-30" class="h-matrix-text" style="animation-delay: 3.2s; animation-duration: 6.52s; font-size: 12px;">
+            |EXE&gt;DIRROOT{⚡}|
         </text>
         
-        <text x="768" y="-30" class="h-matrix-text" style="animation-delay: 1.27s; animation-duration: 5.03s; font-size: 12px;">
-            /0x_0👾|1/}
+        <text x="768" y="-30" class="h-matrix-text" style="animation-delay: 3.34s; animation-duration: 5.06s; font-size: 11px;">
+            &gt;&gt;&gt;█ROOT}👾\SYS
         </text>
         </g>
     <rect class="h-scanline" />
