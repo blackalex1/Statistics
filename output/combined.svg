@@ -509,8 +509,8 @@
 
   <!-- ================= SECTION 2: STRATEGIC FOCUS (470..635) ================= -->
   <g transform="translate(0, 470)">
-    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_MODULES</text>
-    <text x="825" y="26" text-anchor="end" class="t-tag">[05 ACTIVE VECTORS]</text>
+    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_DOMAINS</text>
+    <text x="825" y="26" text-anchor="end" class="t-tag">[05 ACTIVE DOMAINS]</text>
     
     <g transform="translate(15, 42)">
       <!-- Module 1 -->
@@ -518,9 +518,9 @@
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">01 // RE</text>
-        <text x="12" y="40" class="f-title">Reverse Eng</text>
-        <text x="12" y="60" class="f-desc">IDA Pro, Ghidra, x64dbg</text>
+        <text x="12" y="20" class="f-tag">01 // BACKEND</text>
+        <text x="12" y="40" class="f-title">High-Perf APIs</text>
+        <text x="12" y="60" class="f-desc">Go, Python, FastAPI</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
         <rect x="12" y="78" width="115" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
@@ -529,44 +529,44 @@
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">02 // KERNEL</text>
-        <text x="12" y="40" class="f-title">OS Internals</text>
-        <text x="12" y="60" class="f-desc">Windows NT / Linux eBPF</text>
+        <text x="12" y="20" class="f-tag">02 // CLIENTS</text>
+        <text x="12" y="40" class="f-title">Web, Mobile &amp; PC</text>
+        <text x="12" y="60" class="f-desc">JS, TS, Kotlin, C#</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="100" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="110" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 3 -->
       <g transform="translate(332, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">03 // EXPLOIT</text>
-        <text x="12" y="40" class="f-title">Vulnerability</text>
-        <text x="12" y="60" class="f-desc">Fuzzing &amp; ROP Chains</text>
+        <text x="12" y="20" class="f-tag">03 // NETWORK</text>
+        <text x="12" y="40" class="f-title">Routing &amp; Firewalls</text>
+        <text x="12" y="60" class="f-desc">iptables, TPROXY, TUN</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="120" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="115" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 4 -->
       <g transform="translate(498, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">04 // EVASION</text>
-        <text x="12" y="40" class="f-title">EDR Bypass</text>
-        <text x="12" y="60" class="f-desc">Unhooking &amp; Syscalls</text>
+        <text x="12" y="20" class="f-tag">04 // SYSTEMS</text>
+        <text x="12" y="40" class="f-title">Systems &amp; Linux</text>
+        <text x="12" y="60" class="f-desc">Rust, C/C++, ALSA</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="105" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="90" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 5 -->
       <g transform="translate(664, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">05 // NETWORK</text>
-        <text x="12" y="40" class="f-title">Protocols</text>
-        <text x="12" y="60" class="f-desc">Raw Sockets &amp; Sniffing</text>
+        <text x="12" y="20" class="f-tag">05 // INFRA</text>
+        <text x="12" y="40" class="f-title">DevOps &amp; Virt</text>
+        <text x="12" y="60" class="f-desc">Proxmox VE, LXC, Docker</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="125" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="95" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
     </g>
   </g>
@@ -577,126 +577,142 @@
   <!-- ================= SECTION 2.5: UPGRADED S-TIER ARSENAL MATRIX (635..825) ================= -->
   <g transform="translate(0, 635)">
     <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">CORE_SPECIALIZATION // ARSENAL_MATRIX</text>
-    <text x="825" y="26" text-anchor="end" class="t-tag">[VERIFIED_TOOLSET]</text>
+    <text x="825" y="26" text-anchor="end" class="t-tag">[VERIFIED_STACK]</text>
     
     <g transform="translate(15, 38)">
-      <!-- Left Arsenal: Binary Recon & Reverse Engineering -->
+      <!-- Left Arsenal: Backend Architecture & Clients -->
       <g transform="translate(0, 0)">
         <rect width="402" height="136" rx="8" class="a-card"/>
         <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
         <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
         
-        <text x="14" y="22" class="a-header">0x01 // BINARY RECON &amp; DISASSEMBLY</text>
-        <text x="388" y="22" text-anchor="end" class="a-subtag">[STATIC / DYNAMIC]</text>
+        <text x="14" y="22" class="a-header">0x01 // BACKEND ARCHITECTURE &amp; CLIENTS</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[FULL_STACK]</text>
         <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
         
-        <!-- Row 1: Disasm -->
-        <text x="14" y="52" class="a-lbl">DISASM</text>
+        <!-- Row 1: Backend -->
+        <text x="14" y="52" class="a-lbl">BACKEND</text>
         <g transform="translate(80, 39)">
-          <rect width="70" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="35" y="14" class="a-pill-txt-hi" text-anchor="middle">IDA Pro 9.0</text>
+          <rect width="76" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="38" y="14" class="a-pill-txt-hi" text-anchor="middle">Go (Golang)</text>
         </g>
-        <g transform="translate(156, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill"/>
-          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Ghidra</text>
+        <g transform="translate(162, 39)">
+          <rect width="54" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="27" y="14" class="a-pill-txt-hi" text-anchor="middle">Python</text>
         </g>
-        <g transform="translate(218, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill"/>
-          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">x64dbg</text>
+        <g transform="translate(222, 39)">
+          <rect width="58" height="20" rx="4" class="a-pill"/>
+          <text x="29" y="14" class="a-pill-txt" text-anchor="middle">FastAPI</text>
         </g>
-        <g transform="translate(280, 39)">
-          <rect width="66" height="20" rx="4" class="a-pill"/>
-          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">BinNinja</text>
+        <g transform="translate(286, 39)">
+          <rect width="84" height="20" rx="4" class="a-pill"/>
+          <text x="42" y="14" class="a-pill-txt" text-anchor="middle">gRPC / Proto</text>
         </g>
 
-        <!-- Row 2: Dynamic -->
-        <text x="14" y="82" class="a-lbl">TRACE</text>
+        <!-- Row 2: Clients (Kotlin, JS/TS, C#, Compose) -->
+        <text x="14" y="82" class="a-lbl">CLIENTS</text>
         <g transform="translate(80, 69)">
-          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">Frida Hook</text>
+          <rect width="50" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="25" y="14" class="a-pill-txt-hi" text-anchor="middle">Kotlin</text>
         </g>
-        <g transform="translate(170, 69)">
-          <rect width="98" height="20" rx="4" class="a-pill"/>
-          <text x="49" y="14" class="a-pill-txt" text-anchor="middle">Process Hacker</text>
+        <g transform="translate(136, 69)">
+          <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">JS / TypeScript</text>
         </g>
-        <g transform="translate(274, 69)">
-          <rect width="72" height="20" rx="4" class="a-pill"/>
-          <text x="36" y="14" class="a-pill-txt" text-anchor="middle">Wireshark</text>
+        <g transform="translate(244, 69)">
+          <rect width="64" height="20" rx="4" class="a-pill"/>
+          <text x="32" y="14" class="a-pill-txt" text-anchor="middle">C# / .NET</text>
+        </g>
+        <g transform="translate(314, 69)">
+          <rect width="66" height="20" rx="4" class="a-pill"/>
+          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">Compose</text>
         </g>
 
-        <!-- Row 3: Targets & Tech -->
-        <text x="14" y="112" class="a-lbl">TARGET</text>
+        <!-- Row 3: Data & Storage -->
+        <text x="14" y="112" class="a-lbl">DATA</text>
         <g transform="translate(80, 99)">
-          <rect width="112" height="20" rx="4" class="a-pill"/>
-          <text x="56" y="14" class="a-pill-txt" text-anchor="middle">PE / ELF / Mach-O</text>
+          <rect width="78" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="39" y="14" class="a-pill-txt-hi" text-anchor="middle">PostgreSQL</text>
         </g>
-        <g transform="translate(198, 99)">
-          <rect width="78" height="20" rx="4" class="a-pill"/>
-          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">Anti-Debug</text>
+        <g transform="translate(164, 99)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">SQLite</text>
+        </g>
+        <g transform="translate(226, 99)">
+          <rect width="50" height="20" rx="4" class="a-pill"/>
+          <text x="25" y="14" class="a-pill-txt" text-anchor="middle">Redis</text>
         </g>
         <g transform="translate(282, 99)">
-          <rect width="64" height="20" rx="4" class="a-pill"/>
-          <text x="32" y="14" class="a-pill-txt" text-anchor="middle">Hooking</text>
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Docker</text>
         </g>
       </g>
 
-      <!-- Right Arsenal: Low-Level & OS Internals -->
+      <!-- Right Arsenal: Systems, Networking & Infrastructure -->
       <g transform="translate(418, 0)">
         <rect width="402" height="136" rx="8" class="a-card"/>
         <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
         <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
         
-        <text x="14" y="22" class="a-header">0x02 // LOW-LEVEL &amp; KERNEL INTERNALS</text>
-        <text x="388" y="22" text-anchor="end" class="a-subtag">[RING_0 / RING_3]</text>
+        <text x="14" y="22" class="a-header">0x02 // SYSTEMS, NETWORKING &amp; INFRA</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[LOW_LEVEL / DEVOPS]</text>
         <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
         
-        <!-- Row 1: Languages -->
-        <text x="14" y="52" class="a-lbl">LANGS</text>
+        <!-- Row 1: Low-Level -->
+        <text x="14" y="52" class="a-lbl">SYSTEMS</text>
         <g transform="translate(80, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="28" y="14" class="a-pill-txt-hi" text-anchor="middle">C / C++</text>
+          <rect width="48" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="24" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
         </g>
-        <g transform="translate(142, 39)">
-          <rect width="44" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="22" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
+        <g transform="translate(134, 39)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">C / C++</text>
         </g>
-        <g transform="translate(192, 39)">
-          <rect width="54" height="20" rx="4" class="a-pill"/>
-          <text x="27" y="14" class="a-pill-txt" text-anchor="middle">Python</text>
+        <g transform="translate(196, 39)">
+          <rect width="78" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="39" y="14" class="a-pill-txt-hi" text-anchor="middle">Linux ALSA</text>
         </g>
-        <g transform="translate(252, 39)">
-          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">x86/x64 Asm</text>
+        <g transform="translate(280, 39)">
+          <rect width="66" height="20" rx="4" class="a-pill"/>
+          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">Daemons</text>
         </g>
 
-        <!-- Row 2: OS Kernels -->
-        <text x="14" y="82" class="a-lbl">KERNEL</text>
+        <!-- Row 2: Network & iptables -->
+        <text x="14" y="82" class="a-lbl">NETWORK</text>
         <g transform="translate(80, 69)">
-          <rect width="86" height="20" rx="4" class="a-pill"/>
-          <text x="43" y="14" class="a-pill-txt" text-anchor="middle">Win32 / NT</text>
+          <rect width="66" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="33" y="14" class="a-pill-txt-hi" text-anchor="middle">iptables</text>
         </g>
-        <g transform="translate(172, 69)">
+        <g transform="translate(152, 69)">
+          <rect width="62" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="31" y="14" class="a-pill-txt-hi" text-anchor="middle">Sing-box</text>
+        </g>
+        <g transform="translate(220, 69)">
           <rect width="80" height="20" rx="4" class="a-pill"/>
-          <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Linux eBPF</text>
+          <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Xray Reality</text>
         </g>
-        <g transform="translate(258, 69)">
-          <rect width="90" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="45" y="14" class="a-pill-txt-hi" text-anchor="middle">Kernel Driver</text>
+        <g transform="translate(306, 69)">
+          <rect width="70" height="20" rx="4" class="a-pill"/>
+          <text x="35" y="14" class="a-pill-txt" text-anchor="middle">Hysteria 2</text>
         </g>
 
-        <!-- Row 3: Security & Network -->
-        <text x="14" y="112" class="a-lbl">SECURITY</text>
+        <!-- Row 3: Infrastructure -->
+        <text x="14" y="112" class="a-lbl">INFRA</text>
         <g transform="translate(80, 99)">
-          <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">Direct Syscalls</text>
+          <rect width="82" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="41" y="14" class="a-pill-txt-hi" text-anchor="middle">Proxmox VE</text>
         </g>
-        <g transform="translate(188, 99)">
-          <rect width="78" height="20" rx="4" class="a-pill"/>
-          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">DEP / ASLR</text>
+        <g transform="translate(168, 99)">
+          <rect width="68" height="20" rx="4" class="a-pill"/>
+          <text x="34" y="14" class="a-pill-txt" text-anchor="middle">LXC / KVM</text>
         </g>
-        <g transform="translate(272, 99)">
-          <rect width="84" height="20" rx="4" class="a-pill"/>
-          <text x="42" y="14" class="a-pill-txt" text-anchor="middle">Raw Sockets</text>
+        <g transform="translate(242, 99)">
+          <rect width="82" height="20" rx="4" class="a-pill"/>
+          <text x="41" y="14" class="a-pill-txt" text-anchor="middle">Linux / Bash</text>
+        </g>
+        <g transform="translate(330, 99)">
+          <rect width="46" height="20" rx="4" class="a-pill"/>
+          <text x="23" y="14" class="a-pill-txt" text-anchor="middle">CI/CD</text>
         </g>
       </g>
     </g>
@@ -726,7 +742,7 @@
           <path d="M8 0C3.58 0 0 3.58 0 8C0 11.53 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" class="s-icon" transform="translate(0, -11) scale(0.85)"/>
           <text x="22" y="0" class="s-label">COMMITS</text>
         </g>
-        <text x="0" y="32" class="s-value">4048</text>
+        <text x="0" y="32" class="s-value">4061</text>
       </g>
 
       <!-- PRs -->
@@ -790,16 +806,16 @@
                 <stop offset="100%" stop-color="white" stop-opacity="0"/>
               </linearGradient>
               <clipPath id="l-clip-1">
-                <rect x="100" y="47" width="23.22" height="7" rx="3.5"/>
+                <rect x="100" y="47" width="23.400000000000002" height="7" rx="3.5"/>
               </clipPath>
             </defs>
             <text x="12" y="56" class="l-name">JavaScript</text>
-            <text x="380" y="56" class="l-pct" text-anchor="end">12.9%</text>
+            <text x="380" y="56" class="l-pct" text-anchor="end">13.0%</text>
             <rect x="100" y="47" width="180" height="7" rx="3.5" class="l-bar-bg"/>
-            <rect x="100" y="47" width="23.22" height="7" rx="3.5" fill="url(#l-grad-1)"/>
+            <rect x="100" y="47" width="23.400000000000002" height="7" rx="3.5" fill="url(#l-grad-1)"/>
             <g clip-path="url(#l-clip-1)">
               <rect x="100" y="47" width="70" height="7" rx="3.5" fill="url(#l-sheen-1)" opacity="0">
-                 <animate attributeName="x" from="30" to="123.22" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
+                 <animate attributeName="x" from="30" to="123.4" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
                  <animate attributeName="opacity" values="0;0.95;0" dur="2.6s" begin="1.38s" repeatCount="indefinite" />
               </rect>
             </g>
@@ -1253,7 +1269,8 @@
 <rect x="802.59" y="108.47" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-0" style="animation-delay: 3.922s;"/>
 <rect x="818.00" y="16.00" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-1" style="animation-delay: 4.000s;"/>
 <rect x="818.00" y="31.41" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-0" style="animation-delay: 4.000s;"/>
-<rect x="818.00" y="46.82" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-2" style="animation-delay: 4.000s;"/>
+<rect x="818.00" y="46.82" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-4" style="animation-delay: 4.000s;"/>
+<rect x="818.00" y="62.24" width="11.5" height="11.5" rx="2.5" class="sc-cell sc-l-1" style="animation-delay: 4.000s;"/>
 </g>
     <g transform="translate(32, 16)">
       <g class="sc-beam">
@@ -1270,12 +1287,12 @@
 
   <!-- ================= SECTION 5: ACTIVITY TRENDS (1150..1410) ================= -->
   <g transform="translate(0, 1165)">
-    <g class="grid"><line x1="48" y1="167.00" x2="818" y2="167.00" class="ac-grid-line" /><text x="38" y="171.00" class="ac-axis-label" text-anchor="end">0</text><line x1="48" y1="98.50" x2="818" y2="98.50" class="ac-grid-line" /><text x="38" y="102.50" class="ac-axis-label" text-anchor="end">40</text><line x1="48" y1="30.00" x2="818" y2="30.00" class="ac-grid-line" /><text x="38" y="34.00" class="ac-axis-label" text-anchor="end">80</text><line x1="48.00" y1="30" x2="48.00" y2="167" class="ac-grid-line" /><text x="48.00" y="187" class="ac-axis-label" text-anchor="middle">05</text><line x1="180.76" y1="30" x2="180.76" y2="167" class="ac-grid-line" /><text x="180.76" y="187" class="ac-axis-label" text-anchor="middle">10</text><line x1="313.52" y1="30" x2="313.52" y2="167" class="ac-grid-line" /><text x="313.52" y="187" class="ac-axis-label" text-anchor="middle">15</text><line x1="446.28" y1="30" x2="446.28" y2="167" class="ac-grid-line" /><text x="446.28" y="187" class="ac-axis-label" text-anchor="middle">20</text><line x1="579.03" y1="30" x2="579.03" y2="167" class="ac-grid-line" /><text x="579.03" y="187" class="ac-axis-label" text-anchor="middle">25</text><line x1="711.79" y1="30" x2="711.79" y2="167" class="ac-grid-line" /><text x="711.79" y="187" class="ac-axis-label" text-anchor="middle">30</text></g>
-    <path d="M 48.00,167.00 C 61.28,167.00 61.28,167.00 74.55,167.00 C 87.83,167.00 87.83,167.00 101.10,167.00 C 114.38,167.00 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,151.59 180.76,151.59 C 194.03,151.59 194.03,163.57 207.31,163.57 C 220.59,163.57 220.59,167.00 233.86,167.00 C 247.14,167.00 247.14,167.00 260.41,167.00 C 273.69,167.00 273.69,163.57 286.97,163.57 C 300.24,163.57 300.24,167.00 313.52,167.00 C 326.79,167.00 326.79,153.30 340.07,153.30 C 353.34,153.30 353.34,167.00 366.62,167.00 C 379.90,167.00 379.90,88.23 393.17,88.23 C 406.45,88.23 406.45,148.16 419.72,148.16 C 433.00,148.16 433.00,35.14 446.28,35.14 C 459.55,35.14 459.55,113.91 472.83,113.91 C 486.10,113.91 486.10,167.00 499.38,167.00 C 512.66,167.00 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,167.00 579.03,167.00 C 592.31,167.00 592.31,127.61 605.59,127.61 C 618.86,127.61 618.86,160.15 632.14,160.15 C 645.41,160.15 645.41,160.15 658.69,160.15 C 671.97,160.15 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,167.00 738.34,167.00 C 751.62,167.00 751.62,160.15 764.90,160.15 C 778.17,160.15 778.17,167.00 791.45,167.00 C 804.72,167.00 804.72,151.59 818.00,151.59 L 818.00,167 L 48.00,167 Z" class="ac-trend-area"/>
-    <path d="M 48.00,167.00 C 61.28,167.00 61.28,167.00 74.55,167.00 C 87.83,167.00 87.83,167.00 101.10,167.00 C 114.38,167.00 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,167.00 154.21,167.00 C 167.48,167.00 167.48,151.59 180.76,151.59 C 194.03,151.59 194.03,163.57 207.31,163.57 C 220.59,163.57 220.59,167.00 233.86,167.00 C 247.14,167.00 247.14,167.00 260.41,167.00 C 273.69,167.00 273.69,163.57 286.97,163.57 C 300.24,163.57 300.24,167.00 313.52,167.00 C 326.79,167.00 326.79,153.30 340.07,153.30 C 353.34,153.30 353.34,167.00 366.62,167.00 C 379.90,167.00 379.90,88.23 393.17,88.23 C 406.45,88.23 406.45,148.16 419.72,148.16 C 433.00,148.16 433.00,35.14 446.28,35.14 C 459.55,35.14 459.55,113.91 472.83,113.91 C 486.10,113.91 486.10,167.00 499.38,167.00 C 512.66,167.00 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,167.00 579.03,167.00 C 592.31,167.00 592.31,127.61 605.59,127.61 C 618.86,127.61 618.86,160.15 632.14,160.15 C 645.41,160.15 645.41,160.15 658.69,160.15 C 671.97,160.15 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,167.00 738.34,167.00 C 751.62,167.00 751.62,160.15 764.90,160.15 C 778.17,160.15 778.17,167.00 791.45,167.00 C 804.72,167.00 804.72,151.59 818.00,151.59" class="ac-trend-line"/>
-    <g class="dots"><circle cx="48.00" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.00s;"/><circle cx="74.55" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.02s;"/><circle cx="101.10" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.04s;"/><circle cx="127.66" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.06s;"/><circle cx="154.21" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.08s;"/><circle cx="180.76" cy="151.59" r="3.0" class="ac-dot" style="animation-delay: 0.10s;"/><circle cx="207.31" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.12s;"/><circle cx="233.86" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.14s;"/><circle cx="260.41" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.16s;"/><circle cx="286.97" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.18s;"/><circle cx="313.52" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.20s;"/><circle cx="340.07" cy="153.30" r="3.0" class="ac-dot" style="animation-delay: 0.22s;"/><circle cx="366.62" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.24s;"/><circle cx="393.17" cy="88.23" r="3.0" class="ac-dot" style="animation-delay: 0.26s;"/><circle cx="419.72" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.28s;"/><circle cx="446.28" cy="35.14" r="3.0" class="ac-dot" style="animation-delay: 0.30s;"/><circle cx="472.83" cy="113.91" r="3.0" class="ac-dot" style="animation-delay: 0.32s;"/><circle cx="499.38" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.34s;"/><circle cx="525.93" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.36s;"/><circle cx="552.48" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.38s;"/><circle cx="579.03" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.40s;"/><circle cx="605.59" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.42s;"/><circle cx="632.14" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.44s;"/><circle cx="658.69" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.46s;"/><circle cx="685.24" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.48s;"/><circle cx="711.79" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.50s;"/><circle cx="738.34" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.52s;"/><circle cx="764.90" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.54s;"/><circle cx="791.45" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.56s;"/>
-            <circle cx="818.00" cy="151.59" r="7" class="ac-pulse-ring"/>
-            <circle cx="818.00" cy="151.59" r="3.5" class="ac-dot-head"/>
+    <g class="grid"><line x1="48" y1="167.00" x2="818" y2="167.00" class="ac-grid-line" /><text x="38" y="171.00" class="ac-axis-label" text-anchor="end">0</text><line x1="48" y1="98.50" x2="818" y2="98.50" class="ac-grid-line" /><text x="38" y="102.50" class="ac-axis-label" text-anchor="end">40</text><line x1="48" y1="30.00" x2="818" y2="30.00" class="ac-grid-line" /><text x="38" y="34.00" class="ac-axis-label" text-anchor="end">80</text><line x1="48.00" y1="30" x2="48.00" y2="167" class="ac-grid-line" /><text x="48.00" y="187" class="ac-axis-label" text-anchor="middle">06</text><line x1="180.76" y1="30" x2="180.76" y2="167" class="ac-grid-line" /><text x="180.76" y="187" class="ac-axis-label" text-anchor="middle">11</text><line x1="313.52" y1="30" x2="313.52" y2="167" class="ac-grid-line" /><text x="313.52" y="187" class="ac-axis-label" text-anchor="middle">16</text><line x1="446.28" y1="30" x2="446.28" y2="167" class="ac-grid-line" /><text x="446.28" y="187" class="ac-axis-label" text-anchor="middle">21</text><line x1="579.03" y1="30" x2="579.03" y2="167" class="ac-grid-line" /><text x="579.03" y="187" class="ac-axis-label" text-anchor="middle">26</text><line x1="711.79" y1="30" x2="711.79" y2="167" class="ac-grid-line" /><text x="711.79" y="187" class="ac-axis-label" text-anchor="middle">31</text></g>
+    <path d="M 48.00,167.00 C 61.28,167.00 61.28,167.00 74.55,167.00 C 87.83,167.00 87.83,167.00 101.10,167.00 C 114.38,167.00 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,151.59 154.21,151.59 C 167.48,151.59 167.48,163.57 180.76,163.57 C 194.03,163.57 194.03,167.00 207.31,167.00 C 220.59,167.00 220.59,167.00 233.86,167.00 C 247.14,167.00 247.14,163.57 260.41,163.57 C 273.69,163.57 273.69,167.00 286.97,167.00 C 300.24,167.00 300.24,153.30 313.52,153.30 C 326.79,153.30 326.79,167.00 340.07,167.00 C 353.34,167.00 353.34,88.23 366.62,88.23 C 379.90,88.23 379.90,148.16 393.17,148.16 C 406.45,148.16 406.45,35.14 419.72,35.14 C 433.00,35.14 433.00,113.91 446.28,113.91 C 459.55,113.91 459.55,167.00 472.83,167.00 C 486.10,167.00 486.10,167.00 499.38,167.00 C 512.66,167.00 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,127.61 579.03,127.61 C 592.31,127.61 592.31,160.15 605.59,160.15 C 618.86,160.15 618.86,160.15 632.14,160.15 C 645.41,160.15 645.41,167.00 658.69,167.00 C 671.97,167.00 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,160.15 738.34,160.15 C 751.62,160.15 751.62,167.00 764.90,167.00 C 778.17,167.00 778.17,131.04 791.45,131.04 C 804.72,131.04 804.72,165.29 818.00,165.29 L 818.00,167 L 48.00,167 Z" class="ac-trend-area"/>
+    <path d="M 48.00,167.00 C 61.28,167.00 61.28,167.00 74.55,167.00 C 87.83,167.00 87.83,167.00 101.10,167.00 C 114.38,167.00 114.38,167.00 127.66,167.00 C 140.93,167.00 140.93,151.59 154.21,151.59 C 167.48,151.59 167.48,163.57 180.76,163.57 C 194.03,163.57 194.03,167.00 207.31,167.00 C 220.59,167.00 220.59,167.00 233.86,167.00 C 247.14,167.00 247.14,163.57 260.41,163.57 C 273.69,163.57 273.69,167.00 286.97,167.00 C 300.24,167.00 300.24,153.30 313.52,153.30 C 326.79,153.30 326.79,167.00 340.07,167.00 C 353.34,167.00 353.34,88.23 366.62,88.23 C 379.90,88.23 379.90,148.16 393.17,148.16 C 406.45,148.16 406.45,35.14 419.72,35.14 C 433.00,35.14 433.00,113.91 446.28,113.91 C 459.55,113.91 459.55,167.00 472.83,167.00 C 486.10,167.00 486.10,167.00 499.38,167.00 C 512.66,167.00 512.66,167.00 525.93,167.00 C 539.21,167.00 539.21,167.00 552.48,167.00 C 565.76,167.00 565.76,127.61 579.03,127.61 C 592.31,127.61 592.31,160.15 605.59,160.15 C 618.86,160.15 618.86,160.15 632.14,160.15 C 645.41,160.15 645.41,167.00 658.69,167.00 C 671.97,167.00 671.97,167.00 685.24,167.00 C 698.52,167.00 698.52,167.00 711.79,167.00 C 725.07,167.00 725.07,160.15 738.34,160.15 C 751.62,160.15 751.62,167.00 764.90,167.00 C 778.17,167.00 778.17,131.04 791.45,131.04 C 804.72,131.04 804.72,165.29 818.00,165.29" class="ac-trend-line"/>
+    <g class="dots"><circle cx="48.00" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.00s;"/><circle cx="74.55" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.02s;"/><circle cx="101.10" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.04s;"/><circle cx="127.66" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.06s;"/><circle cx="154.21" cy="151.59" r="3.0" class="ac-dot" style="animation-delay: 0.08s;"/><circle cx="180.76" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.10s;"/><circle cx="207.31" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.12s;"/><circle cx="233.86" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.14s;"/><circle cx="260.41" cy="163.57" r="3.0" class="ac-dot" style="animation-delay: 0.16s;"/><circle cx="286.97" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.18s;"/><circle cx="313.52" cy="153.30" r="3.0" class="ac-dot" style="animation-delay: 0.20s;"/><circle cx="340.07" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.22s;"/><circle cx="366.62" cy="88.23" r="3.0" class="ac-dot" style="animation-delay: 0.24s;"/><circle cx="393.17" cy="148.16" r="3.0" class="ac-dot" style="animation-delay: 0.26s;"/><circle cx="419.72" cy="35.14" r="3.0" class="ac-dot" style="animation-delay: 0.28s;"/><circle cx="446.28" cy="113.91" r="3.0" class="ac-dot" style="animation-delay: 0.30s;"/><circle cx="472.83" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.32s;"/><circle cx="499.38" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.34s;"/><circle cx="525.93" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.36s;"/><circle cx="552.48" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.38s;"/><circle cx="579.03" cy="127.61" r="3.0" class="ac-dot" style="animation-delay: 0.40s;"/><circle cx="605.59" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.42s;"/><circle cx="632.14" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.44s;"/><circle cx="658.69" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.46s;"/><circle cx="685.24" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.48s;"/><circle cx="711.79" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.50s;"/><circle cx="738.34" cy="160.15" r="3.0" class="ac-dot" style="animation-delay: 0.52s;"/><circle cx="764.90" cy="167.00" r="3.0" class="ac-dot" style="animation-delay: 0.54s;"/><circle cx="791.45" cy="131.04" r="3.0" class="ac-dot" style="animation-delay: 0.56s;"/>
+            <circle cx="818.00" cy="165.29" r="7" class="ac-pulse-ring"/>
+            <circle cx="818.00" cy="165.29" r="3.5" class="ac-dot-head"/>
             </g>
   </g>
 
