@@ -1,13 +1,13 @@
 import html
 
 def get_focus_svg(color="#00FFAA"):
-    # Strategic Focus Data
+    # Strategic Focus Data - Verified Engineering Domains
     focus_areas = [
-        ("RE", "Reverse Engineering", "x64dbg, IDA Pro, Ghidra"),
-        ("OS", "OS Internals", "Kernel Dev / Windows & Linux"),
-        ("PENTEST", "Pentesting", "Infrastructure & Web Audits"),
-        ("BYPASS", "Evasion", "Advanced Detection Bypass"),
-        ("NET", "Networking", "Low-level Protocols & Sniffing")
+        ("BACKEND", "High-Perf APIs", "Go, Python, FastAPI", "gRPC, Protobuf & WSS", 115),
+        ("CLIENTS", "Web, Mobile & PC", "JavaScript & TypeScript", "Kotlin, Compose & C#", 110),
+        ("NETWORK", "Routing & Firewalls", "iptables, TPROXY & TUN", "Sing-box, Xray, Hysteria", 115),
+        ("SYSTEMS", "Systems & Linux", "Rust, C/C++, Linux ALSA", "Daemons & Raw Sockets", 90),
+        ("INFRA", "DevOps & Virt", "Proxmox VE, LXC, Docker", "Linux & GitHub Actions", 95)
     ]
     
     # Dimensions
@@ -72,13 +72,13 @@ def get_focus_svg(color="#00FFAA"):
 
         .f-indicator {{
             fill: var(--f-accent);
-            opacity: 0.3;
+            opacity: 0.8;
             animation: pulse 2s infinite ease-in-out;
         }}
 
         @keyframes pulse {{
-            0%, 100% {{ opacity: 0.3; }}
-            50% {{ opacity: 0.7; }}
+            0%, 100% {{ opacity: 0.5; }}
+            50% {{ opacity: 0.9; }}
         }}
 
         .f-appear {{
@@ -96,17 +96,15 @@ def get_focus_svg(color="#00FFAA"):
     """
 
     cards_html = ""
-    for i, (tag, title, desc) in enumerate(focus_areas):
+    for i, (tag, title, desc_l1, desc_l2, bar_w) in enumerate(focus_areas):
         x = 10 + (i * (card_w + gap))
         y = 40
         delay = i * 0.1
         
-        # Split description before escaping to avoid breaking entities
-        desc_line1 = html.escape(desc[:25])
-        desc_line2 = html.escape(desc[25:])
-        
         tag_esc = html.escape(tag)
         title_esc = html.escape(title)
+        l1_esc = html.escape(desc_l1)
+        l2_esc = html.escape(desc_l2)
         
         cards_html += f"""
         <g class="f-appear" style="animation-delay: {delay}s;">
@@ -119,19 +117,19 @@ def get_focus_svg(color="#00FFAA"):
             <text x="{x+12}" y="{y+48}" class="f-title">{title_esc}</text>
             
             <!-- Wrapping description -->
-            <text x="{x+12}" y="{y+70}" class="f-desc">{desc_line1}</text>
-            <text x="{x+12}" y="{y+85}" class="f-desc">{desc_line2}</text>
+            <text x="{x+12}" y="{y+70}" class="f-desc">{l1_esc}</text>
+            <text x="{x+12}" y="{y+85}" class="f-desc">{l2_esc}</text>
             
             <rect x="{x+12}" y="{y+110}" width="130" height="3" rx="1.5" fill="var(--f-border)"/>
-            <rect x="{x+12}" y="{y+110}" width="{40 + i*15}" height="3" rx="1.5" class="f-indicator"/>
+            <rect x="{x+12}" y="{y+110}" width="{bar_w}" height="3" rx="1.5" class="f-indicator"/>
         </g>
         """
 
     return f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     {svg_style}
     
-    <text x="10" y="25" style="font: bold 16px monospace; fill: var(--f-text); letter-spacing: 2px;">STRATEGIC_FOCUS // MODULES</text>
-    <line x1="10" y1="30" x2="280" y2="30" stroke="{color}" stroke-width="1" opacity="0.3"/>
+    <text x="10" y="25" style="font: bold 16px monospace; fill: var(--f-text); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_DOMAINS</text>
+    <line x1="10" y1="30" x2="330" y2="30" stroke="{color}" stroke-width="1" opacity="0.3"/>
 
     {cards_html}
 </svg>"""

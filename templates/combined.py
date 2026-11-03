@@ -606,8 +606,8 @@ def get_combined_svg(data, color="#00FFAA"):
 
   <!-- ================= SECTION 2: STRATEGIC FOCUS (470..635) ================= -->
   <g transform="translate(0, 470)">
-    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_MODULES</text>
-    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[05 ACTIVE VECTORS]</text>
+    <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">STRATEGIC_FOCUS // CORE_DOMAINS</text>
+    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[05 ACTIVE DOMAINS]</text>
     
     <g transform="translate(15, 42)">
       <!-- Module 1 -->
@@ -615,9 +615,9 @@ def get_combined_svg(data, color="#00FFAA"):
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">01 // RE</text>
-        <text x="12" y="40" class="f-title">Reverse Eng</text>
-        <text x="12" y="60" class="f-desc">IDA Pro, Ghidra, x64dbg</text>
+        <text x="12" y="20" class="f-tag">01 // BACKEND</text>
+        <text x="12" y="40" class="f-title">High-Perf APIs</text>
+        <text x="12" y="60" class="f-desc">Go, Python, FastAPI</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
         <rect x="12" y="78" width="115" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
@@ -626,44 +626,44 @@ def get_combined_svg(data, color="#00FFAA"):
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">02 // KERNEL</text>
-        <text x="12" y="40" class="f-title">OS Internals</text>
-        <text x="12" y="60" class="f-desc">Windows NT / Linux eBPF</text>
+        <text x="12" y="20" class="f-tag">02 // CLIENTS</text>
+        <text x="12" y="40" class="f-title">Web, Mobile &amp; PC</text>
+        <text x="12" y="60" class="f-desc">JS, TS, Kotlin, C#</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="100" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="110" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 3 -->
       <g transform="translate(332, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">03 // EXPLOIT</text>
-        <text x="12" y="40" class="f-title">Vulnerability</text>
-        <text x="12" y="60" class="f-desc">Fuzzing &amp; ROP Chains</text>
+        <text x="12" y="20" class="f-tag">03 // NETWORK</text>
+        <text x="12" y="40" class="f-title">Routing &amp; Firewalls</text>
+        <text x="12" y="60" class="f-desc">iptables, TPROXY, TUN</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="120" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="115" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 4 -->
       <g transform="translate(498, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">04 // EVASION</text>
-        <text x="12" y="40" class="f-title">EDR Bypass</text>
-        <text x="12" y="60" class="f-desc">Unhooking &amp; Syscalls</text>
+        <text x="12" y="20" class="f-tag">04 // SYSTEMS</text>
+        <text x="12" y="40" class="f-title">Systems &amp; Linux</text>
+        <text x="12" y="60" class="f-desc">Rust, C/C++, ALSA</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="105" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="90" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
       <!-- Module 5 -->
       <g transform="translate(664, 0)">
         <rect width="155" height="98" rx="6" class="f-card"/>
         <path d="M 0 10 L 0 0 L 10 0" class="hud-bracket"/>
         <path d="M 155 88 L 155 98 L 145 98" class="hud-bracket"/>
-        <text x="12" y="20" class="f-tag">05 // NETWORK</text>
-        <text x="12" y="40" class="f-title">Protocols</text>
-        <text x="12" y="60" class="f-desc">Raw Sockets &amp; Sniffing</text>
+        <text x="12" y="20" class="f-tag">05 // INFRA</text>
+        <text x="12" y="40" class="f-title">DevOps &amp; Virt</text>
+        <text x="12" y="60" class="f-desc">Proxmox VE, LXC, Docker</text>
         <rect x="12" y="78" width="130" height="3" rx="1.5" class="f-meter-bg"/>
-        <rect x="12" y="78" width="125" height="3" rx="1.5" class="f-meter-fill"/>
+        <rect x="12" y="78" width="95" height="3" rx="1.5" class="f-meter-fill"/>
       </g>
     </g>
   </g>
@@ -674,126 +674,142 @@ def get_combined_svg(data, color="#00FFAA"):
   <!-- ================= SECTION 2.5: UPGRADED S-TIER ARSENAL MATRIX (635..825) ================= -->
   <g transform="translate(0, 635)">
     <text x="25" y="26" style="font: bold 12px 'JetBrains Mono', monospace; fill: var(--text-hi); letter-spacing: 2px;">CORE_SPECIALIZATION // ARSENAL_MATRIX</text>
-    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[VERIFIED_TOOLSET]</text>
+    <text x="{width-25}" y="26" text-anchor="end" class="t-tag">[VERIFIED_STACK]</text>
     
     <g transform="translate(15, 38)">
-      <!-- Left Arsenal: Binary Recon & Reverse Engineering -->
+      <!-- Left Arsenal: Backend Architecture & Clients -->
       <g transform="translate(0, 0)">
         <rect width="402" height="136" rx="8" class="a-card"/>
         <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
         <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
         
-        <text x="14" y="22" class="a-header">0x01 // BINARY RECON &amp; DISASSEMBLY</text>
-        <text x="388" y="22" text-anchor="end" class="a-subtag">[STATIC / DYNAMIC]</text>
+        <text x="14" y="22" class="a-header">0x01 // BACKEND ARCHITECTURE &amp; CLIENTS</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[FULL_STACK]</text>
         <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
         
-        <!-- Row 1: Disasm -->
-        <text x="14" y="52" class="a-lbl">DISASM</text>
+        <!-- Row 1: Backend -->
+        <text x="14" y="52" class="a-lbl">BACKEND</text>
         <g transform="translate(80, 39)">
-          <rect width="70" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="35" y="14" class="a-pill-txt-hi" text-anchor="middle">IDA Pro 9.0</text>
+          <rect width="76" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="38" y="14" class="a-pill-txt-hi" text-anchor="middle">Go (Golang)</text>
         </g>
-        <g transform="translate(156, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill"/>
-          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Ghidra</text>
+        <g transform="translate(162, 39)">
+          <rect width="54" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="27" y="14" class="a-pill-txt-hi" text-anchor="middle">Python</text>
         </g>
-        <g transform="translate(218, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill"/>
-          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">x64dbg</text>
+        <g transform="translate(222, 39)">
+          <rect width="58" height="20" rx="4" class="a-pill"/>
+          <text x="29" y="14" class="a-pill-txt" text-anchor="middle">FastAPI</text>
         </g>
-        <g transform="translate(280, 39)">
-          <rect width="66" height="20" rx="4" class="a-pill"/>
-          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">BinNinja</text>
+        <g transform="translate(286, 39)">
+          <rect width="84" height="20" rx="4" class="a-pill"/>
+          <text x="42" y="14" class="a-pill-txt" text-anchor="middle">gRPC / Proto</text>
         </g>
 
-        <!-- Row 2: Dynamic -->
-        <text x="14" y="82" class="a-lbl">TRACE</text>
+        <!-- Row 2: Clients (Kotlin, JS/TS, C#, Compose) -->
+        <text x="14" y="82" class="a-lbl">CLIENTS</text>
         <g transform="translate(80, 69)">
-          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">Frida Hook</text>
+          <rect width="50" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="25" y="14" class="a-pill-txt-hi" text-anchor="middle">Kotlin</text>
         </g>
-        <g transform="translate(170, 69)">
-          <rect width="98" height="20" rx="4" class="a-pill"/>
-          <text x="49" y="14" class="a-pill-txt" text-anchor="middle">Process Hacker</text>
+        <g transform="translate(136, 69)">
+          <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">JS / TypeScript</text>
         </g>
-        <g transform="translate(274, 69)">
-          <rect width="72" height="20" rx="4" class="a-pill"/>
-          <text x="36" y="14" class="a-pill-txt" text-anchor="middle">Wireshark</text>
+        <g transform="translate(244, 69)">
+          <rect width="64" height="20" rx="4" class="a-pill"/>
+          <text x="32" y="14" class="a-pill-txt" text-anchor="middle">C# / .NET</text>
+        </g>
+        <g transform="translate(314, 69)">
+          <rect width="66" height="20" rx="4" class="a-pill"/>
+          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">Compose</text>
         </g>
 
-        <!-- Row 3: Targets & Tech -->
-        <text x="14" y="112" class="a-lbl">TARGET</text>
+        <!-- Row 3: Data & Storage -->
+        <text x="14" y="112" class="a-lbl">DATA</text>
         <g transform="translate(80, 99)">
-          <rect width="112" height="20" rx="4" class="a-pill"/>
-          <text x="56" y="14" class="a-pill-txt" text-anchor="middle">PE / ELF / Mach-O</text>
+          <rect width="78" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="39" y="14" class="a-pill-txt-hi" text-anchor="middle">PostgreSQL</text>
         </g>
-        <g transform="translate(198, 99)">
-          <rect width="78" height="20" rx="4" class="a-pill"/>
-          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">Anti-Debug</text>
+        <g transform="translate(164, 99)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">SQLite</text>
+        </g>
+        <g transform="translate(226, 99)">
+          <rect width="50" height="20" rx="4" class="a-pill"/>
+          <text x="25" y="14" class="a-pill-txt" text-anchor="middle">Redis</text>
         </g>
         <g transform="translate(282, 99)">
-          <rect width="64" height="20" rx="4" class="a-pill"/>
-          <text x="32" y="14" class="a-pill-txt" text-anchor="middle">Hooking</text>
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">Docker</text>
         </g>
       </g>
 
-      <!-- Right Arsenal: Low-Level & OS Internals -->
+      <!-- Right Arsenal: Systems, Networking & Infrastructure -->
       <g transform="translate(418, 0)">
         <rect width="402" height="136" rx="8" class="a-card"/>
         <path d="M 0 12 L 0 0 L 12 0" class="hud-bracket"/>
         <path d="M 402 124 L 402 136 L 390 136" class="hud-bracket"/>
         
-        <text x="14" y="22" class="a-header">0x02 // LOW-LEVEL &amp; KERNEL INTERNALS</text>
-        <text x="388" y="22" text-anchor="end" class="a-subtag">[RING_0 / RING_3]</text>
+        <text x="14" y="22" class="a-header">0x02 // SYSTEMS, NETWORKING &amp; INFRA</text>
+        <text x="388" y="22" text-anchor="end" class="a-subtag">[LOW_LEVEL / DEVOPS]</text>
         <line x1="14" y1="30" x2="388" y2="30" stroke="var(--border-dim)" stroke-width="1"/>
         
-        <!-- Row 1: Languages -->
-        <text x="14" y="52" class="a-lbl">LANGS</text>
+        <!-- Row 1: Low-Level -->
+        <text x="14" y="52" class="a-lbl">SYSTEMS</text>
         <g transform="translate(80, 39)">
-          <rect width="56" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="28" y="14" class="a-pill-txt-hi" text-anchor="middle">C / C++</text>
+          <rect width="48" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="24" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
         </g>
-        <g transform="translate(142, 39)">
-          <rect width="44" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="22" y="14" class="a-pill-txt-hi" text-anchor="middle">Rust</text>
+        <g transform="translate(134, 39)">
+          <rect width="56" height="20" rx="4" class="a-pill"/>
+          <text x="28" y="14" class="a-pill-txt" text-anchor="middle">C / C++</text>
         </g>
-        <g transform="translate(192, 39)">
-          <rect width="54" height="20" rx="4" class="a-pill"/>
-          <text x="27" y="14" class="a-pill-txt" text-anchor="middle">Python</text>
+        <g transform="translate(196, 39)">
+          <rect width="78" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="39" y="14" class="a-pill-txt-hi" text-anchor="middle">Linux ALSA</text>
         </g>
-        <g transform="translate(252, 39)">
-          <rect width="84" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="42" y="14" class="a-pill-txt-hi" text-anchor="middle">x86/x64 Asm</text>
+        <g transform="translate(280, 39)">
+          <rect width="66" height="20" rx="4" class="a-pill"/>
+          <text x="33" y="14" class="a-pill-txt" text-anchor="middle">Daemons</text>
         </g>
 
-        <!-- Row 2: OS Kernels -->
-        <text x="14" y="82" class="a-lbl">KERNEL</text>
+        <!-- Row 2: Network & iptables -->
+        <text x="14" y="82" class="a-lbl">NETWORK</text>
         <g transform="translate(80, 69)">
-          <rect width="86" height="20" rx="4" class="a-pill"/>
-          <text x="43" y="14" class="a-pill-txt" text-anchor="middle">Win32 / NT</text>
+          <rect width="66" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="33" y="14" class="a-pill-txt-hi" text-anchor="middle">iptables</text>
         </g>
-        <g transform="translate(172, 69)">
+        <g transform="translate(152, 69)">
+          <rect width="62" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="31" y="14" class="a-pill-txt-hi" text-anchor="middle">Sing-box</text>
+        </g>
+        <g transform="translate(220, 69)">
           <rect width="80" height="20" rx="4" class="a-pill"/>
-          <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Linux eBPF</text>
+          <text x="40" y="14" class="a-pill-txt" text-anchor="middle">Xray Reality</text>
         </g>
-        <g transform="translate(258, 69)">
-          <rect width="90" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="45" y="14" class="a-pill-txt-hi" text-anchor="middle">Kernel Driver</text>
+        <g transform="translate(306, 69)">
+          <rect width="70" height="20" rx="4" class="a-pill"/>
+          <text x="35" y="14" class="a-pill-txt" text-anchor="middle">Hysteria 2</text>
         </g>
 
-        <!-- Row 3: Security & Network -->
-        <text x="14" y="112" class="a-lbl">SECURITY</text>
+        <!-- Row 3: Infrastructure -->
+        <text x="14" y="112" class="a-lbl">INFRA</text>
         <g transform="translate(80, 99)">
-          <rect width="102" height="20" rx="4" class="a-pill a-pill-hi"/>
-          <text x="51" y="14" class="a-pill-txt-hi" text-anchor="middle">Direct Syscalls</text>
+          <rect width="82" height="20" rx="4" class="a-pill a-pill-hi"/>
+          <text x="41" y="14" class="a-pill-txt-hi" text-anchor="middle">Proxmox VE</text>
         </g>
-        <g transform="translate(188, 99)">
-          <rect width="78" height="20" rx="4" class="a-pill"/>
-          <text x="39" y="14" class="a-pill-txt" text-anchor="middle">DEP / ASLR</text>
+        <g transform="translate(168, 99)">
+          <rect width="68" height="20" rx="4" class="a-pill"/>
+          <text x="34" y="14" class="a-pill-txt" text-anchor="middle">LXC / KVM</text>
         </g>
-        <g transform="translate(272, 99)">
-          <rect width="84" height="20" rx="4" class="a-pill"/>
-          <text x="42" y="14" class="a-pill-txt" text-anchor="middle">Raw Sockets</text>
+        <g transform="translate(242, 99)">
+          <rect width="82" height="20" rx="4" class="a-pill"/>
+          <text x="41" y="14" class="a-pill-txt" text-anchor="middle">Linux / Bash</text>
+        </g>
+        <g transform="translate(330, 99)">
+          <rect width="46" height="20" rx="4" class="a-pill"/>
+          <text x="23" y="14" class="a-pill-txt" text-anchor="middle">CI/CD</text>
         </g>
       </g>
     </g>
